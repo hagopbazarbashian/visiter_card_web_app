@@ -24,8 +24,8 @@
                </div>
             </div>
             <div class="iq-button">
-               <a href="#" class="btn text-uppercase position-relative">
-                  <span class="button-text">Show Your card</span>
+               <a href="{{route('user-edit.index')}}" class="btn text-uppercase position-relative">
+                  <span class="button-text">Edit Your card</span>
                   <i class="fa-solid fa-play"></i>
                </a>
             </div>
@@ -48,7 +48,7 @@
             </ul>
             <div class="tab-content px-0">
                <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
-                <form  method="post" action="{{ route('login_now') }}" onsubmit="return validateForm()">
+                <form  method="post" action="{{ route('add_card') }}" onsubmit="return validateForm()" enctype="multipart/form-data">
                     @csrf
                     <img id="imagePreview" class="image-preview">
                       <div class="mb-3">
@@ -97,6 +97,11 @@
                         <input type="text" id="instagramProfile" name="ins" class="form-control rounded-0" oninput="validateAndToggleInstagramInput(this.value)" value="{{old('ins')}}" placeholder="instagram profile Link">
                         <span id="error-messageins" class="error-message"></span>
                       </div>
+                      <div class="mb-3">
+                        <label class="text-white fw-500 mb-2">linkedin profile Link</label>
+                        <input type="text" id="linkedinProfile" name="ins" class="form-control rounded-0" oninput="validateAndToggleLinkedInInput(this.value)" value="{{old('ins')}}" placeholder="instagram profile Link">
+                        <span id="error-messagelinkedin" class="error-message"></span>
+                      </div>
                       {{-- <div class="mb-3">
                         <label class="text-white fw-500 mb-2">Facebook profile Link</label>
                         <input type="text" id="facebookProfile" name="fb" class="form-control rounded-0" oninput="validateAndToggleInput(this.value)">
@@ -106,7 +111,7 @@
                       <div class="full-button">
                       <div class="iq-button"style="display: flex;justify-content: space-around;">
                           <button type="submit" class="btn text-uppercase position-relative">
-                               <span class="button-text">Submit</span>
+                               <span class="button-text">Add Card</span>
                                <i class="fa-solid fa-play"></i>
                           </button>
                       </div>

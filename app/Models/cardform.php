@@ -7,5 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 
 class cardform extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'user_id',
+        'photo',
+        'full_name',
+        'title',
+        'department',
+        'company',
+        'headline',
+        'email',
+        'phone',
+        'fb',
+        'ins',
+        'link',
+        'color'
+    ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+
 }

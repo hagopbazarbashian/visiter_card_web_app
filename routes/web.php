@@ -5,7 +5,8 @@ use App\Http\Controllers\HomeVontroller;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\User\UserHomeController;
-
+use App\Http\Controllers\User\UserFormController;
+use App\Http\Controllers\User\UserEditCardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,11 @@ Route::get('login-user',[LoginController::class , 'index'])->name('login_user');
 Route::post('login-now',[LoginController::class , 'submit_login'])->name('login_now');
 
 // User Home
-Route::middleware(['web:web'])->group(function () { 
+Route::middleware(['web:web'])->group(function () {
     Route::get('home', [UserHomeController::class, 'index'])->name('home');
+    //  User Add Visiter Card
+    Route::post('add-card', [UserFormController::class, 'store'])->name('add_card');
+    // User Edit System
+    Route::resource('user-edit', UserEditCardController::class);
 
 });
