@@ -18,3 +18,6 @@
  <!-- Streamit Script -->
  <script src="{{ asset('assets/js/streamit.js') }}" defer></script>
  <script src="{{ asset('assets/js/swiper.js') }}" defer></script>
+ <script src="{{ asset('assets/js/inputnumber.js') }}"></script>
+ <script src="{{ asset('assets/js/photo.js') }}"></script>
+ <script src="{{ asset('assets/js/facebooklink.js') }}"></script>

@@ -33,6 +33,6 @@ class RegisterController extends Controller
             // 'status' => 0
         ]);
 
-        return redirect()->back()->with('succes', 'Registration successful!');
+        return redirect()->route('login_user')->with('succes', 'Registration successful!');
      }
-} 
+}
