@@ -25,4 +25,18 @@ class UserHomeController extends Controller
             return view('User.user_not_verifiy');
         }
     }
+
+     public function logout(Request $request){
+        if (Auth::check()) {
+            // User is authenticated, you can access user properties
+            $userName = Auth::user()->name;
+            // ... any other operations you want to perform on the authenticated user
+        }
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+    
+        return redirect('/');
+
+     }
 }

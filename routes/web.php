@@ -32,6 +32,7 @@ Route::post('login-now',[LoginController::class , 'submit_login'])->name('login_
 // User Home
 Route::middleware(['web:web'])->group(function () {
     Route::get('home', [UserHomeController::class, 'index'])->name('home');
+    Route::get('logout', [UserHomeController::class, 'logout'])->name('logout');
     //  User Add Visiter Card
     Route::post('add-card', [UserFormController::class, 'store'])->name('add_card');
     // User Edit System

@@ -1,28 +1,34 @@
+<style>
+   .navbar-brand img.logo{
+    height: 4.375rem !important;
+    max-height: 10.375rem;
+}
+</style>
 <div class="header-top d-xl-block d-none">
   <div class="container-fluid">
      <div class="row align-items-center">
         <div class="col-md-3">
            <!--Logo -->
            <div class="logo-default">
-              <a class="navbar-brand text-primary" href="./index.html">
+              <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                  <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
               </a>
            </div>
-           <div class="logo-hotstar">
-              <a class="navbar-brand text-primary" href="./index.html">
+           {{-- <div class="logo-hotstar">
+              <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                  <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
               </a>
            </div>
            <div class="logo-prime">
-              <a class="navbar-brand text-primary" href="./index.html">
+              <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                  <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
               </a>
            </div>
            <div class="logo-hulu">
-              <a class="navbar-brand text-primary" href="./index.html">
+              <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                  <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
               </a>
-           </div>
+           </div> --}}
         </div>
         <div class="col-md-9">
            <ul class="d-flex align-items-center justify-content-end gap-3 list-inline mb-0">
@@ -102,11 +108,10 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end dropdown-user border-0 p-0 m-0" aria-labelledby="navbarDropdown">
                      <li class="user-info d-flex align-items-center gap-3 mb-3">
-                        <img src="./assets/images/user/user1.webp" class="img-fluid" alt="" loading="lazy" />
-                        <span class="font-size-14 fw-500 text-capitalize text-white">Jenny</span>
+                        <span class="font-size-14 fw-500 text-capitalize text-white">{{ auth()->user()->name }}</span>
                      </li>
                      <li>
-                        <a href="./playlist.html" class="iq-sub-card d-flex align-items-center gap-3">
+                        <a href="{{ route('home') }}" class="iq-sub-card d-flex align-items-center gap-3">
                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 22" fill="none">
                               <path
                                  fill-rule="evenodd"
@@ -131,21 +136,13 @@
                         </a>
                      </li>
                      <li>
-                        <a href="view-all-movie.html" class="iq-sub-card d-flex align-items-center gap-3">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                              <path d="M6.425 13.75V7.575H0.25V6.425H6.425V0.25H7.575V6.425H13.75V7.575H7.575V13.75H6.425Z" fill="white"></path>
-                           </svg>
-                           <h6 class="mb-0 font-size-14 fw-normal">Watchlist</h6>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="pricing-plan.html" class="iq-sub-card d-flex align-items-center gap-3">
+                        <a href="{{route('user-edit.index')}}" class="iq-sub-card d-flex align-items-center gap-3">
                            <i class="fa-regular fa-star"></i>
-                           <h6 class="mb-0 font-size-14 fw-normal">Subscription</h6>
+                           <h6 class="mb-0 font-size-14 fw-normal">Edit Your card</h6>
                         </a>
                      </li>
                      <li>
-                        <a href="./login.html" class="iq-sub-card iq-logout-2 mt-1 d-flex justify-content-center gap-2">
+                        <a href="{{route('logout')}}" class="iq-sub-card iq-logout-2 mt-1 d-flex justify-content-center gap-2">
                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                               <path
                                  d="M1.82209 15.9999C1.46654 15.9999 1.16283 15.874 0.910981 15.6221C0.659129 15.3703 0.533203 15.0666 0.533203 14.711V1.73322C0.533203 1.37767 0.659129 1.07397 0.910981 0.822114C1.16283 0.570262 1.46654 0.444336 1.82209 0.444336H7.95543V1.44434H1.82209C1.74802 1.44434 1.68135 1.47397 1.62209 1.53322C1.56283 1.59248 1.5332 1.65915 1.5332 1.73322V14.711C1.5332 14.7851 1.56283 14.8517 1.62209 14.911C1.68135 14.9703 1.74802 14.9999 1.82209 14.9999H7.95543V15.9999H1.82209ZM12.0888 11.5999L11.3554 10.8888L13.5332 8.73322H5.68876V7.711H13.511L11.3332 5.55545L12.0665 4.82211L15.4665 8.24434L12.0888 11.5999Z"
@@ -178,25 +175,25 @@
               </div>
               <!--Logo -->
               <div class="logo-default">
-                 <a class="navbar-brand text-primary" href="./index.html">
-                    <img class="img-fluid logo" src="./assets/images/logo.webp" loading="lazy" alt="streamit" />
+                 <a class="navbar-brand text-primary" href="{{route('welcome')}}">
+                    <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                  </a>
               </div>
-              <div class="logo-hotstar">
+              {{-- <div class="logo-hotstar">
                  <a class="navbar-brand text-primary" href="./index.html">
-                    <img class="img-fluid logo" src="./assets/images/logo-hotstar.webp" loading="lazy" alt="streamit" />
+                    <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                  </a>
               </div>
               <div class="logo-prime">
                  <a class="navbar-brand text-primary" href="./index.html">
-                    <img class="img-fluid logo" src="./assets/images/logo-prime.webp" loading="lazy" alt="streamit" />
+                    <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                  </a>
               </div>
               <div class="logo-hulu">
                  <a class="navbar-brand text-primary" href="./index.html">
-                    <img class="img-fluid logo" src="./assets/images/logo-hulu.webp" loading="lazy" alt="streamit" />
+                    <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                  </a>
-              </div>
+              </div> --}}
            </div>
            <!-- Horizontal Menu Start -->
            <nav id="navbar_main" class="offcanvas mobile-offcanvas nav navbar navbar-expand-xl hover-nav horizontal-nav py-xl-0">
@@ -205,25 +202,25 @@
                     <div class="navbar-brand ms-3">
                        <!--Logo -->
                        <div class="logo-default">
-                          <a class="navbar-brand text-primary" href="./index.html">
-                             <img class="img-fluid logo" src="./assets/images/logo.webp" loading="lazy" alt="streamit" />
+                          <a class="navbar-brand text-primary" href="{{route('welcome')}}">
+                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                           </a>
                        </div>
-                       <div class="logo-hotstar">
+                       {{-- <div class="logo-hotstar">
                           <a class="navbar-brand text-primary" href="./index.html">
-                             <img class="img-fluid logo" src="./assets/images/logo-hotstar.webp" loading="lazy" alt="streamit" />
+                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                           </a>
                        </div>
                        <div class="logo-prime">
                           <a class="navbar-brand text-primary" href="./index.html">
-                             <img class="img-fluid logo" src="./assets/images/logo-prime.webp" loading="lazy" alt="streamit" />
+                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                           </a>
                        </div>
                        <div class="logo-hulu">
                           <a class="navbar-brand text-primary" href="./index.html">
-                             <img class="img-fluid logo" src="./assets/images/logo-hulu.webp" loading="lazy" alt="streamit" />
+                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                           </a>
-                       </div>
+                       </div> --}}
                     </div>
                     <button type="button" class="btn-close float-end px-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                  </div>
@@ -571,10 +568,11 @@
                           </a>
                           <div class="dropdown-menu dropdown-menu-end dropdown-user border-0 p-0 m-0" aria-labelledby="navbarDropdown2">
                              <div class="user-info d-flex align-items-center gap-3 mb-3">
-                                <img src="./assets/images/user/user1.webp" class="img-fluid" alt="" loading="lazy" />
-                                <span class="font-size-14 fw-500 text-capitalize text-white">Jenny</span>
+                             @if(auth()->check())
+                                  <span class="font-size-14 fw-500 text-capitalize text-white">{{auth()->user()->name}}</span>
+                             @endif
                              </div>
-                             <a href="./playlist.html" class="iq-sub-card d-flex align-items-center gap-3">
+                             <a href="{{route('home')}}" class="iq-sub-card d-flex align-items-center gap-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 22" fill="none">
                                    <path
                                       fill-rule="evenodd"
@@ -597,17 +595,11 @@
                                 </svg>
                                 <h6 class="mb-0 font-size-14 fw-normal">My Account</h6>
                              </a>
-                             <a href="view-all-movie.html" class="iq-sub-card d-flex align-items-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                   <path d="M6.425 13.75V7.575H0.25V6.425H6.425V0.25H7.575V6.425H13.75V7.575H7.575V13.75H6.425Z" fill="white"></path>
-                                </svg>
-                                <h6 class="mb-0 font-size-14 fw-normal">Watchlist</h6>
-                             </a>
-                             <a href="pricing-plan.html" class="iq-sub-card d-flex align-items-center gap-3">
+                             <a href="{{route('user-edit.index')}}" class="iq-sub-card d-flex align-items-center gap-3">
                                 <i class="fa-regular fa-star"></i>
-                                <h6 class="mb-0 font-size-14 fw-normal">Subscription</h6>
+                                <h6 class="mb-0 font-size-14 fw-normal">Edit Your Card</h6>
                              </a>
-                             <a href="#" class="iq-sub-card iq-logout-2 mt-1 d-flex justify-content-center gap-2">
+                             <a href="{{route('logout')}}" class="iq-sub-card iq-logout-2 mt-1 d-flex justify-content-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                    <path
                                       d="M1.82209 15.9999C1.46654 15.9999 1.16283 15.874 0.910981 15.6221C0.659129 15.3703 0.533203 15.0666 0.533203 14.711V1.73322C0.533203 1.37767 0.659129 1.07397 0.910981 0.822114C1.16283 0.570262 1.46654 0.444336 1.82209 0.444336H7.95543V1.44434H1.82209C1.74802 1.44434 1.68135 1.47397 1.62209 1.53322C1.56283 1.59248 1.5332 1.65915 1.5332 1.73322V14.711C1.5332 14.7851 1.56283 14.8517 1.62209 14.911C1.68135 14.9703 1.74802 14.9999 1.82209 14.9999H7.95543V15.9999H1.82209ZM12.0888 11.5999L11.3554 10.8888L13.5332 8.73322H5.68876V7.711H13.511L11.3332 5.55545L12.0665 4.82211L15.4665 8.24434L12.0888 11.5999Z"

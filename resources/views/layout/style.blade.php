@@ -30,6 +30,7 @@
   <!-- Rtl Css -->
   <link rel="stylesheet" href="{{ asset('assets/css/rtl.min.css?v=1.0.0') }}" />
   <link rel="stylesheet" href="{{ asset('assets/css/iziToast.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('assets/css/edit-user-card.css') }}" />
 <!-- Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

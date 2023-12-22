@@ -10,7 +10,7 @@ class ShowFullVisiterCardController extends Controller
 {
      public function index($id){
          $cardform = cardform::where('id' , $id)->with('user')->first();
-         dd($cardform);
+        //  dd($cardform);
          return view('User.full_visitor_card');
 
      }
