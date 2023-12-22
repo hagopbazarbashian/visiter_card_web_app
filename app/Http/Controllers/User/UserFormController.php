@@ -13,13 +13,14 @@ class UserFormController extends Controller
 {
      public function store(Formcardrequest $request){
 
+
         $image = $request->file('photo');
 
         if ($image) {
             $logoFileName = $image->hashName();
             $destinationPath = public_path('user_image');
 
-            // Move the uploaded image to the destination folder
+            // Move the uploaded image to the destination folder 
             $image->move($destinationPath, $logoFileName);
 
             // Path to the saved logo image

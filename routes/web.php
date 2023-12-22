@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\User\UserHomeController;
 use App\Http\Controllers\User\UserFormController;
 use App\Http\Controllers\User\UserEditCardController;
+use App\Http\Controllers\User\ShowFullVisiterCardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,5 +36,6 @@ Route::middleware(['web:web'])->group(function () {
     Route::post('add-card', [UserFormController::class, 'store'])->name('add_card');
     // User Edit System
     Route::resource('user-edit', UserEditCardController::class);
+    Route::get('full-visiter-card/{id}', [ShowFullVisiterCardController::class, 'index'])->name('full_visiter_card');
 
 });

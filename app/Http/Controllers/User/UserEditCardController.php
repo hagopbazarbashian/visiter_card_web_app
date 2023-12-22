@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\cardform;
 use Illuminate\Support\Facades\Auth;
 
-class UserEditCardController extends Controller
+class UserEditCardController extends Controller  
 {
     /**
      * Display a listing of the resource.
@@ -93,4 +93,4 @@ class UserEditCardController extends Controller
     {
         //
     }
-}
+}  

@@ -16,18 +16,18 @@ return new class extends Migration
         Schema::create('cardforms', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->string('full_name');
-            $table->string('title');
-            $table->string('department');
-            $table->string('company');
-            $table->string('headline');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('fb');
-            $table->string('ins');
-            $table->string('link');
-            $table->string('color');
+            $table->string('title')->nullable();
+            $table->string('department')->nullable();
+            $table->string('company')->nullable();
+            $table->string('headline')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('fb')->nullable();
+            $table->string('ins')->nullable();
+            $table->string('link')->nullable();
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }
