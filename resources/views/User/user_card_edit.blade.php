@@ -25,30 +25,59 @@
         </section>
     </section>
 
-    <form class="form">
+    <form  method="post" action="{{route('user-edit.update',$cardform->id)}}"class="form">
+        @csrf
+        @method('PUT')
       <div>
-        <label for="number">Card Number</label>
-        <input id="number" type="number">
+        <label for="number">Add Photo</label>
+        <input type="file" name="photo">
       </div>
       <div>
-        <label for="holder">Card Holder</label>
-        <input id="holder" type="text">
+        <label for="holder">Full Name</label>
+        <input  type="text" name="full_name" value="{{$cardform->full_name ?? 'Null'}}">
       </div>
       <div>
-        <label for="holder">Card Holder</label>
-        <input id="holder" type="text">
+        <label for="holder">Title</label>
+        <input  type="text" name="title" value="{{$cardform->title ?? 'Null'}}">
       </div>
       <div>
-        <label for="holder">Card Holder</label>
-        <input id="holder" type="text">
+        <label for="holder">Department</label>
+        <input  type="text" name="department" value="{{$cardform->department ?? 'Null'}}">
       </div>
       <div>
-        <label for="holder">Card Holder</label>
-        <input id="holder" type="text">
+        <label for="holder">Company</label>
+        <input  type="text" name="company" value="{{$cardform->company ?? 'Null'}}">
       </div>
       <div>
-        <label for="holder">Card Holder</label>
-        <input id="holder" type="text">
+        <label for="holder">Color Card</label>
+        <input type="color" name="color" value="{{$cardform->color}}" style="background-color: {{$cardform->color}};">
+      </div>
+      <div>
+        <label for="holder">Headline</label>
+        <input type="text" name="headline"  value="{{$cardform->headline ?? 'Null'}}">
+      </div>
+      <div>
+        <label for="holder">Email</label>
+        <input type="text" name="email" value="{{$cardform->email ?? 'Null'}}" />
+      </div>
+      <div>
+        <label for="holder">Phone</label>
+        <input type="number" name="Phone" placeholder="(555) 555-555" id="phoneInput" value="{{$cardform->Phone ?? 'Null'}}" />
+      </div>
+      <div>
+        <label for="holder">Facebook profile Link</label>
+        <input type="text" id="facebookProfile" name="fb" oninput="validateAndToggleInput(this.value)" value="{{$cardform->fb  ?? 'Null' }}" />
+        <span id="error-message" class="error-message"></span>
+      </div>
+      <div>
+        <label for="holder">instagram profile Link</label>
+        <input type="text" id="instagramProfile" name="ins" oninput="validateAndToggleInstagramInput(this.value)" value="{{$cardform->fb  ?? 'Null' }}" />
+        <span id="error-messageins" class="error-message"></span>
+      </div>
+      <div>
+        <label for="holder">linkedin profile Link</label>
+        <input type="text" id="linkedinProfile" name="ins" oninput="validateAndToggleLinkedInInput(this.value)" value="{{$cardform->fb  ?? 'Null' }}" />
+        <span id="error-messagelinkedin" class="error-message"></span>
       </div>
       <div class="full-button">
         <div class="iq-button" style="display: flex; justify-content: space-around;">

@@ -5,9 +5,10 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\cardform;
+use App\Http\Requests\Formcardrequest;
 use Illuminate\Support\Facades\Auth;
 
-class UserEditCardController extends Controller  
+class UserEditCardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -79,9 +80,46 @@ class UserEditCardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Formcardrequest $request, $id)
     {
-        //
+        // Find the existing record
+    $cardform = Cardform::findOrFail($id);
+
+    // Check if a new photo is provided
+    if ($request->hasFile('photo')) {
+        $image = $request->file('photo');
+        $logoFileName = $image->hashName();
+        $destinationPath = public_path('user_image');
+
+        // Move the uploaded image to the destination folder
+        $image->move($destinationPath, $logoFileName);
+
+        // Path to the saved logo image
+        $logoImagePath = $destinationPath . '/' . $logoFileName;
+
+        // Update record with new photo information
+        $cardform->update([
+            'photo' => $logoFileName,
+        ]);
+    }
+
+    // Update other fields
+    $cardform->update([
+        'user_id' => Auth()->user()->id,
+        'full_name' => $request->full_name,
+        'title' => $request->title,
+        'department' => $request->department,
+        'company' => $request->company,
+        'headline' => $request->headline,
+        'email' => $request->email,
+        'phone' => $request->phone,
+        'fb' => $request->fb,
+        'ins' => $request->ins,
+        'link' => $request->link,
+        'color' => $request->color,
+    ]);
+
+    return redirect()->back()->with('succes', 'Record updated successfully.');
     }
 
     /**
@@ -92,6 +130,9 @@ class UserEditCardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $cardform = Cardform::findOrFail($id);
+        $cardform->delete();
+        return redirect()->back()->with('succes', 'Deleted successfully');
+
     }
-}  
+}

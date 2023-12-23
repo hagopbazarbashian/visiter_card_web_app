@@ -8,6 +8,12 @@ use App\Http\Controllers\User\UserHomeController;
 use App\Http\Controllers\User\UserFormController;
 use App\Http\Controllers\User\UserEditCardController;
 use App\Http\Controllers\User\ShowFullVisiterCardController;
+// Admin System
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminHomeController;
+// User System
+use App\Http\Controllers\Admin\User\AdminUserController;
+use App\Http\Controllers\Customer\CustomerRegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,4 +45,23 @@ Route::middleware(['web:web'])->group(function () {
     Route::resource('user-edit', UserEditCardController::class);
     Route::get('full-visiter-card/{id}', [ShowFullVisiterCardController::class, 'index'])->name('full_visiter_card');
 
+});
+
+// Admin System
+Route::get('admin/login' , [AdminLoginController::class ,'index'])->name('admin_login');
+Route::post('login_submit' , [AdminLoginController::class ,'login_submit'])->name('login_submit');
+Route::get('logout' , [AdminLoginController::class ,'logout'])->name('logout');
+// Customer Register
+Route::resource('register', CustomerRegisterController::class);
+// Admin Home
+
+Route::middleware(['admin:admin'])->group(function () {
+    Route::get('admin_home' , [AdminHomeController::class , 'index'])->name('admin_home');
+    // User System
+    Route::resource('user', AdminUserController::class);
+
+    // track-visitor
+    Route::group(['middleware' => 'trackVisitor'], function () {
+        Route::get('visitor', [VisitorController::class, 'showVisitorCount'])->name('visitor');
+    });
 });
