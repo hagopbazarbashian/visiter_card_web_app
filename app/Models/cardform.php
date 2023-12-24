@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class cardform extends Model
 {
-    protected $fillable = [ 
+    protected $fillable = [
         'user_id',
         'photo',
         'full_name',
@@ -20,13 +20,20 @@ class cardform extends Model
         'fb',
         'ins',
         'link',
-        'color'
+        'color',
+        'color_code'
     ];
 
 
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+
+    public function socelmedia()
+    {
+        return $this->hasMany(socelmedia::class);
     }
 
 

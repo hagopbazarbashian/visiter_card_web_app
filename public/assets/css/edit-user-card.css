@@ -3,9 +3,9 @@
   * {
     box-sizing: border-box;
   }
-  
-  
-  
+
+
+
   #highlight {
     position: absolute;
     border: 1px solid #fff;
@@ -18,40 +18,40 @@
     box-shadow: 0 0 5px #fff;
     transition: .3s;
   }
-  
+
   #highlight.highlight__number {
     width: 346px;
     height: 40px;
     top: 92px;
     left: 18px;
   }
-  
+
   #highlight.highlight__holder {
     width: 264px;
     height: 56px;
     top: 156px;
     left: 18px;
   }
-  
+
   #highlight.highlight__expire {
     width: 86px;
     height: 56px;
     top: 156px;
     left: 323px;
   }
-  
+
   #highlight.highlight__cvv {
     width: 381px;
     height: 91px;
     top: 83px;
     left: 18px;
   }
-  
+
   #highlight.hidden {
     display: none;
   }
-  
-  .card { 
+
+  .card {
     position: relative;
     max-width: 420px;
     margin: 0 auto;
@@ -59,16 +59,16 @@
     transform-style: preserve-3d;
     transition: 1s;
   }
-  
+
   .card:hover,
   .card.flip {
     transform: rotateY(180deg);
   }
-  
+
   .card:hover #highlight {
     display: none;
   }
-  
+
   .card__front,
   .card__back {
     width: 100%;
@@ -83,7 +83,7 @@
     margin: 0 auto;
     backface-visibility: hidden;
   }
-  
+
   @media (max-width: 450px) {
     .card__front,
     .card__back{
@@ -91,7 +91,7 @@
       height: 206px;
     }
   }
-  
+
   .card__back {
     position: absolute;
     top: 0;
@@ -99,11 +99,11 @@
     transform: rotateY(180deg);
     padding: 24px 0 0;
   }
-  
+
   .card__front {
     position: relative;
   }
-  
+
   .card__front:before,
   .card__back:before {
     content: "";
@@ -116,7 +116,7 @@
     width: 300px;
     filter: blur(13px);
   }
-  
+
   .card__front:after,
   .card__back:after {
     content: "";
@@ -129,7 +129,7 @@
     height: 300px;
     filter: blur(13px);
   }
-  
+
   .card__hide_line {
     height: 40px;
     width: 100%;
@@ -137,7 +137,7 @@
     position: relative;
     z-index: 1;
   }
-  
+
   .card_cvv {
     position: relative;
     z-index: 1;
@@ -150,7 +150,7 @@
     font-weight: 600;
     text-transform: uppercase;
   }
-  
+
   .card_cvv_field {
     margin-top: 6px;
     background-color: #fff;
@@ -165,7 +165,7 @@
     font-size: 25px;
     line-height: 21px;
   }
-  
+
   .card__header {
     display: flex;
     align-items: center;
@@ -175,7 +175,7 @@
     position: relative;
     z-index: 1;
   }
-  
+
   .card__number {
     /* word-spacing: 10px; */
     font-size: 22px;
@@ -186,21 +186,21 @@
     height: 33px;
     overflow: hidden;
   }
-  
+
   .card__number span {
     display: flex;
     flex-direction: column;
     transition: .2s;
   }
-  
-  .card__number span.filed { 
+
+  .card__number span.filed {
     transform: translateY(-33px);
   }
-  
+
   .card__number span:nth-child(4n) {
     margin-right: 10px;
   }
-  
+
   .card__footer {
     display: flex;
     align-items: center;
@@ -208,21 +208,21 @@
     position: relative;
     z-index: 1;
   }
-  
+
   .card__holder {
     text-transform: uppercase;
   }
-  
+
   .card__section__title {
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
   }
-  
+
   .form {
     border-radius: 12px;
     background: #fff;
-    max-width: 600px;
+    max-width: 700px;
     margin: -130px auto 0;
     padding: 180px 32px 32px;
     border: 1px solid #f1f1f1;
@@ -230,14 +230,14 @@
     display: grid;
     gap: 12px;
   }
-  
+
   label {
     display: block;
     margin: 14px 0 4px;
     color: #0d0c22;
     font-weight: 500;
   }
-  
+
   input, select {
     height: 52px;
     display: block;
@@ -251,23 +251,23 @@
     color: #0d0c22;
     font-size: 16px;
   }
-  
+
   input:focus,
   select:focus {
-    border: 1px solid #000;   
+    border: 1px solid #000;
     outline: 4px solid rgba(0,0,0,.1);
   }
-  
+
   select {
     padding: 0 20px;
   }
-  
+
   .filed__group {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 24px;
   }
-  
+
   .filed__date {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -280,3 +280,43 @@
     .card__image img{
     width: 35%;
   }
+
+
+  .tytyt{
+    flex-direction: row;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .bg-icoo{
+    margin: 5px 0;
+    display: flex;
+    /* text-align: center; */
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .flexx {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.bg-ico {
+    /* Your existing styles for the icon container */
+}
+
+.fa {
+    /* Your existing styles for the icon */
+}
+
+.flexx p {
+    margin-top: 5px; /* Adjust the margin as needed */
+}

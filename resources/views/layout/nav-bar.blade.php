@@ -193,17 +193,7 @@
                  <div class="iq-meta-menu-container d-xl-block d-none">
                  @guest
                  @else
-                 <ul class="d-flex align-items-center m-0 list-inline iq-meta-menu">
-                       <li>
-                          <a href="./shop/my-account.html">My Account</a>
-                       </li>
-                       <li>
-                          <a href="https://iqonic.desky.support/">Customer Support</a>
-                       </li>
-                       <li>
-                          <a href="./contact-us.html">Help?</a>
-                       </li>
-                    </ul>
+                 
                  @endguest
                  </div>
                  <div class="d-xl-none">

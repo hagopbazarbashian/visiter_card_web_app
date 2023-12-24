@@ -24,7 +24,7 @@ class Formcardrequest extends FormRequest
     public function rules()
     {
         return [
-           'photo'=>'max:2048',
+        //    'photo'=>'max:2048',
            'full_name'=>'required',
         ];
     }

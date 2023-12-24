@@ -38,15 +38,19 @@ Index Of Script
     loaderInit();
   });
 
-  const loaderInit = () => {
+  const hideLoaderWithDelay = () => {
     const loader = document.querySelector(".loader");
     if (loader) {
-      loader.classList.add("animate__animated", "animate__fadeOut");
-      setTimeout(() => {
-        loader.classList.add("d-none");
-      }, 200);
+        loader.classList.add("animate__animated", "animate__fadeOut");
+        setTimeout(() => {
+            loader.classList.add("d-none");
+        }, 4000); // Show the loader for 4 seconds
     }
-  };
+};
+
+// Call hideLoaderWithDelay when you want to hide the loader after a 4-second delay
+hideLoaderWithDelay();
+
 
   /*----------Sticky-Header-----------*/
   jQuery(window).scroll(function () {

@@ -17,8 +17,9 @@
  <script src="{{ asset('assets/js/iziToast.min.js') }}"></script>
  <!-- Streamit Script -->
  <script src="{{ asset('assets/js/streamit.js') }}" defer></script>
- <script src="{{ asset('assets/js/swiper.js') }}" defer></script> 
+ <script src="{{ asset('assets/js/swiper.js') }}" defer></script>
  <script src="{{ asset('assets/js/inputnumber.js') }}"></script>
  <script src="{{ asset('assets/js/photo.js') }}"></script>
  <script src="{{ asset('assets/js/facebooklink.js') }}"></script>
+ <script src="{{ asset('assets/js/edituserpage.js') }}"></script>
  {{-- <script src="{{ asset('assets/js/nfcsystem.js') }}"></script> --}}

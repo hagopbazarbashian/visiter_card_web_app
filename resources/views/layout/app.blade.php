@@ -10,12 +10,12 @@
 </head>
 
 <body class="  ">
-  <span class="screen-darken"></span>
+  {{-- <span class="screen-darken"></span>
   <!-- loader Start -->
    <!-- loader Start -->
-  {{-- <div class="loader simple-loader">
+  <div class="loader simple-loader">
      <div class="loader-body">
-        <img src="./assets/images/loader.gif" alt="loader" class="img-fluid " width="300">
+        <img src="{{asset('assets/images/logo.png')}}" alt="loader" class="img-fluid " width="300">
       </div>
   </div> --}}
   <!-- loader END -->  <!-- loader END -->
@@ -29,10 +29,10 @@
 
 
   @include('layout.footer')
-  
+
   @include('layout.rt_box')
   @include('layout.script_bottom')
-  
+
   @if ($errors->any())
   @foreach ($errors->all() as $error)
   <script>

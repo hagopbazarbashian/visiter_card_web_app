@@ -1,89 +1,6 @@
 @extends('layout.app')
 @section('title'){{ 'User Edit Page' }}@endsection
 @section('home')
-<style>
-   .file-input-container {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
-  }
-
-  .file-input-button {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-  }
-
-  .file-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 100px;
-    cursor: pointer;
-    opacity: 0;
-  }
-
-  .file-input:hover + .file-input-button {
-    background-color: #2980b9;
-  }
-
-  .file-input:focus + .file-input-button {
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
-  }
-
-  .image-preview {
-    max-width: 100px;
-    max-height: 100px;
-    margin-top: 10px;
-    display: none;
-  }
-
-  .no-image-message {
-    margin-top: 10px;
-    color: #000; /* Set the text color to black */
-  }
-
-
-   
-
-
-
-
-
-    .color-input-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .color-input {
-    background-color: transparent;
-    border: 2px solid #3498db;
-    border-radius: 8px;
-    padding: 8px;
-    width: 50px;
-    height: 30px;
-    cursor: pointer;
-    transition: border-color 0.3s ease-in-out;
-  }
-
-  .color-input:hover,
-  .color-input:focus {
-    border-color: #2980b9;
-  }
-
-  .color-code-input {
-    padding: 8px;
-    border: 2px solid #3498db;
-    border-radius: 8px;
-    width: 100px;
-    font-size: 14px;
-    color: #555;
-  }
-</style>
 <main>
     <section id="card" class="card">
         <div id="highlight"></div>
@@ -184,42 +101,8 @@
     </form>
   </main>
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const photoInput = document.getElementById('photo');
-    previewImage(photoInput);
-  });
 
-  function previewImage(input) {
-    const preview = document.getElementById('image-preview');
-    const noImageMessage = document.getElementById('no-image-message');
-    const file = input.files[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = function (e) {
-        preview.src = e.target.result;
-        preview.style.display = 'block';
-        noImageMessage.style.display = 'none';
-      };
-
-      reader.readAsDataURL(file);
-    } else {
-      preview.style.display = 'none';
-      noImageMessage.style.display = 'block';
-    }
-  }
-
-
-
-  function updateColorBox() {
-    const colorInput = document.getElementById('color');
-    const colorCodeInput = document.getElementById('color-code');
-    
-    // Set the background color of the color box
-    colorInput.style.backgroundColor = colorCodeInput.value;
-  }
-</script>
+</script> 
   @if($cardform->photo)
   <script>
     // If there is a photo, display the preview
@@ -229,5 +112,4 @@
     });
   </script>
 @endif
-
 @endsection

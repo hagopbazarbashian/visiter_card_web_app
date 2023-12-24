@@ -1,0 +1,288 @@
+.file-input-container {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .file-input-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 100px;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .file-input:hover + .file-input-button {
+    background-color: #2980b9;
+  }
+
+  .file-input:focus + .file-input-button {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+
+  .image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    margin-top: 10px;
+    display: none;
+  }
+
+  .no-image-message {
+    margin-top: 10px;
+    color: #000; /* Set the text color to black */
+  }
+    .color-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .color-input {
+    background-color: transparent;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 8px;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  .color-input:hover,
+  .color-input:focus {
+    border-color: #2980b9;
+  }
+
+  .color-code-input {
+    padding: 8px;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    width: 100px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  .yy{
+    margin: 50px auto 0 !important;
+    padding: 30px 32px 32px !important;
+  }
+
+
+
+   /* Add your CSS styles here */
+   .image-preview {
+    max-width: 25%;
+    height: auto;
+ }
+ .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+ }
+  /* Customize the tooltip styles */
+  .tooltip-inner {
+      background-color: red;
+      color: white;
+  }
+
+  .tooltip.bs-tooltip-top .arrow::before {
+      border-top-color: red !important;
+  }
+
+
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+a {
+text-decoration: none;
+}
+
+body {
+font-family: 'Open Sans';
+}
+
+.site {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  height: 10vh;
+  flex-direction: row;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fab {
+margin: auto;
+}
+
+.social {
+color: #FFF;
+transition: all 0.35s;
+transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.social:hover {
+text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+transition: all ease 0.5s;
+-moz-transition: all ease-in 0.5s;
+-webkit-transition: all ease-in 0.5s;
+-o-transition: all ease-in 0.5s;
+}
+
+.facebook {
+color: #4267B2;
+}
+
+.twitter {
+color: #1DA1F2;
+}
+
+.youtube {
+color: #c4302b;
+}
+
+.pinterest {
+color: #c8232c;
+}
+
+.instagram {
+color: transparent;
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+background-clip: text;
+-webkit-background-clip: text;
+}
+
+.tumblr {
+color: #34526f;
+}
+
+.whatsapp {
+color: #25D366;
+}
+
+.bg-ico {
+display: flex;
+background-color: #FFF;
+width: 90px;
+height: 90px;
+line-height: 90px;
+margin: 0 5px;
+text-align: center;
+position: relative;
+overflow: hidden;
+border-radius: 28%;
+box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+opacity: 0.99;
+-webkit-transition: background-color 2s ease-out;
+-moz-transition: background-color 2s ease-out;
+-o-transition: background-color 2s ease-out;
+transition: background-color 2s ease-out;
+}
+
+.bg-ico:hover {
+box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.8);
+}
+
+#facebook:hover {
+background-color: #4267B2;
+}
+
+#twitter:hover {
+background-color: #1DA1F2;
+}
+
+#youtube:hover {
+background-color: #c4302b;
+}
+
+#pinterest:hover {
+background-color: #c8232c;
+}
+
+#instagram:hover {
+background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+#tumblr:hover {
+background-color: #34526f;
+}
+
+#whatsapp:hover {
+background-color: #25D366;
+}
+
+.facebook:hover,
+.twitter:hover,
+.youtube:hover,
+.pinterest:hover,
+.instagram:hover,
+.tumblr:hover,
+.whatsapp:hover {
+color: #fff;
+transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+.wrapper {
+  flex-direction: row;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bg-ico {
+  margin: 5px 0;
+}
+}
+
+
+/* Your existing styles go here */
+#submitButton {
+    display: none; /* Initially hide the submit button */
+  }
+
+
+  .social-media-input {
+    display: none; /* Initially hide all input fields */
+  }
+
+
+  /* Styling for the submit button */
+  #submitButton {
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding for better appearance */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+
+  #submitButton:hover {
+    background-color: #45a049; /* Darker green color on hover */
+  }
+
+
+  .wer{
+    display: flex;
+    justify-content: space-around;
+  }
+
