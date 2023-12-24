@@ -30,12 +30,6 @@
                   <span class="font-size-14 text-white fw-500">{{auth()->user()->email}}</span>
                </div>
             </div>
-            <div class="iq-button">
-               <a href="{{route('user-edit.index')}}" class="btn text-uppercase position-relative">
-                  <span class="button-text">Edit Your card</span>
-                  <i class="fa-solid fa-play"></i>
-               </a>
-            </div>
          </div>
       </div>
    </div>
@@ -139,21 +133,21 @@
                         <div class="alert alert-info" role="alert">
                            You don't have any active cards.
                         </div>
-                        @else @foreach ($filteredCardforms as $filteredCardform)
+                        @else @foreach ($filteredCardforms as $filteredCardform) 
                         <div class="col mb-4">
                            <div class="watchlist-warpper card-hover-style-two">
-                              <div class="block-images position-relative w-100" data-bs-toggle="tooltip" data-bs-placement="top" title="Do you need to activate NFC?">
+                              <div class="block-images position-relative w-100" data-bs-toggle="tooltip" data-bs-placement="top" title="You Need Edit Your Card ?">
                                  <div class="img-box">
                                     <a href="{{route('full_visiter_card', $filteredCardform->id)}}" class="position-absolute top-0 bottom-0 start-0 end-0"></a>
-                                    <img src="https://i.ytimg.com/vi/Ein864T2IlU/maxresdefault.jpg" alt="movie-card" class="img-fluid object-cover w-100 d-block border-0" />
+                                    @if($filteredCardform->photo)
+                                       <img src="{{ asset('user_image/' . $filteredCardform->photo) }}" alt="User Image" class="img-fluid object-cover w-100 d-block border-0">
+                                    @else
+                                       <img src="{{ asset('assets/images/download.jpg') }}"  class="img-fluid object-cover w-100 d-block border-0" />
+                                    @endif
                                  </div>
                                  <div class="card-description">
                                     <h5 class="text-capitalize fw-500"><a href="">{{$filteredCardform->full_name}}</a></h5>
                                     <div class="d-flex align-items-center gap-3">
-                                       <div class="d-flex align-items-center gap-1 font-size-12">
-                                          <i class="fa-solid fa-earth-americas text-primary"></i>
-                                          <span class="text-body fw-semibold text-capitalize">Activ</span>
-                                       </div>
                                     </div>
                                  </div>
                               </div>

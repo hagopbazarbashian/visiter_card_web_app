@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\cardform;
 
 class ShowFullVisiterCardController extends Controller
-{
+{ 
      public function index($id){
          $cardform = cardform::where('id' , $id)->with('user')->first();
         //  dd($cardform);
-         return view('User.full_visitor_card');
+         return view('User.user_card_edit',compact('cardform'));
 
      }
 } 

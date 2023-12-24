@@ -14,21 +14,6 @@
                  <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
               </a>
            </div>
-           {{-- <div class="logo-hotstar">
-              <a class="navbar-brand text-primary" href="{{route('welcome')}}">
-                 <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
-              </a>
-           </div>
-           <div class="logo-prime">
-              <a class="navbar-brand text-primary" href="{{route('welcome')}}">
-                 <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
-              </a>
-           </div>
-           <div class="logo-hulu">
-              <a class="navbar-brand text-primary" href="{{route('welcome')}}">
-                 <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
-              </a>
-           </div> --}}
         </div>
         <div class="col-md-9">
            <ul class="d-flex align-items-center justify-content-end gap-3 list-inline mb-0">
@@ -166,34 +151,19 @@
      <div class="container-fluid navbar-inner">
         <div class="d-flex align-items-center justify-content-between w-100 landing-header">
            <div class="d-xl-none d-flex gap-3 gap-xl-0 align-items-center">
-              <div>
+              {{-- <div>
                  <button type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar_main" aria-controls="navbar_main" class="d-xl-none btn btn-primary rounded-pill p-1 pt-0 toggle-rounded-btn">
                     <svg width="20px" class="icon-20" viewBox="0 0 24 24">
                        <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
                     </svg>
                  </button>
-              </div>
+              </div> --}}
               <!--Logo -->
               <div class="logo-default">
                  <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                     <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                  </a>
               </div>
-              {{-- <div class="logo-hotstar">
-                 <a class="navbar-brand text-primary" href="./index.html">
-                    <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
-                 </a>
-              </div>
-              <div class="logo-prime">
-                 <a class="navbar-brand text-primary" href="./index.html">
-                    <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
-                 </a>
-              </div>
-              <div class="logo-hulu">
-                 <a class="navbar-brand text-primary" href="./index.html">
-                    <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
-                 </a>
-              </div> --}}
            </div>
            <!-- Horizontal Menu Start -->
            <nav id="navbar_main" class="offcanvas mobile-offcanvas nav navbar navbar-expand-xl hover-nav horizontal-nav py-xl-0">
@@ -206,272 +176,9 @@
                              <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                           </a>
                        </div>
-                       {{-- <div class="logo-hotstar">
-                          <a class="navbar-brand text-primary" href="./index.html">
-                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
-                          </a>
-                       </div>
-                       <div class="logo-prime">
-                          <a class="navbar-brand text-primary" href="./index.html">
-                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
-                          </a>
-                       </div>
-                       <div class="logo-hulu">
-                          <a class="navbar-brand text-primary" href="./index.html">
-                             <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
-                          </a>
-                       </div> --}}
                     </div>
                     <button type="button" class="btn-close float-end px-3" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                  </div>
-                 <ul class="navbar-nav iq-nav-menu list-unstyled" id="header-menu">
-                    <li class="nav-item">
-                       <a class="nav-link" data-bs-toggle="collapse" href="#homePages" role="button" aria-expanded="false" aria-controls="homePages">
-                          <span class="item-name">Home</span>
-                          <span class="menu-icon">
-                             <i class="fa fa-caret-down toggledrop-desktop right-icon" aria-hidden="true"></i>
-                             <span class="toggle-menu">
-                                <i class="fa fa-plus arrow-active text-white" aria-hidden="true"></i>
-                                <i class="fa fa-minus arrow-hover text-white" aria-hidden="true"></i>
-                             </span>
-                          </span>
-                       </a>
-                       <ul class="sub-nav collapse list-unstyled" id="homePages">
-                          <li class="nav-item">
-                             <a class="nav-link" href="./index.html"> OTT Home </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./home.html"> Home </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./movie.html"> Movie </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./tv-show.html"> TV Show </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./video.html"> Video </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link active" href="./merchandise-store.html"> Merchandise Store </a>
-                          </li>
-                       </ul>
-                    </li>
-                    <li class="nav-item">
-                       <a class="nav-link" data-bs-toggle="collapse" href="#features" role="button" aria-expanded="false" aria-controls="homePages">
-                          <span class="item-name">Features</span>
-                          <span class="menu-icon">
-                             <i class="fa fa-caret-down toggledrop-desktop right-icon" aria-hidden="true"></i>
-                             <span class="toggle-menu">
-                                <i class="fa fa-plus arrow-active text-white" aria-hidden="true"></i>
-                                <i class="fa fa-minus arrow-hover text-white" aria-hidden="true"></i>
-                             </span>
-                          </span>
-                       </a>
-                       <ul class="sub-nav collapse list-unstyled" id="features">
-                          <li class="nav-item">
-                             <a class="nav-link" href="./restricted-content.html"> Restricted Content </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./related-merchandise.html"> Related Merchandise </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./playlist.html"> Playlist </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./geners.html"> Genres </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./cast.html"> Cast </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./tags.html"> Tags </a>
-                          </li>
-                       </ul>
-                    </li>
-                    <li class="nav-item">
-                       <a class="nav-link" data-bs-toggle="collapse" href="#pages" role="button" aria-expanded="false" aria-controls="homePages">
-                          <span class="item-name">Pages</span>
-                          <span class="menu-icon">
-                             <i class="fa fa-caret-down toggledrop-desktop right-icon" aria-hidden="true"></i>
-                             <span class="toggle-menu">
-                                <i class="fa fa-plus arrow-active text-white" aria-hidden="true"></i>
-                                <i class="fa fa-minus arrow-hover text-white" aria-hidden="true"></i>
-                             </span>
-                          </span>
-                       </a>
-                       <ul class="sub-nav collapse list-unstyled" id="pages">
-                          <li class="nav-item">
-                             <a class="nav-link" href="./about-us.html"> About Us </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./contact-us.html"> Contact Us </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./faq.html"> FAQ </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./privacy-policy.html"> Privacy Policy </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./pricing-plan.html"> Pricing Plan </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./coming-soon.html"> Coming Soon </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" data-bs-toggle="collapse" href="#error-page" role="button" aria-expanded="false" aria-controls="error-page">
-                                <span class="item-name">Error Page</span>
-                                <span class="menu-icon">
-                                   <i class="fa fa-caret-right toggledrop-desktop right-icon" aria-hidden="true"></i>
-                                   <span class="toggle-menu">
-                                      <i class="fa fa-plus arrow-active text-white" aria-hidden="true"></i>
-                                      <i class="fa fa-minus arrow-hover text-white" aria-hidden="true"></i>
-                                   </span>
-                                </span>
-                             </a>
-                             <ul class="sub-nav collapse list-unstyled" id="error-page">
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./error-page-one.html"> Error Page 1 </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./error-page-two.html"> Error Page 2 </a>
-                                </li>
-                             </ul>
-                          </li>
-                       </ul>
-                    </li>
-                    <li class="nav-item">
-                       <a class="nav-link" data-bs-toggle="collapse" href="#blog" role="button" aria-expanded="false" aria-controls="blog">
-                          <span class="item-name">Blog</span>
-                          <span class="menu-icon">
-                             <i class="fa fa-caret-down toggledrop-desktop right-icon" aria-hidden="true"></i>
-                             <span class="toggle-menu">
-                                <i class="fa fa-plus arrow-active text-white" aria-hidden="true"></i>
-                                <i class="fa fa-minus arrow-hover text-white" aria-hidden="true"></i>
-                             </span>
-                          </span>
-                       </a>
-                       <ul class="sub-nav collapse list-unstyled" id="blog">
-                          <li class="nav-item">
-                             <a class="nav-link" href="./blog/blog-listing.html"> Listing </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" data-bs-toggle="collapse" href="#blog-grid" role="button" aria-expanded="false" aria-controls="blog-grid">
-                                <span class="item-name">Blog Grid</span>
-                                <span class="menu-icon">
-                                   <i class="fa fa-caret-right toggledrop-desktop right-icon" aria-hidden="true"></i>
-                                   <span class="toggle-menu">
-                                      <i class="fa fa-plus arrow-active text-white" aria-hidden="true"></i>
-                                      <i class="fa fa-minus arrow-hover text-white" aria-hidden="true"></i>
-                                   </span>
-                                </span>
-                             </a>
-                             <ul class="sub-nav collapse list-unstyled" id="blog-grid">
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/one-column.html"> 1 Column </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/two-column.html"> 2 Column </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/three-column.html"> 3 Column </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/four-column.html"> 4 Column </a>
-                                </li>
-                             </ul>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" data-bs-toggle="collapse" href="#blog-sidebar" role="button" aria-expanded="false" aria-controls="blog-sidebar">
-                                <span class="item-name">Blog Sidebar</span>
-                                <span class="menu-icon">
-                                   <i class="fa fa-caret-right toggledrop-desktop right-icon" aria-hidden="true"></i>
-                                   <span class="toggle-menu">
-                                      <i class="fa fa-plus arrow-active text-white" aria-hidden="true"></i>
-                                      <i class="fa fa-minus arrow-hover text-white" aria-hidden="true"></i>
-                                   </span>
-                                </span>
-                             </a>
-                             <ul class="sub-nav collapse list-unstyled" id="blog-sidebar">
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/left-sidebar.html"> Left Sidebar </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/right-sidebar.html"> Right Sidebar </a>
-                                </li>
-                             </ul>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" data-bs-toggle="collapse" href="#blog-single" role="button" aria-expanded="false" aria-controls="blog-single">
-                                <span class="item-name">Blog Single</span>
-                                <span class="menu-icon">
-                                   <i class="fa fa-caret-right toggledrop-desktop right-icon" aria-hidden="true"></i>
-                                   <span class="toggle-menu">
-                                      <i class="fa fa-plus arrow-active text-white" aria-hidden="true"></i>
-                                      <i class="fa fa-minus arrow-hover text-white" aria-hidden="true"></i>
-                                   </span>
-                                </span>
-                             </a>
-                             <ul class="sub-nav collapse list-unstyled" id="blog-single">
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/blog-template.html"> Blog Template </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/blog-detail.html"> Standard </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/blog-audio.html"> Audio </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/blog-video.html"> Video </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/blog-link.html"> Link </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/blog-quote.html"> Quote </a>
-                                </li>
-                                <li class="nav-item">
-                                   <a class="nav-link" href="./blog/blog-gallery.html"> Gallery </a>
-                                </li>
-                             </ul>
-                          </li>
-                       </ul>
-                    </li>
-                    <li class="nav-item">
-                       <a class="nav-link" data-bs-toggle="collapse" href="#shop" role="button" aria-expanded="false" aria-controls="shop">
-                          <span class="item-name">Shop</span>
-                          <span class="menu-icon">
-                             <i class="fa fa-caret-down toggledrop-desktop right-icon" aria-hidden="true"></i>
-                             <span class="toggle-menu">
-                                <i class="fa fa-plus arrow-active text-white" aria-hidden="true"></i>
-                                <i class="fa fa-minus arrow-hover text-white" aria-hidden="true"></i>
-                             </span>
-                          </span>
-                       </a>
-                       <ul class="sub-nav collapse list-unstyled" id="shop">
-                          <li class="nav-item">
-                             <a class="nav-link" href="./shop/shop.html"> Shop </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./shop/my-account.html"> My Account Page </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./shop/cart.html"> Cart Page </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./shop/wishlist.html"> Wishlist Page </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./shop/checkout.html"> Checkout Page </a>
-                          </li>
-                          <li class="nav-item">
-                             <a class="nav-link" href="./shop/order-tracking.html"> Order Tracking </a>
-                          </li>
-                       </ul>
-                    </li>
-                 </ul>
               </div>
               <!-- container-fluid.// -->
            </nav>
@@ -484,7 +191,9 @@
               </button>
               <div class="collapse navbar-collapse p-3" id="navbarSupportedContent">
                  <div class="iq-meta-menu-container d-xl-block d-none">
-                    <ul class="d-flex align-items-center m-0 list-inline iq-meta-menu">
+                 @guest
+                 @else
+                 <ul class="d-flex align-items-center m-0 list-inline iq-meta-menu">
                        <li>
                           <a href="./shop/my-account.html">My Account</a>
                        </li>
@@ -495,10 +204,11 @@
                           <a href="./contact-us.html">Help?</a>
                        </li>
                     </ul>
+                 @endguest
                  </div>
                  <div class="d-xl-none">
                     <ul class="d-flex align-items-center justify-content-end gap-3 list-inline mb-0">
-                       <li>
+                       {{-- <li>
                           <div class="search-box-2">
                              <form>
                                 <input type="text" class="form-control" placeholder="Search..." />
@@ -510,9 +220,9 @@
                                 </button>
                              </form>
                           </div>
-                       </li>
+                       </li> --}}
                        <li>
-                          <a href="#offcanvasCart" class="text-white" data-bs-toggle="offcanvas">
+                          {{-- <a href="#offcanvasCart" class="text-white" data-bs-toggle="offcanvas">
                              <span class="btn-icon rounded-pill user-icons">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
                                    <path
@@ -536,7 +246,7 @@
                                 </svg>
                              </span>
                           </a>
-                       </li>
+                       </li> --}}
                        <li class="dropdown" id="itemdropdown2">
                           <a class="text-white d-flex align-items-center" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                              <div class="btn-icon rounded-pill user-icons">
