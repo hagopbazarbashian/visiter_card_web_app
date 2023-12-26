@@ -40,7 +40,7 @@
                                   <i class="fa-solid fa-play"></i>
                                </button>
                             </div>
-                            <p class="mt-2 mb-0 fw-normal">Already have an account?<a href="{{ route('welcome') }}" class="ms-1">Login</a></p>
+                            <p class="mt-2 mb-0 fw-normal">Already have an account?<a href="{{ route('login_user') }}" class="ms-1">Login</a></p>
                          </div>
                       </div>
                       <div class="col-lg-3"></div>

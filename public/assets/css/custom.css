@@ -1878,8 +1878,8 @@ li.swiper-active.last .card-hover-style-two .block-images:hover .img-box {
   font-weight: 500;
   -webkit-border-radius: 0.1875rem;
           border-radius: 0.1875rem;
-  background: rgba(var(--bs-primary-rgb), 0.8);
-  border: 0.063em solid var(--bs-primary);
+  background-color: #68b7e2 !important;
+  border: 0.063em solid #68b7e2 !important;
   -webkit-transition: color 0.3s ease;
   -o-transition: color 0.3s ease;
   transition: color 0.3s ease;
@@ -1906,8 +1906,8 @@ li.swiper-active.last .card-hover-style-two .block-images:hover .img-box {
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--bs-primary);
-  border: 0.063em solid var(--bs-primary);
+  background-color: #68b7e2 !important;
+  border: 0.063em solid #68b7e2 !important;
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);

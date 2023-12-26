@@ -27,6 +27,7 @@
   <!-- Custom Css -->
   <link rel="stylesheet" href="{{ asset('assets/css/custom.min.css?v=1.0.0') }}" />
   <link rel="stylesheet" href="{{ asset('assets/css/edit-page.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/button-color.css') }}" />
 
   <!-- Rtl Css -->
   <link rel="stylesheet" href="{{ asset('assets/css/rtl.min.css?v=1.0.0') }}" />

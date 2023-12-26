@@ -119,7 +119,7 @@ justify-content: center;
 
 .wrapper {
     display: flex;
-    height: 10vh;
+    height: 24vh;
     flex-direction: row;
     padding: 0 20px;
     align-items: center;
@@ -303,15 +303,16 @@ transform: scale(1.3);
 
 .social-icons-container i {
     margin: 5px;
-    color: black;
+    color: #68b7e2
 }
 
 .toggle-button {
     cursor: pointer;
     padding: 10px;
-    background-color: #007BFF; /* Button background color */
+    background-color: #68b7e2; /* Button background color */
     color: #FFFFFF; /* Button text color */
     border: none;
     border-radius: 5px;
+    text-align: center;
     text-decoration: none;
 }

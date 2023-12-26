@@ -23,9 +23,6 @@
                <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="pill" href="#watchlist" role="tab" aria-selected="false">Show Your card</a>
                </li>
-               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="pill" href="#med" role="tab" aria-selected="false">sasa</a>
-             </li>
             </ul>
             <div class="tab-content px-0">
                <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">

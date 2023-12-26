@@ -15,13 +15,30 @@ return new class extends Migration
     {
         Schema::create('socelmedia', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
+            $table->integer('cardform_id');
             $table->string('facebook')->nullable();
             $table->string('pinterest')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('youtube')->nullable();
+
+            $table->string('tiktok')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('snapchat')->nullable();
+            $table->string('telegram')->nullable();
+            $table->string('discord')->nullable();
+            $table->string('skype')->nullable();
+            $table->string('paypal')->nullable();
+
+            $table->string('spotify')->nullable();
+            $table->string('applemusic')->nullable();
+            $table->string('soundcloud')->nullable();
+
+            $table->string('behance')->nullable();
+            $table->string('twitch')->nullable();
+            $table->string('link')->nullable();
+            $table->string('website')->nullable();
             $table->timestamps();
         });
     }
