@@ -28,6 +28,8 @@
                <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
                   <form method="post" action="{{route('add_card')}}" class="form yy" enctype="multipart/form-data">
                      @csrf
+                     <h2 class="title">Add Your Card</h2>
+
                      <div class="file-input-container">
                         <label for="photo" class="file-input-button">Choose a Photo</label>
                         <input type="file" name="photo" id="photo" class="file-input" onchange="previewImage(this)" />
@@ -56,13 +58,13 @@
                         <input type="text" id="color-code" name="color-code" class="color-code-input" placeholder="Color Code" value="{{old('color-code')}}" oninput="updateColorBox()" />
                      </div>
 
-                        <label for="headline">Headline</label>
-                        <textarea name="headline" id="headline">{{ old('headline') }}</textarea>
+                     <label for="headline">Headline</label>
+                     <textarea name="headline" id="headline">{{ old('headline') }}</textarea>
 
                      <div>
                         <label for="holder">Date</label>
                         <input type="date" name="date" value="{{old('date')}}" />
-                        </div>
+                     </div>
                      <div>
                         <label for="holder">Email</label>
                         <input type="text" name="email" value="{{old('email')}}" />
@@ -71,41 +73,15 @@
                         <label for="holder">Phone</label>
                         <input type="number" name="Phone" placeholder="+374 XX XXXXX" value="{{old('Phone')}}" />
                      </div>
-                     <a class="toggle-button" onclick="toggleSocialIcons()">
-                        <i class="material-icons">Add</i> your social media
-                    </a>
+                     <a class="toggle-button" onclick="toggleSocialIcons()"> <i class="material-icons">Add</i> your social media </a>
                      <div class="social-icons-container" id="socialIcons">
                         <div class="wrapper">
-                            @include('User.socel_media_icon')
-                         </div>
+                           @include('User.socel_media_icon')
+                        </div>
                         <!-- Add other social media icons as needed -->
-                    </div>
-                    @include('User.input_socel_media')
-                     <!-- Your existing form fields go here -->
-                     <div class="social-media-input" id="facebookInput">
-                        <label for="facebookUsername">Facebook Username</label>
-                        <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook username"  value="{{old('facebook')}}"/>
                      </div>
-                     <div class="social-media-input" id="pinterestInput">
-                        <label for="pinterestUsername">Pinterest Username</label>
-                        <input type="text" id="pinterestUsername" name="pinterest" placeholder="Enter your Pinterest username" value="{{old('pinterest')}}"/>
-                     </div>
-                     <div class="social-media-input" id="twitterInput">
-                        <label for="twitterUsername">twitter Username</label>
-                        <input type="text" id="twitterUsername" name="twitter" placeholder="Enter your twitter username" value="{{old('twitter')}}"/>
-                     </div>
-                     <div class="social-media-input" id="instagramInput">
-                        <label for="instagramUsername">instagram Username</label>
-                        <input type="text" id="instagramUsername" name="instagram" placeholder="Enter your instagram username" value="{{old('instagram')}}"/>
-                     </div>
-                     <div class="social-media-input" id="whatsappInput">
-                        <label for="whatsappUsername">instagram Username</label>
-                        <input type="text" id="whatsappUsername" name="whatsapp" placeholder="Enter your whatsapp username" value="{{old('whatsapp')}}"/>
-                     </div>
-                     <div class="social-media-input" id="youtubeInput">
-                        <label for="youtubeUsername">youtube Username</label>
-                        <input type="text" id="youtubeUsername" name="youtube" placeholder="Enter your youtube username" value="{{old('youtube')}}"/>
-                     </div>
+                     @include('User.input_socel_media')
+                     <!-- Your existing form fields go here --> 
                      <div id="socialMediaContainer" class="social-media-container"></div>
                      <div class="full-button">
                         <div class="iq-button" style="display: flex; justify-content: space-around;">
@@ -130,24 +106,43 @@
                         </div>
                         @else @foreach ($filteredCardforms as $filteredCardform)
                         <div class="col mb-4">
-                            <div class="watchlist-warpper card-hover-style-two">
-                                <div class="block-images position-relative w-100" data-bs-toggle="tooltip" data-bs-placement="top" title="You Need Edit Your Card ?">
+                              <div class="watchlist-warpper card-hover-style-two">
+                                 <div class="block-images position-relative w-100" data-bs-toggle="tooltip" data-bs-placement="top" title="You Need Edit Your Card ?">
                                     <div class="img-box">
-                                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cardDetailsModal">
-                                            <!-- Your card image code here -->
-                                            @if($filteredCardform->photo)
-                                                <img src="{{ asset('user_image/' . $filteredCardform->photo) }}" alt="User Image" class="img-fluid object-cover w-100 d-block border-0" />
-                                            @else
-                                                <img src="{{ asset('assets/images/download.jpg') }}" class="img-fluid object-cover w-100 d-block border-0" />
-                                            @endif
-                                        </button>
+                                       <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}"">
+                                          <!-- Your card image code here -->
+                                          @if($filteredCardform->photo)
+                                          <img src="{{ asset('user_image/' . $filteredCardform->photo) }}" alt="User Image" class="img-fluid object-cover w-100 d-block border-0" />
+                                          @else
+                                          <img src="{{ asset('assets/images/download.jpg') }}" class="img-fluid object-cover w-100 d-block border-0" />
+                                          @endif
+                                       </button>
+                                       <!-- Edit icon -->
                                     </div>
-                                    <div class="card-description">
-                                        <h5 class="text-capitalize fw-500"><a href="">{{$filteredCardform->full_name}}</a></h5>
-                                        <div class="d-flex align-items-center gap-3"></div>
+                                    <!-- Modal Body -->
+                                    <div class="modal-body text-center">
+                                       <!-- Edit Icon -->
+                                       <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card">
+                                          <i class="fas fa-edit fa-2x" style="color: #68b7e2; margin-right: 20px;"></i>
+                                       </a>
+
+                                       <!-- Delete Icon -->
+                                       <a href="" class="delete-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Card">
+                                          <i class="fas fa-trash-alt fa-2x" style="color: #68b7e2; margin-right: 20px;"></i>
+                                       </a>
+
+                                       <!-- QR Icon -->
+                                       <a href="" class="qr-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Generate QR Code">
+                                          <i class="fas fa-qrcode fa-2x" style="color: #68b7e2; margin-right: 20px;"></i>
+                                       </a>
+
+                                       <!-- Duplicate Icon -->
+                                       <a href="" class="duplicate-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Duplicate Card">
+                                          <i class="fas fa-copy fa-2x" style="color: #68b7e2;"></i>
+                                       </a>
                                     </div>
-                                </div>
-                            </div>
+                                 </div>
+                              </div>
                         </div>
                         @endforeach @endif
                      </div>
@@ -157,7 +152,6 @@
          </div>
       </div>
    </div>
-@include('User.modal')
 </section>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-bzZwK8hO06P5wGn5aPQkflkLgpoWB/JDl/G9E963b0gs1pLV9Z1glqQ8V0oH3h/R" crossorigin="anonymous"></script>
@@ -169,29 +163,29 @@
    });
 </script>
 <script>
-    function toggleInput(socialMedia) {
-       var contentId = socialMedia + "-content";
-       $("#" + contentId).toggleClass("active");
-    }
- </script>
- <script>
-    function toggleInput(socialMedia) {
-        var contentId = socialMedia + "-content";
-        var contentElement = document.getElementById(contentId);
+   function toggleInput(socialMedia) {
+      var contentId = socialMedia + "-content";
+      $("#" + contentId).toggleClass("active");
+   }
+</script>
+<script>
+   function toggleInput(socialMedia) {
+      var contentId = socialMedia + "-content";
+      var contentElement = document.getElementById(contentId);
 
-        if (contentElement) {
-            contentElement.classList.toggle("active");
-        } else {
-            console.error("Element with ID '" + contentId + "' not found.");
-        }
-    }
+      if (contentElement) {
+         contentElement.classList.toggle("active");
+      } else {
+         console.error("Element with ID '" + contentId + "' not found.");
+      }
+   }
 
-    function toggleSocialIcons() {
-        var socialIconsContainer = document.getElementById("socialIcons");
+   function toggleSocialIcons() {
+      var socialIconsContainer = document.getElementById("socialIcons");
 
-        if (socialIconsContainer) {
-            socialIconsContainer.classList.toggle("show");
-        }
-    }
+      if (socialIconsContainer) {
+         socialIconsContainer.classList.toggle("show");
+      }
+   }
 </script>
 @endsection

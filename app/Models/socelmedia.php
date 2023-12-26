@@ -14,7 +14,27 @@ class socelmedia extends Model
         'twitter',
         'instagram',
         'whatsapp',
-        'youtube'
+        'youtube',
+
+        'tiktok',
+        'linkedin',
+        'snapchat',
+        'telegram',
+        'discord',
+        'skype',
+        'paypal',
+        'spotify',
+        'applemusic',
+        'soundcloud',
+        'behance',
+
+        'twitch',
+        'link',
+        'website',
+
+        
+
+
     ];
 
     public function user()

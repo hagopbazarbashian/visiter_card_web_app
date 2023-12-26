@@ -1,7 +1,8 @@
 .file-input-container {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: inline-block;
   }
 
   .file-input-button {

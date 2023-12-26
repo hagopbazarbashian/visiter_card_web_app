@@ -69,6 +69,7 @@ class UserEditCardController extends Controller
      */
     public function edit($id)
     {
+        dd($id);
         $cardform = cardform::where('id' , $id)->with('user')->first();
          return view('User.user_card_edit',compact('cardform'));
     }

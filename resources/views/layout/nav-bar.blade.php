@@ -120,12 +120,12 @@
                            <h6 class="mb-0 font-size-14 fw-normal">My Account</h6>
                         </a>
                      </li>
-                     <li>
+                     {{-- <li>
                         <a href="{{route('user-edit.index')}}" class="iq-sub-card d-flex align-items-center gap-3">
                            <i class="fa-regular fa-star"></i>
                            <h6 class="mb-0 font-size-14 fw-normal">Edit Your card</h6>
                         </a>
-                     </li>
+                     </li> --}}
                      <li>
                         <a href="{{route('logout')}}" class="iq-sub-card iq-logout-2 mt-1 d-flex justify-content-center gap-2">
                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -295,10 +295,10 @@
                                 </svg>
                                 <h6 class="mb-0 font-size-14 fw-normal">My Account</h6>
                              </a>
-                             <a href="{{route('user-edit.index')}}" class="iq-sub-card d-flex align-items-center gap-3">
+                             {{-- <a href="{{route('user-edit.index')}}" class="iq-sub-card d-flex align-items-center gap-3">
                                 <i class="fa-regular fa-star"></i>
                                 <h6 class="mb-0 font-size-14 fw-normal">Edit Your Card</h6>
-                             </a>
+                             </a> --}}
                              <a href="{{route('logout')}}" class="iq-sub-card iq-logout-2 mt-1 d-flex justify-content-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                    <path
@@ -307,7 +307,7 @@
                                    ></path>
                                 </svg>
                                 <h6 class="mb-0 font-size-14 fw-normal">Logout</h6>
-                             </a>
+                             </a> 
                           </div>
                        </li>
                     </ul>

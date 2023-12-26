@@ -47,16 +47,17 @@ Route::middleware(['web:web'])->group(function () {
     Route::get('logout', [UserHomeController::class, 'logout'])->name('logout');
     //  User Add Visiter Card
     Route::post('add-card', [UserFormController::class, 'store'])->name('add_card');
-    // User Edit System
-    Route::resource('user-edit', UserEditCardController::class);
+
+    // Card System
     Route::get('full-visiter-card/{id}', [ShowFullVisiterCardController::class, 'index'])->name('full_visiter_card');
+    Route::post('full-visiter-card-update/{id}', [ShowFullVisiterCardController::class, 'update'])->name('full_visiter_card_update');
 
 });
 
 // Admin System
 Route::get('admin/login' , [AdminLoginController::class ,'index'])->name('admin_login');
 Route::post('login_submit' , [AdminLoginController::class ,'login_submit'])->name('login_submit');
-Route::get('logout' , [AdminLoginController::class ,'logout'])->name('logout');
+//Route::get('logout' , [AdminLoginController::class ,'logout'])->name('logout');
 // Customer Register
 Route::resource('register', CustomerRegisterController::class);
 // Admin Home

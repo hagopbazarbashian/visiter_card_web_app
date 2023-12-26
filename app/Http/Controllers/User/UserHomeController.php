@@ -4,7 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\cardform;
+use App\Models\cardform; 
 use Illuminate\Support\Facades\Auth;
 
 class UserHomeController extends Controller
@@ -19,11 +19,12 @@ class UserHomeController extends Controller
         if (auth()->user()->status == 1) {
             return view('User.user_home', compact('filteredCardforms'));
         }
-
+ 
         if (auth()->user()->status == 0) {
             return view('User.user_not_verifiy');
         }
     }
+
 
      public function logout(Request $request){
         if (Auth::check()) {
@@ -35,7 +36,7 @@ class UserHomeController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect()->route('welcome');
 
      }
 }
