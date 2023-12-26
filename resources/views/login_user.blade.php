@@ -24,7 +24,7 @@
                         <input type="password" name="password" class="form-control rounded-0">
                     </div>
                     <div class="text-end mb-3">
-                        <a href="reset-password.html" class="text-primary fw-semibold fst-italic">Forgot
+                        <a href="{{route('reset_password')}}" class="text-primary fw-semibold fst-italic">Forgot
                             Password?</a>
                     </div>
                     <label

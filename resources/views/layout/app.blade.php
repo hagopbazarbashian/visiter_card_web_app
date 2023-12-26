@@ -39,7 +39,7 @@
       iziToast.error({
       title: '',
       position: 'topRight',
-      message: '{{ $error }}',
+      message: '<span style="color: red;">{{ $error }}</span>',
   });
   </script>
   @endforeach
@@ -51,7 +51,7 @@
       iziToast.error({
       title: '',
       position: 'topRight',
-      message: '{{ session()->get('error') }}',
+      message: '<span  style="color:red; class="error-text">{{ session()->get('error') }}</span>',
   });
   </script>
   @endif
@@ -61,7 +61,7 @@
       iziToast.success({
       title: '',
       position: 'topRight',
-      message: '{{ session()->get('succes') }}',
+      message: '<span style="color: green; class="success-text">{{ session()->get('succes') }}</span>',
   });
   </script>
   @endif

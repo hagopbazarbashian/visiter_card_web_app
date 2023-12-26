@@ -1,3 +1,5 @@
+
+@if (!$filteredCardforms->isEmpty())
 <!-- Modal -->
 <div class="modal fade" id="cardDetailsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -27,7 +29,7 @@
                     <div class="flexx">
                         <a href="#"><div class="bg-ico bg-icoo" id="tumblr"><i class="fa fa-trash   fa-3x"></i></div></a>
                         <p>Delete</p>
-                    </div>
+                    </div>902
                     {{-- <a href="#"><div class="bg-ico bg-icoo" id="whatsapp"><i class="fab fa-whatsapp social  whatsapp fa-3x"></i></div></a>
                     <a href="#"><div class="bg-ico bg-icoo" id="youtube"><i class="fab fa-youtube social  youtube fa-3x"></i></div></a> --}}
                 </div>
@@ -38,3 +40,5 @@
         </div>
     </div>
 </div>
+
+@endif

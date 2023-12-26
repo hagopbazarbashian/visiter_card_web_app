@@ -15,6 +15,7 @@ class cardform extends Model
         'department',
         'company',
         'headline',
+        'date',
         'email',
         'phone',
         'fb',

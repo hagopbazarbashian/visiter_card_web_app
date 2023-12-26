@@ -41,6 +41,7 @@ class UserFormController extends Controller
             'department' => $request->department,
             'company' => $request->company,
             'headline' => $request->headline,
+            'date'=>$request->date,
             'email' => $request->email,
             'phone' => $request->phone,
             'color' => $request->color,

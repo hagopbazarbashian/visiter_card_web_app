@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class UserHomeController extends Controller
 {
     public function index(){
-        
+
         $cardforms = Cardform::with('user')->orderBy('created_at', 'desc')->get();
         $filteredCardforms = $cardforms->filter(function ($cardform) {
             return optional($cardform->user)->id == Auth::id();
@@ -20,7 +20,6 @@ class UserHomeController extends Controller
             return view('User.user_home', compact('filteredCardforms'));
         }
 
-    
         if (auth()->user()->status == 0) {
             return view('User.user_not_verifiy');
         }
@@ -35,7 +34,7 @@ class UserHomeController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-    
+
         return redirect('/');
 
      }

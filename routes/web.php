@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeVontroller;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\User\UserHomeController;
 use App\Http\Controllers\User\UserFormController;
 use App\Http\Controllers\User\UserEditCardController;
@@ -34,6 +35,11 @@ Route::post('store',[RegisterController::class , 'store'])->name('store');
 // Login User System
 Route::get('login-user',[LoginController::class , 'index'])->name('login_user');
 Route::post('login-now',[LoginController::class , 'submit_login'])->name('login_now');
+//  Reset Password system
+Route::get('reset',[ResetPasswordController::class , 'index'])->name('reset_password');
+Route::post('reset-now',[ResetPasswordController::class , 'forget_password_company_submit'])->name('reset_password_now');
+Route::get('reset-password/user/{token}/{email}', [ResetPasswordController::class, 'reset_password_user']);
+Route::post('reset-password-submit-user/{token}/{email}', [ResetPasswordController::class, 'reset_password_user_submit'])->name('resetpassword_user_submit');
 
 // User Home
 Route::middleware(['web:web'])->group(function () {

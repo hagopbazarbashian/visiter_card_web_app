@@ -1,6 +1,5 @@
 @extends('layout.app') @section('title'){{ 'Welcome User' }}@endsection @section('home')
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <section class="section-padding-bottom">
    <div class="profile-box">
       <div class="container-fluid">
@@ -24,6 +23,9 @@
                <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="pill" href="#watchlist" role="tab" aria-selected="false">Show Your card</a>
                </li>
+               <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#med" role="tab" aria-selected="false">sasa</a>
+             </li>
             </ul>
             <div class="tab-content px-0">
                <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
@@ -61,6 +63,10 @@
                         <textarea name="headline" id="headline">{{ old('headline') }}</textarea>
 
                      <div>
+                        <label for="holder">Date</label>
+                        <input type="date" name="date" value="{{old('date')}}" />
+                        </div>
+                     <div>
                         <label for="holder">Email</label>
                         <input type="text" name="email" value="{{old('email')}}" />
                      </div>
@@ -68,27 +74,16 @@
                         <label for="holder">Phone</label>
                         <input type="number" name="Phone" placeholder="+374 XX XXXXX" value="{{old('Phone')}}" />
                      </div>
-                     <div class="wrapper">
-                        <a href="#" onclick="toggleInput('facebook')">
-                           <div class="bg-ico" id="facebook"><i class="fab fa-facebook social facebook fa-3x"></i></div>
-                        </a>
-                        <a href="#" onclick="toggleInput('pinterest')">
-                           <div class="bg-ico" id="pinterest"><i class="fab fa-pinterest social pinterest fa-3x"></i></div>
-                        </a>
-                        <a href="#" onclick="toggleInput('twitter')">
-                           <div class="bg-ico" id="twitter"><i class="fab fa-twitter social twitter fa-3x"></i></div>
-                        </a>
-                        <a href="#" onclick="toggleInput('instagram')">
-                           <div class="bg-ico" id="instagram"><i class="fab fa-instagram social instagram fa-3x"></i></div>
-                        </a>
-                        <a href="#" onclick="toggleInput('whatsapp')">
-                           <div class="bg-ico" id="whatsapp"><i class="fab fa-whatsapp social pinterest fa-3x"></i></div>
-                        </a>
-                        <a href="#" onclick="toggleInput('youtube')">
-                           <div class="bg-ico" id="youtube"><i class="fab fa-youtube social pinterest fa-3x"></i></div>
-                        </a>
+                     <a class="toggle-button" onclick="toggleSocialIcons()">
+                        <i class="material-icons">Add</i> your social media
+                    </a>
+                     <div class="social-icons-container" id="socialIcons">
+                        <div class="wrapper">
+                            @include('User.socel_media_icon')
+                         </div>
                         <!-- Add other social media icons as needed -->
-                     </div>
+                    </div>
+                    @include('User.input_socel_media')
                      <!-- Your existing form fields go here -->
                      <div class="social-media-input" id="facebookInput">
                         <label for="facebookUsername">Facebook Username</label>
@@ -175,5 +170,31 @@
    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
       return new bootstrap.Tooltip(tooltipTriggerEl);
    });
+</script>
+<script>
+    function toggleInput(socialMedia) {
+       var contentId = socialMedia + "-content";
+       $("#" + contentId).toggleClass("active");
+    }
+ </script>
+ <script>
+    function toggleInput(socialMedia) {
+        var contentId = socialMedia + "-content";
+        var contentElement = document.getElementById(contentId);
+
+        if (contentElement) {
+            contentElement.classList.toggle("active");
+        } else {
+            console.error("Element with ID '" + contentId + "' not found.");
+        }
+    }
+
+    function toggleSocialIcons() {
+        var socialIconsContainer = document.getElementById("socialIcons");
+
+        if (socialIconsContainer) {
+            socialIconsContainer.classList.toggle("show");
+        }
+    }
 </script>
 @endsection

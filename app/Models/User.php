@@ -21,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'status'
+        'status',
+        'token'
     ];
 
     /**
@@ -48,5 +49,5 @@ class User extends Authenticatable
         return $this->hasMany(cardform::class);
     }
 
-    
+
 }
