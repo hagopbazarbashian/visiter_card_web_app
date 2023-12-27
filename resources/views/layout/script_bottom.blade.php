@@ -23,3 +23,6 @@
  <script src="{{ asset('assets/js/facebooklink.js') }}"></script>
  <script src="{{ asset('assets/js/edituserpage.js') }}"></script>
  {{-- <script src="{{ asset('assets/js/nfcsystem.js') }}"></script> --}}
+<script src="{{ asset('assets/js/qrcode.js') }}"></script>
+ <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+

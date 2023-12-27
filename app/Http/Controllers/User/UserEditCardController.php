@@ -105,7 +105,7 @@ class UserEditCardController extends Controller
     }
 
     // Update other fields
-    $cardform->update([
+    $cardformform = $cardform->update([
         'user_id' => Auth()->user()->id,
         'full_name' => $request->full_name,
         'title' => $request->title,
@@ -118,6 +118,7 @@ class UserEditCardController extends Controller
         'ins' => $request->ins,
         'link' => $request->link,
         'color' => $request->color,
+        'date'=>$request->date
     ]);
 
     return redirect()->back()->with('succes', 'Record updated successfully.');

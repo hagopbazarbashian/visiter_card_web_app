@@ -64,3 +64,11 @@
     color: #68b7e2;
     text-align: center;
   }
+
+  .back-button a{
+  color: #68b7e2 !important;
+  }
+
+  .back-to-top ,.bg-primary{
+  background-color: #68b7e2 !important ;
+  }

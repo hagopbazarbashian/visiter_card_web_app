@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function previewImage(input) {
-    const preview = document.getElementById('image-preview');
+    const preview = document.getElementById('image-preview'); 
     const noImageMessage = document.getElementById('no-image-message');
     const file = input.files[0];
 
@@ -41,3 +41,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var form = document.getElementById('myForm');
     form.submit(); // Submit the form to your Laravel backend
   }
+
+
+  $(document).ready(function() {
+        // Handle click on delete icon
+        $('.delete-icon').on('click', function(e) {
+            e.preventDefault();
+            var deleteFormId = $(this).data('delete-id');
+            $('#deleteForm' + deleteFormId).submit();
+        });
+    });

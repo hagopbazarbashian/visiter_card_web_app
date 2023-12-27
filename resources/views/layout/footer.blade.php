@@ -5,7 +5,7 @@
           <div class="col-lg-4 col-sm-6">
             <div class="footer-inner">
               <p class="text-uppercase letter-spacing-1 font-size-14 mb-1">costumer services</p>
-              <h4 class="mb-0 contact text-white fw-bold"><a href="tel:+4805550103">+ (480) 555-0103</a></h4>
+              <h4 class="mb-0 contact text-white fw-bold"><a href="tel:+4805550103">+ (374) 00 - 0000</a></h4>
               <span class="d-inline-block mt-4 mb-0 font-size-14">Email us: <a
                   href="maito:customer@streamit.com">customer@streamit.com</a></span>
               <div class="mt-5">
@@ -75,10 +75,10 @@
               <div class="vr text-dark opacity-100 h-100 position-absolute start-0 top-0 d-lg-inline-block d-none"></div>
             </div>
           </div>
-          <div class="col-lg-4 col-sm-12 mt-lg-0 mt-5">
+          <div class="col-lg-4 col-sm-12 mt-lg-0 mt-1">
             <div class="footer-inner">
-              <h5 class="footer-link-title mb-3">Quick Links</h5>
-              <div class="row">
+              {{-- <h5 class="footer-link-title mb-3">Quick Links</h5> --}}
+              {{-- <div class="row">
                 <div class="col-lg-6">
                   <ul class="list-unstyled footer-menu mb-0">
                     <li class="mb-2">
@@ -96,7 +96,7 @@
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> --}}
               <div class="mt-5">
                 <p class="pt-3 mb-3 text-uppercase">We Accept Payments</p>
                 <ul class="list-inline d-flex align-items-center flex-wrap gap-3 m-0">
@@ -120,13 +120,13 @@
       </div>
     </div>
     <div class="footer-bottom bg-body py-3">
-      <div class="container-fluid">
+      <div class="container-fluid"> 
         <div class="row align-items-center">
           <div class="col-md-6 text-md-start text-center">
-            <p class="m-0 font-size-14 text-capitalize">© <span class="currentYear"></span><a href="{{route('welcome')}}"> Toch </a> All rights reserved.</p>
+            <p class="m-0 font-size-14 text-capitalize">© <span class="currentYear"></span><a  style="color:#68b7e2 !important;" href="{{route('welcome')}}"> Toch </a> All rights reserved.</p>
           </div>
           <div class="col-md-6 text-md-end text-center">
-            <p class="m-0 font-size-14">Powered by <a href="https://developsmart.xyz" target="_blank">Develop Smart</a></p>
+            <p class="m-0 font-size-14">Powered by <a style="color:#68b7e2 !important;" href="https://developsmart.xyz" target="_blank">Develop Smart</a></p>
           </div>
         </div>
       </div>

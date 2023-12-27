@@ -18,11 +18,9 @@ class cardform extends Model
         'date',
         'email',
         'phone',
-        'fb',
-        'ins',
-        'link',
         'color',
-        'color_code'
+        'color_code',
+        'status'
     ];
 
 

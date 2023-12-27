@@ -109,7 +109,7 @@
                               <div class="watchlist-warpper card-hover-style-two">
                                  <div class="block-images position-relative w-100" data-bs-toggle="tooltip" data-bs-placement="top" title="You Need Edit Your Card ?">
                                     <div class="img-box">
-                                       <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}"">
+                                       <button type="button" class="btn btn-link"  data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}">
                                           <!-- Your card image code here -->
                                           @if($filteredCardform->photo)
                                           <img src="{{ asset('user_image/' . $filteredCardform->photo) }}" alt="User Image" class="img-fluid object-cover w-100 d-block border-0" />
@@ -123,22 +123,32 @@
                                     <div class="modal-body text-center">
                                        <!-- Edit Icon -->
                                        <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card">
-                                          <i class="fas fa-edit fa-2x" style="color: #68b7e2; margin-right: 20px;"></i>
+                                          <i class="fas fa-edit fa-2x" style="color: #68b7e2; margin-right: 20px;font-size: 19px;"></i>
                                        </a>
-
-                                       <!-- Delete Icon -->
-                                       <a href="" class="delete-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Card">
-                                          <i class="fas fa-trash-alt fa-2x" style="color: #68b7e2; margin-right: 20px;"></i>
-                                       </a>
-
+                                       <form id="deleteForm{{$filteredCardform->id}}" action="{{ route('delete_card', $filteredCardform->id) }}" style="display: inline; margin: 0; padding: 0;">
+                                       @csrf
+                                       @method('DELETE')
+                                          <!-- Delete Icon -->
+                                          <a href="#"  class="delete-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Card" data-delete-id="{{$filteredCardform->id}}">
+                                             <i class="fas fa-trash-alt fa-2x" style="color: #68b7e2; margin-right: 20px;font-size: 19px;"></i>
+                                          </a>
+                                       </form>
                                        <!-- QR Icon -->
-                                       <a href="" class="qr-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Generate QR Code">
-                                          <i class="fas fa-qrcode fa-2x" style="color: #68b7e2; margin-right: 20px;"></i>
+                                       <a  id="qr-icon" class="qr-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Generate QR Code" data-url="{{ route('single_card', $filteredCardform->id) }}">
+                                          <i class="fas fa-qrcode fa-2x" style="color: #68b7e2; margin-right: 20px;font-size: 19px;"></i>
+                                       </a>
+                                       <div class="qrcode-container text-center" style="display: none;">
+                                          <div class="qrcode-close" style="cursor: pointer;">&times;</div>
+                                          <div class="qrcode"></div>
+                                      </div>
+                                       <!--Duplicate Icon -->
+                                       <a href="" class="duplicate-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Duplicate Card">
+                                          <i class="fas fa-copy fa-2x" style="color: #68b7e2;margin-right: 20px; font-size: 19px;"></i>
                                        </a>
 
                                        <!-- Duplicate Icon -->
-                                       <a href="" class="duplicate-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Duplicate Card">
-                                          <i class="fas fa-copy fa-2x" style="color: #68b7e2;"></i>
+                                       <a href="{{ route('single_card', $filteredCardform->id) }}" class="duplicate-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="View Card">
+                                          <i class="fas fa-eye fa-2x" style="color: #68b7e2;margin-right: 20px; font-size: 19px;"></i>
                                        </a>
                                     </div>
                                  </div>
@@ -152,7 +162,8 @@
          </div>
       </div>
    </div>
-</section>
+
+
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-bzZwK8hO06P5wGn5aPQkflkLgpoWB/JDl/G9E963b0gs1pLV9Z1glqQ8V0oH3h/R" crossorigin="anonymous"></script>
 <script>

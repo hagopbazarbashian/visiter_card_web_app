@@ -9,12 +9,14 @@ use App\Http\Controllers\User\UserHomeController;
 use App\Http\Controllers\User\UserFormController;
 use App\Http\Controllers\User\UserEditCardController;
 use App\Http\Controllers\User\ShowFullVisiterCardController;
+use App\Http\Controllers\User\SingleCardController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
 // User System
 use App\Http\Controllers\Admin\User\AdminUserController;
 use App\Http\Controllers\Customer\CustomerRegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,8 +53,12 @@ Route::middleware(['web:web'])->group(function () {
     // Card System
     Route::get('full-visiter-card/{id}', [ShowFullVisiterCardController::class, 'index'])->name('full_visiter_card');
     Route::post('full-visiter-card-update/{id}', [ShowFullVisiterCardController::class, 'update'])->name('full_visiter_card_update');
+    Route::get('delete-card/{id}', [ShowFullVisiterCardController::class, 'delete'])->name('delete_card');
 
 });
+
+// public view card 
+ Route::get('single-card/{id}', [SingleCardController::class, 'index'])->name('single_card');
 
 // Admin System
 Route::get('admin/login' , [AdminLoginController::class ,'index'])->name('admin_login');

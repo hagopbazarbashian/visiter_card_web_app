@@ -17,6 +17,118 @@ class ShowFullVisiterCardController extends Controller
      }
 
      public function update(Request $request , $id){
-        dd($id);
+
+            // Find the existing record
+            $cardform = Cardform::findOrFail($id);
+            $media = socelmedia::where('cardform_id' , $cardform->id)->first();
+
+            // Check if a new photo is provided
+            if ($request->hasFile('photo')) {
+                // Retrieve the old photo file name
+                $oldPhoto = $cardform->photo;
+            
+                // Delete the old photo file
+                if ($oldPhoto) {
+                    $oldPhotoPath = public_path('user_image') . '/' . $oldPhoto;
+                    if (file_exists($oldPhotoPath)) {
+                        unlink($oldPhotoPath);
+                    }
+                }
+            
+                $image = $request->file('photo');
+                $logoFileName = $image->hashName();
+                $destinationPath = public_path('user_image');
+            
+                // Move the new uploaded image to the destination folder
+                $image->move($destinationPath, $logoFileName);
+            
+                // Update record with new photo information
+                $cardform->update([
+                    'photo' => $logoFileName,
+                ]);
+            }
+            // Update other fields
+            $cardform->update([
+                'user_id' => Auth()->user()->id,
+                'full_name' => $request->full_name,
+                'title' => $request->title,
+                'department' => $request->department,
+                'company' => $request->company,
+                'headline' => $request->headline,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'color' => $request->color,
+                'color_code' => $request->color_code,
+                'date'=>$request->date
+            ]);
+
+
+            if ($media) {
+            $updateData = [
+                'facebook' => $request->facebook,
+                'pinterest' => $request->full_name,
+                'twitter' => $request->title,
+                'instagram' => $request->department,
+                'whatsapp' => $request->company,
+                'youtube' => $request->headline,
+                'tiktok' => $request->tiktok,
+                'linkedin' => $request->linkedin,
+                'snapchat' => $request->snapchat,
+                'telegram' => $request->telegram,
+                'discord' => $request->discord,
+                'skype' => $request->skype,
+                'paypal' => $request->paypal,
+                'spotify' => $request->spotify,
+                'applemusic' => $request->applemusic,
+                'soundcloud' => $request->soundcloud,
+                'behance' => $request->behance,
+                'twitch' => $request->twitch,
+                'link' => $request->link,
+                'website' => $request->website,
+            ];
+
+            $updateResult = $media->update($updateData);
+
+            if ($updateResult) {
+                // Update successful
+                return redirect()->back()->with('succes', 'Social media information updated successfully.');
+            } else {
+                // Update failed
+                return redirect()->back()->with('error', 'Failed to update social media information.');
+            }
+            } else {
+                // Media record not found
+                return redirect()->back()->with('error', 'Social media record not found.');
+            }
+
+            return redirect()->back()->with('succes', 'Record updated successfully.');
      }
+
+        public function delete(Request $request , $id){
+           // Find the Cardform record
+            $cardform = Cardform::findOrFail($id);
+
+            // Find the associated socelmedia record
+            $media = socelmedia::where('cardform_id', $cardform->id)->first();
+
+            // Delete the image file
+            if ($cardform->photo) {
+                $photoPath = public_path('user_image') . '/' . $cardform->photo;
+                if (file_exists($photoPath)) {
+                    unlink($photoPath);
+                }
+            }
+
+            // Delete the socelmedia record
+            if ($media) {
+                $media->delete();
+            }
+
+            // Delete the Cardform record
+            $cardform->delete();
+
+            return redirect()->back()->with('succes', 'Card and associated media deleted successfully.');
+
+        }
 } 
+  

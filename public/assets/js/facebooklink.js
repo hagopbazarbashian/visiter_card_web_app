@@ -3,28 +3,28 @@ document.addEventListener('click', function (event) {
     var errorMessage = document.getElementById("error-message");
 
     // Check if the click occurred outside the input element
-    if (event.target !== inputElement && !inputElement.contains(event.target)) {
-      inputElement.style.display = "block"; // Show the input element
-      errorMessage.style.display = "none"; // Hide the error message
-    }
+    // if (event.target !== inputElement && !inputElement.contains(event.target)) {
+    //   inputElement.style.display = "block"; // Show the input element
+    //   errorMessage.style.display = "none"; // Hide the error message
+    // }
   });
 
-//   function validateAndToggleInput(value) {
-//     var inputElement = document.getElementById("facebookProfile");
-//     var errorMessage = document.getElementById("error-message");
+  function validateAndToggleInput(value) {
+    var inputElement = document.getElementById("facebookProfile");
+    var errorMessage = document.getElementById("error-message");
 
-//     // Basic validation: Check if the link starts with "https://www.facebook.com/"
-//     if (value.startsWith("https://www.facebook.com/")) {
-//         errorMessage.style.display = "none";
-//         inputElement.style.border = "1px solid #ccc"; // Reset border
-//     } else {
-//         // Display an error message, apply visual feedback, and hide the input
-//         errorMessage.textContent = "Please enter a valid Facebook profile link.";
-//         errorMessage.style.display = "block";
-//         inputElement.style.border = "1px solid red"; // Highlight the textarea
-//         inputElement.style.display = "none"; // Hide the input
-//     }
-//   }
+    // Basic validation: Check if the link starts with "https://www.facebook.com/"
+    if (value.startsWith("https://www.facebook.com/")) {
+        errorMessage.style.display = "none";
+        inputElement.style.border = "1px solid #ccc"; // Reset border
+    } else {
+        // Display an error message, apply visual feedback, and hide the input
+        errorMessage.textContent = "Please enter a valid Facebook profile link.";
+        errorMessage.style.display = "block";
+        inputElement.style.border = "1px solid red"; // Highlight the textarea
+        inputElement.style.display = "none"; // Hide the input
+    }
+  }
 
 function validateFacebookUsername() {
     var usernameInput = document.getElementById('facebookUsername');
