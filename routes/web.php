@@ -37,6 +37,11 @@ Route::post('store',[RegisterController::class , 'store'])->name('store');
 // Login User System
 Route::get('login-user',[LoginController::class , 'index'])->name('login_user');
 Route::post('login-now',[LoginController::class , 'submit_login'])->name('login_now');
+
+//Get Your First card Page And Get Card
+/////
+//Get Your First card Page And Get Card
+
 //  Reset Password system
 Route::get('reset',[ResetPasswordController::class , 'index'])->name('reset_password');
 Route::post('reset-now',[ResetPasswordController::class , 'forget_password_company_submit'])->name('reset_password_now');

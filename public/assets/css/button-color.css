@@ -71,4 +71,12 @@
 
   .back-to-top ,.bg-primary{
   background-color: #68b7e2 !important ;
+  } 
+  .logo-default .log{
+      height: 6.375rem !important;
+      max-height: 6.375rem !important;
+  }
+
+  .user-login-card .navbar-brand img{
+      margin-bottom: 0rem !important;
   }

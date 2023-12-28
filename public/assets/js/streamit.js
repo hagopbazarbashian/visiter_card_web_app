@@ -44,7 +44,7 @@ Index Of Script
         loader.classList.add("animate__animated", "animate__fadeOut");
         setTimeout(() => {
             loader.classList.add("d-none");
-        }, 4000); // Show the loader for 4 seconds
+        }, 200); // Show the loader for 4 seconds
     }
 };
 

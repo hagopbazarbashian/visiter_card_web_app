@@ -113,7 +113,7 @@ input[type=checkbox]:checked + label{
          <div class="content-details iq-custom-tab-style-two">
             <div class="tab-content px-0">
                <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
-                  <section id="card" class="card">
+                  {{-- <section id="card" class="card">
                      <div id="highlight"></div>
                      <section class="card__front">
                         <div class="card__header">
@@ -142,7 +142,7 @@ input[type=checkbox]:checked + label{
                            @endif
                         </div>
                      </section>
-                  </section>
+                  </section> --}}
                   <form method="post" action="{{route('full_visiter_card_update',$cardform->id)}}" class="form" enctype="multipart/form-data">
                      @csrf
                      <div class="file-input-container">

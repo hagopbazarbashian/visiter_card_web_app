@@ -21,26 +21,29 @@
 
 </head>
 
-<body class="  ">
-   <span class="screen-darken"></span>
+<body class="  "> 
+   {{-- <span class="screen-darken"></span> --}}
    <!-- loader Start -->
-  <div class="loader simple-loader">
+  {{-- <div class="loader simple-loader">
      <div class="loader-body">
-        <img src="{{asset('assets/images/logo.png')}}" alt="loader" class="img-fluid " width="300">
+        <img src="{{asset('assets/images/logo.png')}}" alt="loader" class="img-fluid" width="300">
       </div>
-  </div>
+  </div> --}}
   <!-- loader END -->  <!-- loader END -->
   <main class="main-content">
       <!--Nav Start-->
       <header class="header-center-home header-merchandise">
-          @include('layout.nav-bar')
+        @unless(request()->is(['/', 'login-user', 'register-user']))
+         @include('layout.nav-bar')
+        @endunless
       </header>
       @yield('home')
   </main>
 
-
-  @include('layout.footer')
-
+  @if(request()->is(['/', 'login-user', 'register-user']))
+   @include('layout.footer')
+  @endif
+  
   @include('layout.rt_box')
   @include('layout.script_bottom')
 
