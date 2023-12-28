@@ -29,7 +29,7 @@
        <div class="sidebar-list">
           <!-- Sidebar Menu Start -->
           <ul class="navbar-nav iq-main-menu" id="sidebar-menu">
-             <li class="nav-item">
+             {{-- <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="../dashboard/index.html">
                    <i class="icon" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
                       <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,8 +48,8 @@
                    </i>
                    <span class="item-name">Dashboard</span>
                 </a>
-             </li>
-             <li class="nav-item">
+             </li> --}}
+             {{-- <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="../dashboard/rating.html">
                    <i class="icon" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Rating" data-bs-original-title="Rating">
                       <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,8 +66,8 @@
                    </i>
                    <span class="item-name">Rating</span>
                 </a>
-             </li>
-             <li class="nav-item">
+             </li> --}}
+             {{-- <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="../dashboard/comment.html">
                    <i class="icon" data-bs-toggle="tooltip" title="Comment" data-bs-placement="right" aria-label="Comment" data-bs-original-title="Comment">
                       <svg width="20" class="icon-20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -86,9 +86,9 @@
                    </i>
                    <span class="item-name">Comments</span>
                 </a>
-             </li>
+             </li> --}}
              <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('user.index') ? 'active' : '' }}" href="{{ route('user.index') }}">
+                <a class="nav-link {{ request()->routeIs('user-admin.index') ? 'active' : '' }}" href="{{ route('user-admin.index') }}">
                    <i class="icon" data-bs-toggle="tooltip" title="User" data-bs-placement="right" aria-label="User" data-bs-original-title="User">
                       <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                          <path d="M11.997 15.1746C7.684 15.1746 4 15.8546 4 18.5746C4 21.2956 7.661 21.9996 11.997 21.9996C16.31 21.9996 19.994 21.3206 19.994 18.5996C19.994 15.8786 16.334 15.1746 11.997 15.1746Z" fill="currentColor"></path>

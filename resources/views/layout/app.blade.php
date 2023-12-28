@@ -2,22 +2,33 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>@yield('title')</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ asset('favicon_io/android-chrome-512x512.png') }}">
+    <!-- Touch Icons - iOS and Android 2.1+ -->
+    <link rel="apple-touch-icon" href="{{asset('favicon_io/apple-touch-icon.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon_io/android-chrome-512x512.png') }}" >
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('favicon_io/android-chrome-192x192.png') }}" >
+
+    <!-- Other meta tags and headers -->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <title>@yield('title')</title>
   @include('layout.style')
 
 </head>
 
 <body class="  ">
-  {{-- <span class="screen-darken"></span>
-  <!-- loader Start -->
+   <span class="screen-darken"></span>
    <!-- loader Start -->
   <div class="loader simple-loader">
      <div class="loader-body">
         <img src="{{asset('assets/images/logo.png')}}" alt="loader" class="img-fluid " width="300">
       </div>
-  </div> --}}
+  </div>
   <!-- loader END -->  <!-- loader END -->
   <main class="main-content">
       <!--Nav Start-->

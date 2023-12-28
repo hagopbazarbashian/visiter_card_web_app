@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\cardform;
+use App\Models\User;
 
 class AdminUserController extends Controller
 {
@@ -15,8 +15,8 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        $customerregisters = cardform::with('user')->orderBy('created_at', 'desc')->get();
-         return view('admin.user.user-list',compact('customerregisters'));
+        $users = User::orderBy('created_at', 'desc')->get();
+         return view('admin.user.user-list',compact('users'));
     }
 
     /**
@@ -71,7 +71,11 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::where('id' , $id)->first();
+        $user->update([
+            'status'=>'1'
+        ]);
+        return redirect()->back()->with('succes', 'User is active now');
     }
 
     /**

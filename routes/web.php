@@ -57,8 +57,9 @@ Route::middleware(['web:web'])->group(function () {
 
 });
 
-// public view card 
- Route::get('single-card/{id}', [SingleCardController::class, 'index'])->name('single_card');
+// public view card
+Route::get('single-card/{id}', [SingleCardController::class, 'index'])->name('single_card');
+// public view card
 
 // Admin System
 Route::get('admin/login' , [AdminLoginController::class ,'index'])->name('admin_login');
@@ -71,7 +72,9 @@ Route::resource('register', CustomerRegisterController::class);
 Route::middleware(['admin:admin'])->group(function () {
     Route::get('admin_home' , [AdminHomeController::class , 'index'])->name('admin_home');
     // User System
-    Route::resource('user', AdminUserController::class);
+    Route::resource('user-admin', AdminUserController::class);
+    // User Update Admin
+    Route::get('/user-admin/update/{id}', [AdminUserController::class , 'update'])->name('user-admin.update');
 
     // track-visitor
     Route::group(['middleware' => 'trackVisitor'], function () {

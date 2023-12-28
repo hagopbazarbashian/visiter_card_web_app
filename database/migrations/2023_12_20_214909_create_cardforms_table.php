@@ -22,12 +22,12 @@ return new class extends Migration
             $table->string('department')->nullable();
             $table->string('company')->nullable();
             $table->string('headline')->nullable();
+            $table->string('date')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->string('fb')->nullable();
-            $table->string('ins')->nullable();
-            $table->string('link')->nullable();
             $table->string('color')->nullable();
+            $table->string('color_code')->nullable();
+            $table->string('status')->default('1');
             $table->timestamps();
         });
     }

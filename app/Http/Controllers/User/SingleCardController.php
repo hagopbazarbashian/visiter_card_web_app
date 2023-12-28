@@ -8,11 +8,10 @@ use App\Models\cardform;
 use App\Models\socelmedia;
 use Illuminate\Support\Facades\Auth;
 
-class SingleCardController extends Controller 
+class SingleCardController extends Controller
 {
     public function index($id){
-        return  "card Id Is $id";
+        return  view('User.full_visitor_card');
 
     }
 }
- 

@@ -28,7 +28,7 @@
                       </div>
                    </div>
                    <label class="list-group-item d-flex align-items-center mt-5 mb-3 text-white">
-                      <input class="form-check-input m-0 me-2" type="checkbox" />I've read and accept the <a href="terms-of-use.html" class="ms-1">terms & conditions*</a>
+                      <input class="form-check-input m-0 me-2" type="checkbox" />I've read and accept the <a style="color: #68b7e2 !important" href="#" class="ms-1">terms & conditions*</a>
                    </label>
                    <div class="row text-center">
                       <div class="col-lg-3"></div>
@@ -40,7 +40,7 @@
                                   <i class="fa-solid fa-play"></i>
                                </button>
                             </div>
-                            <p class="mt-2 mb-0 fw-normal">Already have an account?<a href="{{ route('login_user') }}" class="ms-1">Login</a></p>
+                            <p class="mt-2 mb-0 fw-normal">Already have an account?<a style="color: #68b7e2 !important" href="{{ route('login_user') }}" class="ms-1">Login</a></p>
                          </div>
                       </div>
                       <div class="col-lg-3"></div>

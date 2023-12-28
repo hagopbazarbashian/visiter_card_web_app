@@ -4,7 +4,7 @@
   <meta name="google_font_api" content="AIzaSyBG58yNdAjc20_8jAvLNSVi9E4Xhwjau_k">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}" />
+  <link rel="shortcut icon" href="{{asset('assets/images/logo.png')}}" />
 
   <!-- Library / Plugin Css Build -->
   <link rel="stylesheet" href="{{ asset('assets/css/core/libs.min.css') }}" />
