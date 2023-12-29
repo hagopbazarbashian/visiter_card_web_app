@@ -33,16 +33,16 @@
   <main class="main-content">
       <!--Nav Start-->
       <header class="header-center-home header-merchandise">
-        @unless(request()->is(['/', 'login-user', 'register-user']))
+        @unless(request()->is(['/', 'login-user', 'register-user','welcome-user','welcome-user-get-card']))
          @include('layout.nav-bar')
         @endunless
       </header>
       @yield('home')
   </main>
 
-  @if(request()->is(['/', 'login-user', 'register-user']))
+  @unless(request()->is(['/', 'login-user', 'register-user','welcome-user','welcome-user-get-card']))
    @include('layout.footer')
-  @endif
+  @endunless
   
   @include('layout.rt_box')
   @include('layout.script_bottom')

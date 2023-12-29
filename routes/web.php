@@ -10,6 +10,7 @@ use App\Http\Controllers\User\UserFormController;
 use App\Http\Controllers\User\UserEditCardController;
 use App\Http\Controllers\User\ShowFullVisiterCardController;
 use App\Http\Controllers\User\SingleCardController;
+use App\Http\Controllers\FirstCardGetcardController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
@@ -24,7 +25,7 @@ use App\Http\Controllers\Customer\CustomerRegisterController;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "web" middleware group. Now create something great! 
 |
 */
 
@@ -38,9 +39,7 @@ Route::post('store',[RegisterController::class , 'store'])->name('store');
 Route::get('login-user',[LoginController::class , 'index'])->name('login_user');
 Route::post('login-now',[LoginController::class , 'submit_login'])->name('login_now');
 
-//Get Your First card Page And Get Card
-/////
-//Get Your First card Page And Get Card
+
 
 //  Reset Password system
 Route::get('reset',[ResetPasswordController::class , 'index'])->name('reset_password');
@@ -50,6 +49,12 @@ Route::post('reset-password-submit-user/{token}/{email}', [ResetPasswordControll
 
 // User Home
 Route::middleware(['web:web'])->group(function () {
+    //Get Your First card Page And Get Card
+        Route::get('welcome-user' , [FirstCardGetcardController::class , 'welcome'])->name('welcome_user');
+        Route::get('welcome-user-get-card' , [FirstCardGetcardController::class , 'getcard'])->name('get_card');
+    /////
+    //Get Your First card Page And Get Card
+
     Route::get('home', [UserHomeController::class, 'index'])->name('home');
     Route::get('logout', [UserHomeController::class, 'logout'])->name('logout');
     //  User Add Visiter Card

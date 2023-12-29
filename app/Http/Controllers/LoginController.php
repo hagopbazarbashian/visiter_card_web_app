@@ -18,12 +18,12 @@ class LoginController extends Controller
      public function submit_login(LoginRequest $request){
 
         $credential = [
-            'email' => $request->email,
+            'email' => $request->email, 
             'password' => $request->password
         ];
 
         if(Auth::guard('web')->attempt($credential)) {
-            return redirect()->route('home');
+            return redirect()->route('welcome_user');
         } else {
             return redirect()->route('login_user')->with('error', 'Information is not correct!');
         }
