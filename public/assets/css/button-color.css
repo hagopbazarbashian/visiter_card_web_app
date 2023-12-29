@@ -1,6 +1,6 @@
 .text-primary{
     color: #68b7e2 !important;
-} 
+}
 
 .iq-button .btn::before {
     content: "";
@@ -24,7 +24,7 @@
     transition: transform 0.3s ease-out;
     transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   }
-  
+
   .iq-button .btn {
     color: var(--bs-white);
     font-size: 0.875rem;
@@ -71,7 +71,7 @@
 
   .back-to-top ,.bg-primary{
   background-color: #68b7e2 !important ;
-  } 
+  }
   .logo-default .log{
       height: 6.375rem !important;
       max-height: 6.375rem !important;
@@ -80,3 +80,35 @@
   .user-login-card .navbar-brand img{
       margin-bottom: 0rem !important;
   }
+
+  .dark-black {
+    background-color: #000 !important;
+    color: #fff; /* Set your desired text color for better visibility */
+    /* Add any other styles you want for the "dark-black" class */
+}
+
+
+
+
+.watchlist-warpper .block-images .img-box img{
+    border-top-left-radius: 20px 20px !important;
+    border-top-right-radius: 20px 20px !important;
+    border-bottom-left-radius: 20px 20px !important;
+    border-bottom-right-radius: 20px 20px !important;
+}
+
+
+.text-whiteee {
+    position: absolute;
+    bottom: 0; /* Adjust this value to control the vertical position of the text */
+    left: 0; /* Adjust this value to control the horizontal position of the text */
+    background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+}
+
+
+.butonadd{
+    color:#68b7e2 !important;
+}

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\cardform;
+use App\Models\socelmedia;
 use App\Http\Requests\RegisterRequest;
 use Hash;
 use Auth;
@@ -33,6 +35,26 @@ class RegisterController extends Controller
             'token'=>$token
             // 'status' => 0
         ]);
+
+        //    For Work
+           $cardform = cardform::create([
+            'user_id' => $use->id,
+            'full_name' => 'Work',
+            ]);
+
+            $socelmedia = socelmedia::create([
+            'cardform_id' => $cardform->id,
+            ]);
+
+
+            $cardform = cardform::create([
+                'user_id' => $use->id,
+                'full_name' => 'personal',
+            ]);
+
+            $socelmedia = socelmedia::create([
+             'cardform_id' => $cardform->id,
+            ]);
 
         return redirect()->route('login_user')->with('succes', 'Registration successful!');
      }

@@ -223,8 +223,8 @@
     border-radius: 12px;
     background: #fff;
     max-width: 700px;
-    margin: -130px auto 0;
-    padding: 180px 32px 32px;
+    margin: 0px auto 0;
+    padding: 19px 32px 32px;
     border: 1px solid #f1f1f1;
     box-shadow: 0 0 40px rgba(50,55,63,.16);
     display: grid;

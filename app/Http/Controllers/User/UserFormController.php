@@ -9,14 +9,21 @@ use App\Models\socelmedia;
 use App\Http\Requests\Formcardrequest;
 use Hash;
 use Auth;
- 
+
 class UserFormController extends Controller
 {
+
+    public function index(){
+        return view('User.add_new_card');
+    }
+
+
+
      public function store(Formcardrequest $request){
-  
+
 
             $image = $request->file('photo');
-           
+
 
             if ($image) {
             // If an image is uploaded

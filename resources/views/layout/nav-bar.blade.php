@@ -1,10 +1,11 @@
 <style>
    .navbar-brand img.logo{
     height: 4.375rem !important;
-    max-height: 10.375rem;
+    max-height: 10.375rem; 
 }
+
 </style>
-<div class="header-top d-xl-block d-none">
+<div class="header-top dark-black d-xl-block d-none">
   <div class="container-fluid">
      <div class="row align-items-center">
         <div class="col-md-3">
@@ -193,7 +194,7 @@
                  <div class="iq-meta-menu-container d-xl-block d-none">
                  @guest
                  @else
-                 
+
                  @endguest
                  </div>
                  <div class="d-xl-none">
@@ -307,7 +308,7 @@
                                    ></path>
                                 </svg>
                                 <h6 class="mb-0 font-size-14 fw-normal">Logout</h6>
-                             </a> 
+                             </a>
                           </div>
                        </li>
                     </ul>

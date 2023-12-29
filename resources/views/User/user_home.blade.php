@@ -1,31 +1,38 @@
 @extends('layout.app') @section('title'){{ 'Welcome User' }}@endsection @section('home')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<style>
+    .img-box {
+    background-color: #yourBackgroundColor;
+    /* Add other styling as needed */
+}
+
+.image-container {
+    position: relative;
+}
+ 
+
+</style>
 <section class="section-padding-bottom">
-   <div class="profile-box">
-      <div class="container-fluid">
-         <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
-            <div class="d-flex align-items-center gap-3">
-               <div>
-                  <h6 class="font-size-18 text-capitalize text-white fw-500">{{auth()->user()->name}}</h6>
-                  <span class="font-size-14 text-white fw-500">{{auth()->user()->email}}</span>
-               </div>
+    <a class="butonadd" href="{{route('new_card')}}">
+        <div class="d-flex justify-content-end">
+            <div class="nav-item ms-auto">
+                <i style="margin: 13px;" class="fa fa-plus fa-2x" aria-hidden="true"></i>
             </div>
-         </div>
-      </div>
-   </div>
+        </div>
+    </a>
    <div class="tabs">
       <div class="container-fluid">
          <div class="content-details iq-custom-tab-style-two">
             <ul class="d-flex justify-content-center nav nav-pills tab-header" role="tablist">
-               <li class="nav-item">
+               {{-- <li class="nav-item">
                   <a class="nav-link active show" data-bs-toggle="pill" href="#playlist" role="tab" aria-selected="true">Information</a>
-               </li>
+               </li> --}}
                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="pill" href="#watchlist" role="tab" aria-selected="false">Show Your card</a>
+                  <a class="nav-link active show" data-bs-toggle="pill" href="#watchlist" role="tab" aria-selected="false">Show Your card</a>
                </li>
             </ul>
             <div class="tab-content px-0">
-               <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
+               {{-- <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
                   <form method="post" action="{{route('add_card')}}" class="form yy" enctype="multipart/form-data">
                      @csrf
                      <h2 class="title">Add Your Card</h2>
@@ -81,7 +88,7 @@
                         <!-- Add other social media icons as needed -->
                      </div>
                      @include('User.input_socel_media')
-                     <!-- Your existing form fields go here --> 
+                     <!-- Your existing form fields go here -->
                      <div id="socialMediaContainer" class="social-media-container"></div>
                      <div class="full-button">
                         <div class="iq-button" style="display: flex; justify-content: space-around;">
@@ -92,9 +99,9 @@
                         </div>
                      </div>
                   </form>
-               </div>
+               </div> --}}
                {{-- Show Your Card --}}
-               <div id="watchlist" class="tab-pane animated fadeInUp" role="tabpanel">
+               <div id="watchlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
                   <div class="overflow-hidden">
                      <div class="d-flex align-items-center justify-content-between my-4">
                         <h5 class="main-title text-capitalize mb-0">Your Card</h5>
@@ -108,16 +115,20 @@
                         <div class="col mb-4">
                               <div class="watchlist-warpper card-hover-style-two">
                                  <div class="block-images position-relative w-100" data-bs-toggle="tooltip" data-bs-placement="top" title="You Need Edit Your Card ?">
-                                    <div class="img-box">
-                                       <button type="button" class="btn btn-link"  data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}">
-                                          <!-- Your card image code here -->
-                                          @if($filteredCardform->photo)
-                                          <img src="{{ asset('user_image/' . $filteredCardform->photo) }}" alt="User Image" class="img-fluid object-cover w-100 d-block border-0" />
-                                          @else
-                                          <img src="{{ asset('assets/images/download.jpg') }}" class="img-fluid object-cover w-100 d-block border-0" />
-                                          @endif
-                                       </button>
-                                       <!-- Edit icon -->
+                                    <div class="img-box" style="background-color: #yourBackgroundColor;">
+                                        <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}">
+                                            <!-- Your card image code here -->
+                                            <div class="image-container">
+                                                @if($filteredCardform->photo)
+                                                    <img src="{{ asset('user_image/' . $filteredCardform->photo) }}" alt="User Image" class="img-fluid object-cover w-100 d-block border-0" />
+                                                @else
+                                                    <img src="{{ asset('assets/images/download.jpg') }}" class="img-fluid object-cover w-100 d-block border-0" />
+                                                @endif
+                                                <!-- Text part -->
+                                                <span class="text-whiteee">{{$filteredCardform->full_name}}</span>
+                                            </div>
+                                            <!-- Edit icon -->
+                                        </button>
                                     </div>
                                     <!-- Modal Body -->
                                     <div class="modal-body text-center">

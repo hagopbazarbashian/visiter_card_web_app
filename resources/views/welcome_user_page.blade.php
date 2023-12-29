@@ -1,41 +1,16 @@
 @extends('layout.app')
 @section('title'){{ 'Wecom-User' }}@endsection
 @section('home')
+
 <style>
 h2 {
 	color: #c19bf5;
-	font-size: 14vw;
-	position: relative;
+    font-size: 49px;
+    position: relative;
+    box-shadow: 0 0 19px;
     text-align: center;
-	text-transform: uppercase;
-	-webkit-text-stroke: 0.3vw #f7f7fe;
-}
-
-h2::before {
-	top: 0;
-	left: 0;
-	width: 0;
-	height: 100%;
-	color: #8338ec;
-	overflow: hidden;
-	position: absolute;
-	content: attr(data-text);
-	border-right: 2px solid #c19bf5;
-	-webkit-text-stroke: 0vw #f7f7fe;
-	animation: animate 6s linear infinite;
-}
-
-@keyframes animate {
-	0%,
-	10%,
-	100% {
-		width: 0;
-	}
-
-	70%,
-	90% {
-		width: 100%;
-	}
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.3vw #f7f7fe;
 }
 
 </style>
@@ -44,7 +19,7 @@ h2::before {
       <div class="row h-100 align-items-center">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
-            <h2 data-text="Welcome">Welcome</h2>
+            <h2>Welcome</h2>
           <p class="text-center">Get your first card .</p>
           <a href="{{ route('get_card') }}">
             <div class="py-3 text-center mt-5 mb-4" style="background-color:#68b7e2 !important; background-repeat: no-repeat; background-position: center center; background-size: 68% auto;">

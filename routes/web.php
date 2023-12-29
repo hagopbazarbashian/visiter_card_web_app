@@ -25,7 +25,7 @@ use App\Http\Controllers\Customer\CustomerRegisterController;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great! 
+| contains the "web" middleware group. Now create something great!
 |
 */
 
@@ -58,12 +58,13 @@ Route::middleware(['web:web'])->group(function () {
     Route::get('home', [UserHomeController::class, 'index'])->name('home');
     Route::get('logout', [UserHomeController::class, 'logout'])->name('logout');
     //  User Add Visiter Card
-    Route::post('add-card', [UserFormController::class, 'store'])->name('add_card');
 
     // Card System
     Route::get('full-visiter-card/{id}', [ShowFullVisiterCardController::class, 'index'])->name('full_visiter_card');
     Route::post('full-visiter-card-update/{id}', [ShowFullVisiterCardController::class, 'update'])->name('full_visiter_card_update');
     Route::get('delete-card/{id}', [ShowFullVisiterCardController::class, 'delete'])->name('delete_card');
+    Route::get('new-card', [UserFormController::class, 'index'])->name('new_card');
+    Route::post('add-card', [UserFormController::class, 'store'])->name('add_card');
 
 });
 

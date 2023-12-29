@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/rtl.min.css?v=1.0.0') }}" />
   <link rel="stylesheet" href="{{ asset('assets/css/iziToast.min.css') }}" />
   <link rel="stylesheet" href="{{ asset('assets/css/edit-user-card.css') }}" />
+
   {{-- qr --}}
   <link rel="stylesheet" href="{{ asset('assets/css/qr.css') }}" />
 <!-- Google Font -->

@@ -1,4 +1,4 @@
-<footer class="footer-merchandise">
+<footer class="footer-merchandise dark-black">
     <div class="footer-top">
       <div class="container-fluid">
         <div class="row">
@@ -41,22 +41,22 @@
               <div class="footer-logo">
                 <!--Logo -->
                <div class="logo-default">
-                   <a class="navbar-brand text-primary" href="{{route('welcome')}}"> 
+                   <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                        <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                    </a>
                </div>
                <div class="logo-hotstar">
-                   <a class="navbar-brand text-primary" href="{{route('welcome')}}"> 
+                   <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                        <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                    </a>
-               </div> 
+               </div>
                <div class="logo-prime">
-                   <a class="navbar-brand text-primary" href="{{route('welcome')}}"> 
+                   <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                        <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                    </a>
-               </div> 
+               </div>
                <div class="logo-hulu">
-                   <a class="navbar-brand text-primary" href="{{route('welcome')}}"> 
+                   <a class="navbar-brand text-primary" href="{{route('welcome')}}">
                        <img class="img-fluid logo" src="{{ asset('/assets/images/logo.png') }}" loading="lazy" alt="streamit" />
                    </a>
                </div>
@@ -120,7 +120,7 @@
       </div>
     </div>
     <div class="footer-bottom bg-body py-3">
-      <div class="container-fluid"> 
+      <div class="container-fluid">
         <div class="row align-items-center">
           <div class="col-md-6 text-md-start text-center">
             <p class="m-0 font-size-14 text-capitalize">© <span class="currentYear"></span><a  style="color:#68b7e2 !important;" href="{{route('welcome')}}"> Toch </a> All rights reserved.</p>

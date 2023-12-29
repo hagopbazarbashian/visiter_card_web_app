@@ -6,7 +6,7 @@
 	width: 105px;
 	height: 90px;
 	 margin: -30px auto 30px;
-}	
+}
 
 input[type=checkbox]{
   margin-left: -999px;
@@ -26,49 +26,49 @@ input[type=checkbox] + label {
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(158,155,158,1) 24%, rgba(102,102,102,1) 52%, rgba(235,235,235,1) 70%, rgba(214,214,214,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6d6d6', GradientType=0 );
 
-}	
+}
 
 .toggle{
 	display: block;
   position: relative;
 	left:0;
 	width: 50px;
-	height: 50px;	
+	height: 50px;
   margin-top: 1px;
 	border-radius: 50%;
 	cursor: pointer;
 	-webkit-transition: left .3s linear;
 	-moz-transition: left .3s linear;
 	-ms-transition: left .3s linear;
-	-o-transition: left .3s linear; 
-	transition: left .3s linear; 
-} 
+	-o-transition: left .3s linear;
+	transition: left .3s linear;
+}
 
 input[type=checkbox]:checked + label{
-	left:44px;	
-} 
+	left:44px;
+}
 
 .toggle-color{
 	display:block;
 	position: relative;
 	top: 8px;
 	left: 8px;
-	width: 35px; 
+	width: 35px;
 	height: 35px;
-	border-radius: 100%; 
+	border-radius: 100%;
 	box-shadow: inset 0px 0px 15px rgba(0,0,0, 0.6), -1px -2px 2px rgba(138,138,138,0.8);
 }
 
 #onoff + label .toggle-color {
 	background:#fc0000;
-} 
+}
 #onoff:checked + label .toggle-color {
 	background:#a2fd00;
 }
 
-.inner-panel { 
-	width: 95px; 
-	height: 52px; 
+.inner-panel {
+	width: 95px;
+	height: 52px;
 	padding:0;
 	margin:0;
 	display: block;
@@ -76,7 +76,7 @@ input[type=checkbox]:checked + label{
 	border-radius: 25px;
 	border: 1px solid #c1c2c2;
 	box-shadow: inset 0px 0px 12px rgba(0,0,0, 0.2), 0px 1px 1px #fff;
-} 
+}
 
 .inner-panel:after{
 	position: absolute;
@@ -147,14 +147,15 @@ input[type=checkbox]:checked + label{
                      @csrf
                      <div class="file-input-container">
                         <label for="photo" class="file-input-button">Choose a Photo</label>
-                        <input type="file" name="photo" id="photo" class="file-input" onchange="previewImage(this)" /><br />
+                        <input type="file" name="photo" id="photo" class="file-input" onchange="previewImage(this)" />
+                        <br />
                         <img id="image-preview" class="image-preview" alt="Image Preview" />
                         @if (isset($cardform->photo))
-                        <p id="no-image-message" class="no-image-message">You have image</p>
+                        <p id="no-image-message" class="no-image-message">You have an image</p>
                         @else
                         <p id="no-image-message" class="no-image-message" style="display: none;">You don't have an image.</p>
                         @endif
-                     </div>
+                    </div>
                      <div>
                         <label for="holder">Full Name</label>
                         <input type="text" name="full_name" value="{{$cardform->full_name ?? 'Null'}}" />

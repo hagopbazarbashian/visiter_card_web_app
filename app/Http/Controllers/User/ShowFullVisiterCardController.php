@@ -4,11 +4,11 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\cardform;  
+use App\Models\cardform;
 use App\Models\socelmedia;
 
 class ShowFullVisiterCardController extends Controller
-{ 
+{
      public function index($id){
          $cardform = cardform::where('id' , $id)->with('user')->first();
          $socelmedia = socelmedia::where('cardform_id' , $cardform->id)->first();
@@ -26,7 +26,7 @@ class ShowFullVisiterCardController extends Controller
             if ($request->hasFile('photo')) {
                 // Retrieve the old photo file name
                 $oldPhoto = $cardform->photo;
-            
+
                 // Delete the old photo file
                 if ($oldPhoto) {
                     $oldPhotoPath = public_path('user_image') . '/' . $oldPhoto;
@@ -34,14 +34,14 @@ class ShowFullVisiterCardController extends Controller
                         unlink($oldPhotoPath);
                     }
                 }
-            
+
                 $image = $request->file('photo');
                 $logoFileName = $image->hashName();
                 $destinationPath = public_path('user_image');
-            
+
                 // Move the new uploaded image to the destination folder
                 $image->move($destinationPath, $logoFileName);
-            
+
                 // Update record with new photo information
                 $cardform->update([
                     'photo' => $logoFileName,
@@ -130,5 +130,4 @@ class ShowFullVisiterCardController extends Controller
             return redirect()->back()->with('succes', 'Card and associated media deleted successfully.');
 
         }
-} 
-  
+}
