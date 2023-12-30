@@ -270,7 +270,7 @@
                           <div class="dropdown-menu dropdown-menu-end dropdown-user border-0 p-0 m-0" aria-labelledby="navbarDropdown2">
                              <div class="user-info d-flex align-items-center gap-3 mb-3">
                              @if(auth()->check())
-                                  <span class="font-size-14 fw-500 text-capitalize text-white">{{auth()->user()->name}}</span>
+                                  <span class="font-size-14 fw-500 text-capitalize text-white">{{auth()->user()->email}}</span>
                              @endif
                              </div>
                              <a href="{{route('home')}}" class="iq-sub-card d-flex align-items-center gap-3">

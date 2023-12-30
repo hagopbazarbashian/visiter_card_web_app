@@ -22,10 +22,18 @@ class LoginController extends Controller
             'password' => $request->password
         ];
 
-        if(Auth::guard('web')->attempt($credential)) {
+        if (Auth::guard('web')->attempt($credential)) {
+        $user = Auth::guard('web')->user();
+
+        if ($user->first_time_login) {
+            // Update the first-time login flag
+            $user->update(['first_time_login' => false]);
             return redirect()->route('welcome_user');
+        } else {
+            return redirect()->route('home');
+        }
         } else {
             return redirect()->route('login_user')->with('error', 'Information is not correct!');
         }
-     }
+     }  
 }

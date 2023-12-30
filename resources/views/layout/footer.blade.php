@@ -2,39 +2,6 @@
     <div class="footer-top">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-4 col-sm-6">
-            <div class="footer-inner">
-              <p class="text-uppercase letter-spacing-1 font-size-14 mb-1">costumer services</p>
-              <h4 class="mb-0 contact text-white fw-bold"><a href="tel:+4805550103">+ (374) 00 - 0000</a></h4>
-              <span class="d-inline-block mt-4 mb-0 font-size-14">Email us: <a
-                  href="maito:customer@streamit.com">customer@streamit.com</a></span>
-              <div class="mt-5">
-                <p class="text-uppercase letter-spacing-1 font-size-14 mb-1">Stay Connected on:</p>
-                <ul class="p-0 mt-4 mb-0 list-unstyled widget_social_media">
-                  <li class="">
-                    <a href="https://www.facebook.com/" target="_blank" class="position-relative">
-                      <i class="fab fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li class="">
-                    <a href="https://twitter.com/" target="_blank" class="position-relative">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li class="">
-                    <a href="https://github.com/" target="_blank" class="position-relative">
-                      <i class="fab fa-github"></i>
-                    </a>
-                  </li>
-                  <li class="">
-                    <a href="https://www.instagram.com/" target="_blank" class="position-relative">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
           <div class="col-lg-4 col-sm-6 mt-sm-0 mt-5">
             <div class="footer-inner position-relative text-center px-xl-5 px-3">
               <div class="vr text-dark opacity-100 h-100 position-absolute end-0 top-0 d-lg-inline-block d-none"></div>
@@ -75,6 +42,39 @@
               <div class="vr text-dark opacity-100 h-100 position-absolute start-0 top-0 d-lg-inline-block d-none"></div>
             </div>
           </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="footer-inner">
+              {{-- <p class="text-uppercase letter-spacing-1 font-size-14 mb-1">costumer services</p>
+              <h4 class="mb-0 contact text-white fw-bold"><a href="tel:+4805550103">+ (374) 00 - 0000</a></h4> --}}
+              {{-- <span class="d-inline-block mt-4 mb-0 font-size-14">Email us: <a
+                  href="maito:customer@streamit.com">customer@streamit.com</a></span> --}}
+              <div class="mt-5">
+                <p class="text-uppercase letter-spacing-1 font-size-14 mb-1">Stay Connected on:</p>
+                <ul class="p-0 mt-4 mb-0 list-unstyled widget_social_media">
+                  <li class="">
+                    <a href="https://www.facebook.com/" target="_blank" class="position-relative">
+                      <i class="fab fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="https://twitter.com/" target="_blank" class="position-relative">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="https://github.com/" target="_blank" class="position-relative">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="https://www.instagram.com/" target="_blank" class="position-relative">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-4 col-sm-12 mt-lg-0 mt-1">
             <div class="footer-inner">
               {{-- <h5 class="footer-link-title mb-3">Quick Links</h5> --}}
@@ -97,7 +97,7 @@
                   </ul>
                 </div>
               </div> --}}
-              <div class="mt-5">
+              {{-- <div class="mt-5">
                 <p class="pt-3 mb-3 text-uppercase">We Accept Payments</p>
                 <ul class="list-inline d-flex align-items-center flex-wrap gap-3 m-0">
                   <li>
@@ -113,7 +113,7 @@
                     <img src="{{asset('assets/images/footer/04.webp')}}" alt="visa">
                   </li>
                 </ul>
-              </div>
+              </div> --}}
             </div>
           </div>
         </div>

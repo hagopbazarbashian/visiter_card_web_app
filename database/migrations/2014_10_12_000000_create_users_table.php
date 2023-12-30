@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('status')->default('0');
+            $table->integer('status')->default('1');
             $table->string('token')->null;
+            $table->boolean('first_time_login')->default(true);
             $table->rememberToken();
             $table->timestamps();
         });

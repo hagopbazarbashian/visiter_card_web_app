@@ -32,74 +32,6 @@
                </li>
             </ul>
             <div class="tab-content px-0">
-               {{-- <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
-                  <form method="post" action="{{route('add_card')}}" class="form yy" enctype="multipart/form-data">
-                     @csrf
-                     <h2 class="title">Add Your Card</h2>
-
-                     <div class="file-input-container">
-                        <label for="photo" class="file-input-button">Choose a Photo</label>
-                        <input type="file" name="photo" id="photo" class="file-input" onchange="previewImage(this)" />
-                        <img id="image-preview" class="image-preview" alt="Image Preview" />
-                        <p id="no-image-message" class="no-image-message" style="display: none;">You don't have an image.</p>
-                     </div>
-                     <div>
-                        <label for="holder">Full Name</label>
-                        <input type="text" name="full_name" value="{{old('full_name')}}" />
-                     </div>
-                     <div>
-                        <label for="holder">Title</label>
-                        <input type="text" name="title" value="{{old('title')}}" />
-                     </div>
-                     <div>
-                        <label for="holder">Department</label>
-                        <input type="text" name="department" value="{{old('title')}}" />
-                     </div>
-                     <div>
-                        <label for="holder">Company</label>
-                        <input type="text" name="company" value="{{old('title')}}" />
-                     </div>
-                     <div class="color-input-container">
-                        <label for="color">Color Card</label>
-                        <input type="color" id="color" name="color" value="{{old('color')}}" class="color-input" />
-                        <input type="text" id="color-code" name="color-code" class="color-code-input" placeholder="Color Code" value="{{old('color-code')}}" oninput="updateColorBox()" />
-                     </div>
-
-                     <label for="headline">Headline</label>
-                     <textarea name="headline" id="headline">{{ old('headline') }}</textarea>
-
-                     <div>
-                        <label for="holder">Date</label>
-                        <input type="date" name="date" value="{{old('date')}}" />
-                     </div>
-                     <div>
-                        <label for="holder">Email</label>
-                        <input type="text" name="email" value="{{old('email')}}" />
-                     </div>
-                     <div>
-                        <label for="holder">Phone</label>
-                        <input type="number" name="Phone" placeholder="+374 XX XXXXX" value="{{old('Phone')}}" />
-                     </div>
-                     <a class="toggle-button" onclick="toggleSocialIcons()"> <i class="material-icons">Add</i> your social media </a>
-                     <div class="social-icons-container" id="socialIcons">
-                        <div class="wrapper">
-                           @include('User.socel_media_icon')
-                        </div>
-                        <!-- Add other social media icons as needed -->
-                     </div>
-                     @include('User.input_socel_media')
-                     <!-- Your existing form fields go here -->
-                     <div id="socialMediaContainer" class="social-media-container"></div>
-                     <div class="full-button">
-                        <div class="iq-button" style="display: flex; justify-content: space-around;">
-                           <button type="submit" class="btn text-uppercase position-relative">
-                              <span class="button-text">Add your card</span>
-                              <i class="fa-solid fa-play"></i>
-                           </button>
-                        </div>
-                     </div>
-                  </form>
-               </div> --}}
                {{-- Show Your Card --}}
                <div id="watchlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
                   <div class="overflow-hidden">
@@ -118,6 +50,7 @@
                                     <div class="img-box" style="background-color: #yourBackgroundColor;">
                                         <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}">
                                             <!-- Your card image code here -->
+                                            <a href="{{ route('single_card', $filteredCardform->id) }}">
                                             <div class="image-container">
                                                 @if($filteredCardform->photo)
                                                     <img src="{{ asset('user_image/' . $filteredCardform->photo) }}" alt="User Image" class="img-fluid object-cover w-100 d-block border-0" />
@@ -127,6 +60,7 @@
                                                 <!-- Text part -->
                                                 <span class="text-whiteee">{{$filteredCardform->full_name}}</span>
                                             </div>
+                                            </a>
                                             <!-- Edit icon -->
                                         </button>
                                     </div>
@@ -155,11 +89,6 @@
                                        <!--Duplicate Icon -->
                                        <a href="" class="duplicate-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Duplicate Card">
                                           <i class="fas fa-copy fa-2x" style="color: #68b7e2;margin-right: 20px; font-size: 19px;"></i>
-                                       </a>
-
-                                       <!-- Duplicate Icon -->
-                                       <a href="{{ route('single_card', $filteredCardform->id) }}" class="duplicate-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="View Card">
-                                          <i class="fas fa-eye fa-2x" style="color: #68b7e2;margin-right: 20px; font-size: 19px;"></i>
                                        </a>
                                     </div>
                                  </div>

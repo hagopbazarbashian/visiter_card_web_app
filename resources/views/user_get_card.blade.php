@@ -8,11 +8,54 @@
         padding: 1rem 0;
         margin-bottom: 1rem;
     }
+    .section-padding-bottom{
+        padding: 5px 18px 1.875rem !important;
+    }
     .b{
         padding: 0rem 0 !important;
     }
+    /* Styles for screens with a minimum width of 768 pixels */
+    @media (min-width: 768px) {
+        .hide-on-desktop {
+            display: none;
+        }
+    }
+
+    /* Styles for screens with a maximum width of 767 pixels */
+    @media (max-width: 767px) {
+        .show-on-mobile {
+            display: block;
+        }
+
+        .hide-on-mobile {
+            display: none;
+        }
+    }
+     .d{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4; /* Set your desired background color */
+       }
+            
+
+        #mobile-warning {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc; /* Set your desired border color */
+            border-radius: 8px; /* Set your desired border radius */
+            background-color: #fff; /* Set your desired background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Set your desired box shadow */
+        }
 </style>
-<section class="section-padding-bottom">
+<div id="mobile-warning"  class="d">
+    <p>Please open this page on a mobile device.</p>
+</div>
+<section class="section-padding-bottom hide-on-desktop">
     <div class="profile-box">
        <div class="container-fluid">
           <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
@@ -72,4 +115,25 @@
         </div>
     </div>
  </section>
+ <script>
+    // JavaScript code to display the warning if the screen width is greater than a certain threshold
+    document.addEventListener('DOMContentLoaded', function () {
+        var mobileWarning = document.getElementById('mobile-warning');
+
+        function checkScreenSize() {
+            if (window.innerWidth > 768) { // Adjust the threshold as needed
+                mobileWarning.style.display = 'block';
+            } else {
+                mobileWarning.style.display = 'none';
+            }
+        }
+
+        // Check screen size on page load
+        checkScreenSize();
+
+        // Check screen size on window resize
+        window.addEventListener('resize', checkScreenSize);
+    });
+</script>
+
 @endsection
