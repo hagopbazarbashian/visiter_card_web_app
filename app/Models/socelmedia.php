@@ -32,8 +32,6 @@ class socelmedia extends Model
         'link',
         'website',
 
-        
-
 
     ];
 

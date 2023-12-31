@@ -11,7 +11,8 @@ use Illuminate\Support\Facades\Auth;
 class SingleCardController extends Controller
 {
     public function index($id){
-        return  view('User.full_visitor_card');
+        $cardform = cardform::where('id' , $id)->with('socelmedia')->first();
+        return  view('User.full_visitor_card',compact('cardform'));
 
     }
 }

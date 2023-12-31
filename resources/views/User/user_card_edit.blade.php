@@ -158,19 +158,19 @@ input[type=checkbox]:checked + label{
                     </div>
                      <div>
                         <label for="holder">Full Name</label>
-                        <input type="text" name="full_name" value="{{$cardform->full_name ?? 'Null'}}" />
+                        <input type="text" name="full_name" value="{{$cardform->full_name ?? ''}}" />
                      </div>
                      <div>
-                        <label for="holder">Title</label>
-                        <input type="text" name="title" value="{{$cardform->title ?? 'Null'}}" />
+                        <label for="holder">Profesyonel</label>
+                        <input type="text" name="title" value="{{$cardform->title ?? ''}}" />
                      </div>
                      <div>
                         <label for="holder">Department</label>
-                        <input type="text" name="department" value="{{$cardform->department ?? 'Null'}}" />
+                        <input type="text" name="department" value="{{$cardform->department ?? ''}}" />
                      </div>
                      <div>
                         <label for="holder">Company</label>
-                        <input type="text" name="company" value="{{$cardform->company ?? 'Null'}}" />
+                        <input type="text" name="company" value="{{$cardform->company ?? ''}}" />
                      </div>
                      <div class="color-input-container">
                         <label for="color">Color Card</label>
@@ -179,11 +179,11 @@ input[type=checkbox]:checked + label{
                      </div>
                      <div>
                         <label for="holder">Headline</label>
-                        <input type="text" name="headline" value="{{$cardform->headline ?? 'Null'}}" />
+                        <input type="text" name="headline" value="{{$cardform->headline ?? ''}}" />
                      </div>
                      <div>
                         <label for="holder">Email</label>
-                        <input type="text" name="email" value="{{$cardform->email ?? 'Null'}}" />
+                        <input type="text" name="email" value="{{$cardform->email ?? ''}}" />
                      </div>
                      <div>
                         <label for="holder">Phone</label>
@@ -191,7 +191,7 @@ input[type=checkbox]:checked + label{
                      </div>
                      <div>
                         <label for="holder">Date</label>
-                        <input type="date" name="date" value="{{$cardform->date ?? 'Null'}}" />
+                        <input type="date" name="date" value="{{$cardform->date ?? ''}}" />
                      </div>
                      <label for="holder">Make Public Your card</label>
                      <div class="panel">

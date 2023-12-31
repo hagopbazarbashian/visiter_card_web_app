@@ -32,7 +32,7 @@ class cardform extends Model
 
     public function socelmedia()
     {
-        return $this->hasMany(socelmedia::class);
+        return $this->hasOne(socelmedia::class);
     }
 
 
