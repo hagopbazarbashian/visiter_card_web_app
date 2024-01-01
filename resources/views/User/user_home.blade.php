@@ -41,12 +41,12 @@
                      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
                         @if ($filteredCardforms->isEmpty())
                         <div class="alert alert-info" role="alert">
-                           You don't have any active cards.
+                           You don't have any active cards. 
                         </div>
                         @else @foreach ($filteredCardforms as $filteredCardform)
                         <div class="col mb-4">
                               <div class="watchlist-warpper card-hover-style-two">
-                                 <div class="block-images position-relative w-100" data-bs-toggle="tooltip" data-bs-placement="top" title="You Need Edit Your Card ?">
+                                 <div class="block-images position-relative w-100">
                                     <div class="img-box" style="background-color: #yourBackgroundColor;">
                                         <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}">
                                             <!-- Your card image code here -->
@@ -58,28 +58,28 @@
                                                     <img src="{{ asset('assets/images/download.jpg') }}" class="img-fluid object-cover w-100 d-block border-0" />
                                                 @endif
                                                 <!-- Text part -->
+                                                 @include('User.wave_shape')
                                                 <span class="text-whiteee">{{$filteredCardform->full_name}}</span>
                                             </div>
                                             </a>
                                             <!-- Edit icon -->
                                         </button>
-                                    </div>
-                                    <!-- Modal Body -->
+                                          <!-- Modal Body -->
                                     <div class="modal-body text-center">
                                        <!-- Edit Icon -->
-                                       <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Card">
+                                       <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon u">
                                           <i class="fas fa-edit fa-2x" style="color: #68b7e2; margin-right: 20px;font-size: 19px;"></i>
                                        </a>
                                        <form id="deleteForm{{$filteredCardform->id}}" action="{{ route('delete_card', $filteredCardform->id) }}" style="display: inline; margin: 0; padding: 0;">
                                        @csrf
                                        @method('DELETE')
                                           <!-- Delete Icon -->
-                                          <a href="#"  class="delete-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Card" data-delete-id="{{$filteredCardform->id}}">
+                                          <a href="#"  class="delete-icon u"  data-delete-id="{{$filteredCardform->id}}">
                                              <i class="fas fa-trash-alt fa-2x" style="color: #68b7e2; margin-right: 20px;font-size: 19px;"></i>
                                           </a>
                                        </form>
                                        <!-- QR Icon -->
-                                       <a  id="qr-icon" class="qr-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Generate QR Code" data-url="{{ route('single_card', $filteredCardform->id) }}">
+                                       <a  id="qr-icon" class="qr-icon u" data-url="{{ route('single_card', $filteredCardform->id) }}">
                                           <i class="fas fa-qrcode fa-2x" style="color: #68b7e2; margin-right: 20px;font-size: 19px;"></i>
                                        </a>
                                        <div class="qrcode-container text-center" style="display: none;">
@@ -87,10 +87,12 @@
                                           <div class="qrcode"></div>
                                       </div>
                                        <!--Duplicate Icon -->
-                                       <a href="" class="duplicate-icon" data-bs-toggle="tooltip" data-bs-placement="top" title="Duplicate Card">
+                                       <a  class="duplicate-icon u">
                                           <i class="fas fa-copy fa-2x" style="color: #68b7e2;margin-right: 20px; font-size: 19px;"></i>
                                        </a>
                                     </div>
+                                    </div>
+                                  
                                  </div>
                               </div>
                         </div>

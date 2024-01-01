@@ -99,11 +99,11 @@
 
 
 .text-whiteee {
-    position: absolute;
+    position: absolute; 
     bottom: 0; /* Adjust this value to control the vertical position of the text */
     left: 0; /* Adjust this value to control the horizontal position of the text */
-    background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
-    color: #fff;
+    background-color:transparent; /* Background color with transparency */
+    color:black;
     padding: 10px;
     width: 100%;
 }
@@ -112,3 +112,27 @@
 .butonadd{
     color:#68b7e2 !important;
 }
+
+.card-hover-style-two .block-images .img-box{
+    width: 237px !important;
+    height: 275px !important;
+}
+
+.u{
+color:#68b7e2 !important;
+}
+
+
+svg {
+		position: absolute; 
+		top: 0;
+		left: 0;
+		/* box-sizing: border-box; */
+		display: block;
+		/* background-color: #0e4166; */
+    /* background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166); */
+    border-top-left-radius: 20px 20px !important;
+    border-top-right-radius: 20px 20px !important;
+    border-bottom-left-radius: 20px 20px !important;
+    border-bottom-right-radius: 20px 20px !important;
+	}
