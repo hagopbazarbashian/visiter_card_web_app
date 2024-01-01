@@ -125,7 +125,7 @@ color:#68b7e2 !important;
 
 svg {
 		position: absolute; 
-		top: 0;
+		top: 0; 
 		left: 0;
 		/* box-sizing: border-box; */
 		display: block;
