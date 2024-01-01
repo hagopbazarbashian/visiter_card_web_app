@@ -69,7 +69,6 @@ class UserEditCardController extends Controller
      */
     public function edit($id)
     {
-        dd($id);
         $cardform = cardform::where('id' , $id)->with('user')->first();
          return view('User.user_card_edit',compact('cardform'));
     }
@@ -87,7 +86,7 @@ class UserEditCardController extends Controller
     $cardform = Cardform::findOrFail($id);
 
     // Check if a new photo is provided
-    if ($request->hasFile('photo')) {
+    if ($request->hasFile('photo')) { 
         $image = $request->file('photo');
         $logoFileName = $image->hashName();
         $destinationPath = public_path('user_image');
@@ -101,6 +100,24 @@ class UserEditCardController extends Controller
         // Update record with new photo information
         $cardform->update([
             'photo' => $logoFileName,
+        ]);
+    }
+
+    // Check if a new photo is provided
+    if ($request->hasFile('logo')) {
+        $logos = $request->file('logo');
+        $logo = $logos->hashName(); // Fixed variable name
+        $Path = public_path('logo');
+    
+        // Move the uploaded image to the destination folder
+        $logos->move($Path, $logo);
+    
+        // Path to the saved logo image
+        $logoImagePath = $Path . '/' . $logo;
+    
+        // Update record with new photo information
+        $cardform->update([
+            'logo' => $logo,
         ]);
     }
 

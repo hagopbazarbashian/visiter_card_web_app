@@ -29,7 +29,8 @@
 @endif
 <style>
    #v-card-holder #v-card {
-      background: #06a763;
+      background:#fff;
+      box-shadow: none;
    }
 
    .your-div-class {
@@ -53,6 +54,12 @@
 
 svg {
     fill: #fff; /* Adjust the color of the wave */
+
+}
+
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
 }
 </style>
 <div class="container">

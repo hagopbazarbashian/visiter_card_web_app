@@ -92,7 +92,6 @@ input[type=checkbox]:checked + label{
 	content: "OFF";
 	right:120px;
 }
-
 </style>
 <section class="section-padding-bottom">
    <div class="profile-box">
@@ -145,7 +144,7 @@ input[type=checkbox]:checked + label{
                   </section> --}}
                   <form method="post" action="{{route('full_visiter_card_update',$cardform->id)}}" class="form" enctype="multipart/form-data">
                      @csrf
-                     <div class="file-input-container">
+                     {{-- <div class="file-input-container">
                         <label for="photo" class="file-input-button">Choose a Photo</label>
                         <input type="file" name="photo" id="photo" class="file-input" onchange="previewImage(this)" />
                         <br />
@@ -155,9 +154,25 @@ input[type=checkbox]:checked + label{
                         @else
                         <p id="no-image-message" class="no-image-message" style="display: none;">You don't have an image.</p>
                         @endif
-                    </div>
+                    </div> --}} 
+                    <div class="tb-container">
+                        <div class="tb-img-view">
+                           @if ($cardform->photo)
+                            <img src="{{ asset('user_image/' . $cardform->photo) }}"/>
+                           @endif
+                           <img class="profile" id="tb-image" />
+                        </div> 
+                        <label for="tb-file-upload">Upload Profile Image</label>
+                        <input type="file" name="photo" id="tb-file-upload" accept="image/*" onchange="fileUpload(event);" />
+                     </div>
+                     <div> 
+                     </div>
                      <div>
-                        <label for="holder">Full Name</label>
+                        <label for="holder">Add Your Logo</label> 
+                        <input type="file" name="logo" accept="image/*" value="{{$cardform->logo ?? ''}}" />
+                     </div>
+                     <div>
+                        <label for="holder">Full Name</label> 
                         <input type="text" name="full_name" value="{{$cardform->full_name ?? ''}}" />
                      </div>
                      <div>
@@ -175,7 +190,6 @@ input[type=checkbox]:checked + label{
                      <div class="color-input-container">
                         <label for="color">Color Card</label>
                         <input type="color" id="color" name="color" value="{{ $cardform->color }}" class="color-input" style="background-color: {{ $cardform->color }};" />
-                        <input type="text" id="color-code" name="color_code" class="color-code-input"  value="{{ $cardform->color_code }}" oninput="updateColorBox()" />
                      </div>
                      <div>
                         <label for="holder">Headline</label>
@@ -199,9 +213,9 @@ input[type=checkbox]:checked + label{
                      <label for="onoff" class="toggle">
                            <span class="toggle-color"></span>
                      </label>
-                     <span class="inner-panel"></span>
+                     <span class="inner-panel"></span> 
 
-                     <!-- Hidden input to store the value -->
+                     <!-- Hidden input to store the value --> 
                      <input type="hidden" name="status" value="{{ $cardform->status ? '1' : '0' }}">
                      </div>
                      <a class="toggle-button" onclick="toggleSocialIcons()"> <i class="material-icons">Add</i> your social media </a>
@@ -260,5 +274,17 @@ input[type=checkbox]:checked + label{
          socialIconsContainer.classList.toggle("show");
       }
    }
+</script>
+<script>
+const fileUpload = (event) => {
+  const files = event.target.files;
+  const filesLength = files.length;
+  if (filesLength > 0) {
+    const imageSrc = URL.createObjectURL(files[0]);
+    const imagePreviewElement = document.querySelector("#tb-image");
+    imagePreviewElement.src = imageSrc;
+    imagePreviewElement.style.display = "block";
+  }
+};
 </script>
 @endsection

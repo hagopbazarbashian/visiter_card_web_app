@@ -10,7 +10,11 @@ h2 {
     box-shadow: 0 0 19px;
     text-align: center;
     text-transform: uppercase;
-    -webkit-text-stroke: 0.3vw #f7f7fe;
+    -webkit-text-stroke: 0.3vw #f7f7fe; 
+     border-top-left-radius: 20px 20px !important;
+    border-top-right-radius: 20px 20px !important;
+    border-bottom-left-radius: 20px 20px !important;
+    border-bottom-right-radius: 20px 20px !important;
 }
 
 </style>

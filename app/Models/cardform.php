@@ -19,7 +19,7 @@ class cardform extends Model
         'email',
         'phone',
         'color',
-        'color_code',
+        'logo',
         'status'
     ];
 

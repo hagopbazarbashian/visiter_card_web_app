@@ -36,7 +36,7 @@
                       </div>
                    </div>
                    <label class="list-group-item d-flex align-items-center mt-5 mb-3 text-white">
-                      <input class="form-check-input m-0 me-2" type="checkbox" />I've read and accept the <a style="color: #68b7e2 !important" href="#" class="ms-1">terms & conditions*</a>
+                      <input class="form-check-input m-0 me-2" name="chek" type="checkbox" />I've read and accept the <a style="color: #68b7e2 !important" href="#" class="ms-1">terms & conditions*</a>
                    </label>
                    <div class="row text-center">
                       <div class="col-lg-3"></div>
@@ -59,4 +59,19 @@
        </div>
     </div>
  </div>
+ <!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script>
+   // Register Page Submit submitButton
+   $(document).ready(function() {
+        // Disable submit button on page load
+        $('button[type="submit"]').prop('disabled', true);
+
+        // Enable or disable submit button based on checkbox state
+        $('input[name="chek"]').on('change', function() {
+            var isChecked = $(this).prop('checked');
+            $('button[type="submit"]').prop('disabled', !isChecked);
+        });
+    });
+ </script>
 @endsection

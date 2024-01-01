@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('color')->nullable();
-            $table->string('color_code')->nullable();
+            $table->string('logo')->nullable();
             $table->string('status')->default('1');
             $table->timestamps();
         });

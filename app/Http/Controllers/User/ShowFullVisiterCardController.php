@@ -47,6 +47,34 @@ class ShowFullVisiterCardController extends Controller
                     'photo' => $logoFileName,
                 ]);
             }
+
+             // Check if a new Logo is provided
+            if ($request->hasFile('logo')) {
+                // Retrieve the old photo file name
+                $logo = $cardform->logo;
+
+                // Delete the old photo file
+                if ($logo) {
+                    $oldPhotoPath = public_path('logo') . '/' . $logo;
+                    if (file_exists($oldPhotoPath)) {
+                        unlink($oldPhotoPath);
+                    }
+                }
+
+                $image = $request->file('logo');
+                $logo = $image->hashName();
+                $destinationPath = public_path('logo');
+
+                // Move the new uploaded image to the destination folder
+                $image->move($destinationPath, $logo);
+
+                // Update record with new photo information
+                $cardform->update([
+                    'logo' => $logo,
+                ]);
+            }
+
+
             // Update other fields
             $cardform->update([
                 'user_id' => Auth()->user()->id,
@@ -58,7 +86,6 @@ class ShowFullVisiterCardController extends Controller
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'color' => $request->color,
-                'color_code' => $request->color_code,
                 'date'=>$request->date
             ]);
 
@@ -114,6 +141,14 @@ class ShowFullVisiterCardController extends Controller
             // Delete the image file
             if ($cardform->photo) {
                 $photoPath = public_path('user_image') . '/' . $cardform->photo;
+                if (file_exists($photoPath)) {
+                    unlink($photoPath);
+                }
+            }
+
+             // Delete the Logo file
+            if ($cardformlogo->logo) {
+                $photoPath = public_path('logo') . '/' . $cardformlogo->photo;
                 if (file_exists($photoPath)) {
                     unlink($photoPath);
                 }

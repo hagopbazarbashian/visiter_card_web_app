@@ -27,7 +27,8 @@ class RegisterRequest extends FormRequest
             'name'=>'required',
             'email'=>'required | email | max:255',
             'password'=>'required',
-            're-password'=>'required|same:password'
+            're-password'=>'required|same:password',
+            'chek'=>'required'
         ];
     }
 }

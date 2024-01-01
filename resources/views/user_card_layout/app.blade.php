@@ -16,7 +16,7 @@
 <style>
 
 .waveContainer{
-  height: 100vh;
+  height: 84vh;
   overflow: hidden;
 }
 .viewBox{
@@ -34,7 +34,7 @@
 <!--==========================================
                   PRE-LOADER
 ===========================================-->
-<div id="loading">
+{{-- <div id="loading">
     <div id="loading-center">
         <div id="loading-center-absolute">
             <div class="box-holder animated bounceInDown">
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 <!--==========================================
                     HEADER

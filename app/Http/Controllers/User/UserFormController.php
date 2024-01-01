@@ -40,6 +40,23 @@ class UserFormController extends Controller
             $logoFileName = '';
             }
 
+             $logo = $request->file('logo');
+
+             if ($logo) {
+            // If an image is uploaded
+            $logo = $image->hashName();
+            $destinationPath = public_path('logo');
+
+            // Move the uploaded image to the destination folder
+            $image->move($destinationPath, $logo);
+
+            // Path to the saved logo image
+            $logoImagePath = $destinationPath . '/' . $logo;
+            } else {
+            // If no image is uploaded, use the default image
+            $logo = '';
+            }
+
                $cardform = cardform::create([
                'user_id' => Auth()->user()->id,
                'photo' => $logoFileName,
@@ -52,7 +69,7 @@ class UserFormController extends Controller
                'email' => $request->email,
                'phone' => $request->phone,
                'color' => $request->color,
-               'color_code' => $request->color_code,
+               'logo' => $logo,
                ]);
 
                $socelmedia = socelmedia::create([

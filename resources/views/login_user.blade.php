@@ -43,12 +43,12 @@
                 </form>
                 <p class="my-4 text-center fw-500 text-white">New to Streamit? <a href="{{ route('register_user') }}"
                         class="text-primary ms-1">Register</a></p>
-                <div class="seperator d-flex justify-content-center align-items-center">
+                {{-- <div class="seperator d-flex justify-content-center align-items-center">
                     <span class="line"></span>
                     <span class="mx-2">OR</span>
                     <span class="line"></span>
-                </div>
-                <ul class="p-0 pt-4 m-0 list-unstyled widget_social_media text-center">
+                </div> --}}
+                {{-- <ul class="p-0 pt-4 m-0 list-unstyled widget_social_media text-center">
                     <li class="">
                         <a href="https:/www.google.com/" class="position-relative">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -80,7 +80,7 @@
                             </svg>
                         </a>
                     </li>
-                </ul>
+                </ul> --}}
             </div>
         </div>
     </div>
