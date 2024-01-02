@@ -154,25 +154,23 @@ input[type=checkbox]:checked + label{
                         @else
                         <p id="no-image-message" class="no-image-message" style="display: none;">You don't have an image.</p>
                         @endif
-                    </div> --}} 
+                    </div> --}}
                     <div class="tb-container">
                         <div class="tb-img-view">
                            @if ($cardform->photo)
                             <img src="{{ asset('user_image/' . $cardform->photo) }}"/>
                            @endif
                            <img class="profile" id="tb-image" />
-                        </div> 
+                        </div>
                         <label for="tb-file-upload">Upload Profile Image</label>
                         <input type="file" name="photo" id="tb-file-upload" accept="image/*" onchange="fileUpload(event);" />
                      </div>
-                     <div> 
-                     </div>
                      <div>
-                        <label for="holder">Add Your Logo</label> 
+                        <label for="holder">Add Your Logo</label>
                         <input type="file" name="logo" accept="image/*" value="{{$cardform->logo ?? ''}}" />
                      </div>
                      <div>
-                        <label for="holder">Full Name</label> 
+                        <label for="holder">Full Name</label>
                         <input type="text" name="full_name" value="{{$cardform->full_name ?? ''}}" />
                      </div>
                      <div>
@@ -213,9 +211,9 @@ input[type=checkbox]:checked + label{
                      <label for="onoff" class="toggle">
                            <span class="toggle-color"></span>
                      </label>
-                     <span class="inner-panel"></span> 
+                     <span class="inner-panel"></span>
 
-                     <!-- Hidden input to store the value --> 
+                     <!-- Hidden input to store the value -->
                      <input type="hidden" name="status" value="{{ $cardform->status ? '1' : '0' }}">
                      </div>
                      <a class="toggle-button" onclick="toggleSocialIcons()"> <i class="material-icons">Add</i> your social media </a>

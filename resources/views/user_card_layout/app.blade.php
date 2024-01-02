@@ -7,6 +7,7 @@
     <meta name="author" content="Trimatrix Lab">
     <meta name="description" content="">
     <meta name="keywords" content="">
+    <script src="https://kit.fontawesome.com/0b13bde584.js" crossorigin="anonymous"></script>
 
     <title>@yield('title')</title>
 
@@ -16,7 +17,7 @@
 <style>
 
 .waveContainer{
-  height: 84vh;
+  height: 75vh;
   overflow: hidden;
 }
 .viewBox{
@@ -26,6 +27,24 @@
 .path{
   stroke: none;
   fill: rgb(253, 253, 253);
+}
+/*scroll to top button*/
+#scrollup {
+  color: #fff;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  font-size: 28px;
+  background: {{$cardform->color}};
+  border: 1px solid : {{$cardform->color}};
+  text-align: center;
+  position: fixed;
+  bottom: 21px;
+  right: 18px;
+  z-index: 5;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  display: none;
+  transition: .3s;
 }
 </style>
 <body>
@@ -98,18 +117,16 @@
             </svg>
           </div>
     </div>
-
-
 </header>
 
 <div id="v-card-holder" class="section">
     @yield('user_card')
 </div>
 
-
 <!--==========================================
                      SCROLL TO TOP
 ===========================================-->
+<a href="#" class="btn waves-effect-share" onclick="shareContact()">Share</a>
 <div id="scroll-top">
     <div id="scrollup"><i class="fa fa-angle-up"></i></div>
 </div>
