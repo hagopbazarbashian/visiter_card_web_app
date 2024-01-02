@@ -37,13 +37,13 @@
                      <div class="d-flex align-items-center justify-content-between my-4">
                         <h5 class="main-title text-capitalize mb-0">Your Card</h5>
                      </div>
-                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 ty">
+                     <div class="ty">
                         @if ($filteredCardforms->isEmpty())
                         <div class="alert alert-info" role="alert">
                            You don't have any active cards. 
                         </div>
                         @else @foreach ($filteredCardforms as $filteredCardform)
-                        <div class="col mb-4 ty">
+                        <div class="ty">
                               <div class="watchlist-warpper card-hover-style-two">
                                  <div class="block-images position-relative w-100">
                                     <div class="img-box" style="background-color: #yourBackgroundColor;">

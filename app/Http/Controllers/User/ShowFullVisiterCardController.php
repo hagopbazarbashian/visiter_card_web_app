@@ -93,11 +93,11 @@ class ShowFullVisiterCardController extends Controller
             if ($media) {
             $updateData = [
                 'facebook' => $request->facebook,
-                'pinterest' => $request->full_name,
-                'twitter' => $request->title,
-                'instagram' => $request->department,
-                'whatsapp' => $request->company,
-                'youtube' => $request->headline,
+                'pinterest' => $request->pinterest,
+                'twitter' => $request->twitter,  
+                'instagram' => $request->instagram,
+                'whatsapp' => $request->whatsapp,
+                'youtube' => $request->youtube,
                 'tiktok' => $request->tiktok,
                 'linkedin' => $request->linkedin,
                 'snapchat' => $request->snapchat,
@@ -147,8 +147,8 @@ class ShowFullVisiterCardController extends Controller
             }
 
              // Delete the Logo file
-            if ($cardformlogo->logo) {
-                $photoPath = public_path('logo') . '/' . $cardformlogo->photo;
+            if ($cardform->logo) {
+                $photoPath = public_path('logo') . '/' . $cardform->logo;
                 if (file_exists($photoPath)) {
                     unlink($photoPath);
                 }

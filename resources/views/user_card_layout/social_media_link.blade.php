@@ -2,7 +2,7 @@
     @if ($cardform->email)
     <div class="your-div-class">
        <li class="clearfix">
-          <span class="title"><i class="fa fa-envelope ic">email</i></span>
+          <span class="title"><i class="fa fa-envelope ic"></i></span>
           <a href="mailto:{{ $cardform->email }}"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->email, $limit = 20, $end = '...') }}</span></a>
        </li>
     </div>
@@ -10,7 +10,7 @@
     @if ($cardform->phone)
     <div class="your-div-class">
        <li class="clearfix">
-          <span class="title"><i class="fa fa-phone ic">phone</i></span>
+          <span class="title"><i class="fa fa-phone ic"></i></span>
           <a href="tel:{{ $cardform->phone }}"><span class="content">{{ $cardform->phone ?? ''}}</span></a>
        </li>
     </div>
@@ -18,7 +18,7 @@
     @if ($cardform->socelmedia->website)
     <div class="your-div-class">
        <li class="clearfix">
-          <span class="title"><i class="material-icons ic">language</i></span>
+          <span class="title"><i class="material-icons ic"></i></span>
           <a href="{{ $cardform->socelmedia->website }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->website, $limit = 20, $end = '...') }}</span></a>
        </li>
     </div>

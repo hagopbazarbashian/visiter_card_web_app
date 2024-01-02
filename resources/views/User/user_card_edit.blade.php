@@ -144,17 +144,6 @@ input[type=checkbox]:checked + label{
                   </section> --}}
                   <form method="post" action="{{route('full_visiter_card_update',$cardform->id)}}" class="form" enctype="multipart/form-data">
                      @csrf
-                     {{-- <div class="file-input-container">
-                        <label for="photo" class="file-input-button">Choose a Photo</label>
-                        <input type="file" name="photo" id="photo" class="file-input" onchange="previewImage(this)" />
-                        <br />
-                        <img id="image-preview" class="image-preview" alt="Image Preview" />
-                        @if (isset($cardform->photo))
-                        <p id="no-image-message" class="no-image-message">You have an image</p>
-                        @else
-                        <p id="no-image-message" class="no-image-message" style="display: none;">You don't have an image.</p>
-                        @endif
-                    </div> --}}
                     <div class="tb-container">
                         <div class="tb-img-view">
                            @if ($cardform->photo)
@@ -205,6 +194,7 @@ input[type=checkbox]:checked + label{
                         <label for="holder">Date</label>
                         <input type="date" name="date" value="{{$cardform->date ?? ''}}" />
                      </div>
+
                      <label for="holder">Make Public Your card</label>
                      <div class="panel">
                      <input type="checkbox" name="status" id="onoff" {{ $cardform->status ? 'checked' : '' }}>
@@ -222,10 +212,10 @@ input[type=checkbox]:checked + label{
                            @include('User.socel_media_icon')
                         </div>
                      </div>
-                     @include('User.input_socel_media_for_edit_page')
+                     @include('User.input_socel_media_for_edit_page') 
                      <div class="full-button">
                         <div class="iq-button" style="display: flex; justify-content: space-around;">
-                           <button type="submit" class="btn text-uppercase position-relative">
+                           <button type="submit" class="btn text-uppercase position-relative submit-button">
                               <span class="button-text">Update Your Card</span>
                               <i class="fa-solid fa-play"></i>
                            </button>

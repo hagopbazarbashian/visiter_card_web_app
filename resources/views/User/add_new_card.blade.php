@@ -9,8 +9,6 @@
 .image-container {
     position: relative;
 }
-
-
 </style>
 <section class="section-padding-bottom">
     <div class="profile-box">
@@ -36,15 +34,19 @@
             </ul>
             <div class="tab-content px-0">
                <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
-                  <form method="post" action="{{route('add_card')}}" class="form yy" enctype="multipart/form-data">
+                  <form id="myForm" method="post" action="{{route('add_card')}}" class="form yy" enctype="multipart/form-data">
                      @csrf
-                     <h2 class="title">Add Your Card</h2>
-
-                     <div class="file-input-container">
-                        <label for="photo" class="file-input-button">Choose a Photo</label>
-                        <input type="file" name="photo" id="photo" class="file-input" onchange="previewImage(this)" />
-                        <img id="image-preview" class="image-preview" alt="Image Preview" />
-                        <p id="no-image-message" class="no-image-message" style="display: none;">You don't have an image.</p>
+                     <h2 class="title">Add Your Card</h2>  
+                     <div class="tb-container"> 
+                        <div class="tb-img-view">
+                           <img class="profile" id="tb-image" />
+                        </div>
+                        <label for="tb-file-upload">Upload Profile Image</label>
+                        <input type="file" name="photo" id="tb-file-upload" accept="image/*" onchange="fileUpload(event);" />
+                     </div>
+                     <div> 
+                        <label for="holder">Add Your Logo</label>
+                        <input type="file" name="logo" accept="image/*" value="{{old('logo')}}" />
                      </div>
                      <div>
                         <label for="holder">Full Name</label>
@@ -65,12 +67,7 @@
                      <div class="color-input-container">
                         <label for="color">Color Card</label>
                         <input type="color" id="color" name="color" value="{{old('color')}}" class="color-input" />
-                        <input type="text" id="color-code" name="color-code" class="color-code-input" placeholder="Color Code" value="{{old('color-code')}}" oninput="updateColorBox()" />
                      </div>
-
-                     {{-- <label for="headline">Headline</label>
-                     <textarea name="headline" id="headline">{{ old('headline') }}</textarea> --}}
-
                      <div>
                         <label for="holder">Date</label>
                         <input type="date" name="date" value="{{old('date')}}" />
@@ -95,7 +92,7 @@
                      <div id="socialMediaContainer" class="social-media-container"></div>
                      <div class="full-button">
                         <div class="iq-button" style="display: flex; justify-content: space-around;">
-                           <button type="submit" class="btn text-uppercase position-relative">
+                           <button type="submit" class="btn text-uppercase position-relative submit-button">
                               <span class="button-text">Add your card</span>
                               <i class="fa-solid fa-play"></i>
                            </button>
@@ -143,5 +140,17 @@
          socialIconsContainer.classList.toggle("show");
       }
    }
+</script>
+<script>
+const fileUpload = (event) => {
+  const files = event.target.files;
+  const filesLength = files.length;
+  if (filesLength > 0) {
+    const imageSrc = URL.createObjectURL(files[0]);
+    const imagePreviewElement = document.querySelector("#tb-image");
+    imagePreviewElement.src = imageSrc;
+    imagePreviewElement.style.display = "block";
+  }
+};
 </script>
 @endsection

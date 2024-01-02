@@ -114,12 +114,13 @@
 }
 
 .card-hover-style-two .block-images .img-box{
-    width: 237px !important;
-    height: 275px !important;
+    width: 181px !important;
+    height: 269px !important;
 }
 
 .u{
   color:#68b7e2 !important;
+  margin: 0 -11px 0 0;
 }
 
 
@@ -141,6 +142,7 @@ svg {
     .ty{
         display: flex !important;
         justify-content: center !important;
+        flex-wrap: wrap;
     }
 
 
@@ -190,4 +192,13 @@ svg {
 .form-check-input:checked{
   border-color:#68b7e2 !important;
   background-color:#68b7e2 !important;
+}
+
+.iq-custom-tab-style-two .tab-header .nav-link::after{
+  background:#68b7e2 !important;
+}
+
+
+.watchlist-warpper .block-images .img-box img{
+ height: 9.5rem !important;
 }

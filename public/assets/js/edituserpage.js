@@ -52,3 +52,67 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+///////
+// close Button with sumbit
+
+const LOADING_CLASS = "is-loading";
+
+class SubmitButton {
+    constructor(elem) {
+        this.elem = elem;
+        this.init();
+    }
+    init() {
+        this.prepButton();
+        this.bindEvents();
+    }
+    prepButton() {
+        this.elem.innerHTML = `
+            <span class="submit-button__text">${this.elem.innerHTML}</span>
+            <span class="submit-button__loader"></span>
+        `;
+    }
+
+    bindEvents() {
+        this.elem.form.addEventListener("submit", ev => {
+            this.disableButton();
+            this.addLoadingStyles();
+        });
+    }
+
+    disableButton() {
+        this.elem.disabled = true;
+    }
+
+    enableButton() {
+        this.elem.disabled = false;
+    }
+
+    addLoadingStyles() {
+        if (!this.elem.classList.contains(LOADING_CLASS)) {
+            this.elem.classList.add(LOADING_CLASS);
+        }
+    }
+
+    removeLoadingStyles() {
+        if (this.elem.classList.contains(LOADING_CLASS)) {
+            this.elem.classList.remove(LOADING_CLASS);
+        }
+    }
+
+    reset() {
+        this.enableButton();
+        this.removeLoadingStyles();
+    }
+}
+
+
+// Demo Script
+const submitButton = new SubmitButton(document.querySelector(".submit-button"));
+document.querySelector("form").addEventListener("submit", function(event) {
+    window.setTimeout(function() {
+        submitButton.reset();
+    }, 7500);
+
+    event.preventDefault();
+});

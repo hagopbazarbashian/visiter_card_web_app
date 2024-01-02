@@ -36,7 +36,6 @@
 
       .your-div-class {
          width: 100%;
-         box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1); /* Adjust the shadow as needed */
          padding: 10px;
          margin: 10px;
          /* Add any other styling as needed */
@@ -58,23 +57,34 @@
 
    }
 
-   .row {
-       margin-right: 0 !important;
+   .row { 
+       margin-right: 0 !important;  
        margin-left: 0 !important;
    }
    .waves-effect{
-       background-color: {{$cardform->color}} !important;
-       width: 225px;
+      background-color: {{$cardform->color}} !important;
+      width: 299px;
+      height: 50px;
+      border-top-left-radius: 20px 20px !important;
+      border-top-right-radius: 20px 20px !important;
+      border-bottom-left-radius: 20px 20px !important;
+      border-bottom-right-radius: 20px 20px !important;
    }
    .btn.waves-effect-share {
            position: fixed;
            bottom: 0;
            left: 0;
            width: 100%;
+           height: 45px;
            background-color:  {{$cardform->color}}; /* Set background color if needed */
            text-align: center;
            padding: 10px; /* Adjust padding as needed */
            z-index: 999;
+          margin: 0 0 9px 0;
+         border-top-left-radius: 20px 20px !important;
+         border-top-right-radius: 20px 20px !important;
+         border-bottom-left-radius: 20px 20px !important;
+         border-bottom-right-radius: 20px 20px !important;
        }
    .ic{
        background-color: {{$cardform->color}};
@@ -152,7 +162,7 @@
             <div id="about-btn" class="card-action">
                <div class="about-btn">
                   <!-- DOWNLOAD CV BUTTON -->
-                  <a onclick="downloadVCard()" class="btn waves-effect">Save Contact</a>
+                  <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:{{ urlencode($cardform->full_name) }}%20Doe%0AEMAIL:{{ urlencode($cardform->email) }}%0ATEL:{{ urlencode($cardform->phone) }}%0AEND:VCARD" download="contact.vcf" class="btn waves-effect">Save Contact</a>
                   <!-- CONTACT BUTTON -->
                </div>
             </div>
@@ -170,61 +180,4 @@
       </div>
    </div>
 </div>
-<script>
-   function downloadVCard() {
-      // Create a vCard content
-      const vCardContent = `
-        BEGIN:VCARD
-        VERSION:3.0
-        FN:John Doe
-        EMAIL:john.doe@example.com
-        TEL:+123456789
-        END:VCARD`;
-
-      // Create a Blob containing the vCard content
-      const blob = new Blob([vCardContent], { type: "text/vcard" });
-
-      // Create a link element to trigger the download
-      const link = document.createElement("a");
-      link.href = window.URL.createObjectURL(blob);
-      link.download = "contact.vcf"; // Set the desired filename with .vcf extension
-      link.click();
-   }
-</script>
-/* For Share */
-<script>
-   function shareContact() {
-      // Create a vCard content
-      const vCardContent = `
-BEGIN:VCARD
-VERSION:3.0
-FN:John Doe
-EMAIL:john.doe@example.com
-TEL:+123456789
-END:VCARD`;
-
-      // Create a Blob containing the vCard content
-      const blob = new Blob([vCardContent], { type: "text/vcard" });
-
-      // Create a temporary link element to get a URL for the Blob
-      const link = document.createElement("a");
-      link.href = window.URL.createObjectURL(blob);
-      link.setAttribute("download", "contact.vcf"); // Set the desired filename with .vcf extension
-
-      // Check if the Web Share API is supported
-      if (navigator.share) {
-         navigator
-            .share({
-               title: "Contact Information",
-               text: "Download this contact",
-               url: link.href,
-            })
-            .then(() => console.log("Contact shared successfully"))
-            .catch((error) => console.error("Error sharing contact:", error));
-      } else {
-         // Fallback for browsers that do not support Web Share API
-         link.click();
-      }
-   }
-</script>
 @endsection

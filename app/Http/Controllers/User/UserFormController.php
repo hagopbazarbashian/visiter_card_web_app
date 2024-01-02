@@ -17,7 +17,7 @@ class UserFormController extends Controller
         return view('User.add_new_card');
     }
 
-
+  
 
      public function store(Formcardrequest $request){
 
@@ -42,19 +42,19 @@ class UserFormController extends Controller
 
              $logo = $request->file('logo');
 
-             if ($logo) {
-            // If an image is uploaded
-            $logo = $image->hashName();
-            $destinationPath = public_path('logo');
+            if ($logo) {
+                // If an image is uploaded
+                $logoFileNameee = $logo->hashName();
+                $destinationPathh = public_path('logo');
 
-            // Move the uploaded image to the destination folder
-            $image->move($destinationPath, $logo);
+                // Move the uploaded image to the destination folder
+                $logo->move($destinationPathh, $logoFileNameee);
 
-            // Path to the saved logo image
-            $logoImagePath = $destinationPath . '/' . $logo;
+                // Path to the saved logo image
+                $logoImagePath = $destinationPathh . '/' . $logoFileNameee;
             } else {
-            // If no image is uploaded, use the default image
-            $logo = '';
+                // If no image is uploaded, use the default image
+                $logoFileNameee = ''; // Use a different variable name to store the filename
             }
 
                $cardform = cardform::create([
@@ -69,7 +69,7 @@ class UserFormController extends Controller
                'email' => $request->email,
                'phone' => $request->phone,
                'color' => $request->color,
-               'logo' => $logo,
+               'logo' => $logoFileNameee,
                ]);
 
                $socelmedia = socelmedia::create([
