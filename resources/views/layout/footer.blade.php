@@ -1,4 +1,4 @@
-<footer class="footer-merchandise dark-black">
+<footer class="footer-merchandise dark-black hide-on-desktop">
     <div class="footer-top">
       <div class="container-fluid">
         <div class="row">

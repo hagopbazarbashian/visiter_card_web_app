@@ -17,11 +17,11 @@
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
     <title>@yield('title')</title>
-  @include('layout.style')
+     @include('layout.style')
 
 </head>
 
-<body class="  "> 
+<body class="  ">
    {{-- <span class="screen-darken"></span> --}}
    <!-- loader Start -->
   {{-- <div class="loader simple-loader">
@@ -30,7 +30,7 @@
       </div>
   </div> --}}
   <!-- loader END -->  <!-- loader END -->
-  <main class="main-content">
+  <main class="main-content hide-on-desktop">
       <!--Nav Start-->
       <header class="header-center-home header-merchandise">
         @unless(request()->is(['/', 'login-user', 'register-user','welcome-user','welcome-user-get-card']))
@@ -43,7 +43,7 @@
   @unless(request()->is(['/', 'login-user', 'register-user','welcome-user','welcome-user-get-card']))
    @include('layout.footer')
   @endunless
-  
+
   @include('layout.rt_box')
   @include('layout.script_bottom')
 

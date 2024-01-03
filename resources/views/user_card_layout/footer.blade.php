@@ -2,7 +2,7 @@
                       FOOTER
 ===========================================-->
 
-<footer>
+<footer class="hide-on-desktop">
     <div class="container">
         <!--FOOTER DETAILS-->
         <p class="text-center" style="margin: 25px 0 0 0;">

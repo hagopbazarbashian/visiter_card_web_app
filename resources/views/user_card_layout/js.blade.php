@@ -11,4 +11,5 @@
 <script src="{{asset('assets/usercard/javascript/vendors/swiper.jquery.min.js')}}"></script>
 <script src="{{asset('assets/usercard/javascript/vendors/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('assets/usercard/javascript/custom.js')}}"></script>
+<script src="{{asset('assets/usercard/javascript/share.js')}}"></script>
 

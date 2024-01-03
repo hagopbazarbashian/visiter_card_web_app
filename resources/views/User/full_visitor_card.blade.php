@@ -1,4 +1,4 @@
-@extends('user_card_layout.app') @section('title'){{ 'Profile' }}@endsection @section('user_card') 
+@extends('user_card_layout.app') @section('title'){{ 'Profile' }}@endsection @section('user_card')
 @if (isset($cardform))
 @include('user_card_layout.all_css_in_card_page')
 <div class="">
@@ -10,11 +10,7 @@
             @if ($cardform->logo)
             <div id="profile" class="right">
                 <img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}" />
-                <div class="slant"></div>
-
-                <!--EMPTY PLUS BUTTON-->
-                <div class="btn-floating btn-large add-btn"><i class="material-icons">add</i></div>
-             </div>
+            </div>
             @endif
             <!--VIDEO CLOSE BUTTON-->
             <!--<div id="close-btn" class="btn-floating icon-close">
@@ -57,8 +53,7 @@
 </div>
 @else
 <div style="display:flex;justify-content: space-around;">
-   <p>Your Card is not Activ</p>
+   <p>Your Card is not Activ</p> 
 </div>
 @endif
-
 @endsection

@@ -32,6 +32,7 @@
       #v-card-holder #v-card {
          background:#fff;
          box-shadow: none;
+         top: 135px;
       }
 
       .your-div-class {
@@ -57,8 +58,8 @@
 
    }
 
-   .row { 
-       margin-right: 0 !important;  
+   .row {
+       margin-right: 0 !important;
        margin-left: 0 !important;
    }
    .waves-effect{

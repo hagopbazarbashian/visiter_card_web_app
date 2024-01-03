@@ -718,7 +718,8 @@ body.scale-effect .btn-holder .btn-play {
     transition: height 1s, color 1s, margin 1s;
     z-index: 1;
     background: #038175;
-    margin: -33px 3px 0 0; }
+    margin: 0px 3px 0 0 !important;
+}
 #v-card-holder #v-card .info-headings {
     /*basic infos*/
     max-width: 514px; }

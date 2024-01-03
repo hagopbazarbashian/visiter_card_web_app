@@ -282,7 +282,9 @@ video {
       /*paragraph style inside card content*/
       margin: 0;
       color: inherit;
-      text-align: center; }
+      text-align: center;
+      margin: 0 0 14px;
+    }
 
 /*-------------------------------------------------------------------------------
 #MODAL
@@ -842,8 +844,8 @@ body.scale-effect {
       z-index: 1;
       background-color: transparent; }
       #v-card-holder #v-card #profile img {
-        /*image at max width 767*/ 
-        width: auto;
+        /*image at max width 767*/
+        width: 100%;
         height: auto;
         border-radius: 50%;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
@@ -877,7 +879,7 @@ body.scale-effect {
     margin: 0 auto 9px; }
     #v-card-holder #v-card .links #first_one {
       /*first link at max width 767*/
-      margin-left: 0; } 
+      margin-left: 0; }
   #v-card-holder #v-card .info-headings {
     /*heading at max width 767*/
     max-width: 100%;
@@ -2210,3 +2212,31 @@ hr {
   margin: 0; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* For All page User*/
+@media (min-width: 768px) {
+    .hide-on-desktop {
+        display: none;
+    }
+}
+
+.waveContainer{
+    height: 121vh;
+    overflow: hidden;
+  }
+  .viewBox{
+    height: 100%;
+    width: 100%;
+  }
+  .path{
+    stroke: none;
+    fill: rgb(253, 253, 253);
+  }
+
+
+  .right img {
+    border-radius: 10px;
+    max-width: 100px!important;
+    max-height: 100px!important;
+}

@@ -14,21 +14,6 @@
     @include('user_card_layout.style')
 
 </head>
-<style>
- 
-.waveContainer{
-  height: 151vh;
-  overflow: hidden;
-}
-.viewBox{
-  height: 100%;
-  width: 100%;
-}
-.path{
-  stroke: none;
-  fill: rgb(253, 253, 253);
-}
-</style>
 <body>
 
 <!--==========================================
@@ -46,7 +31,7 @@
                 <h6>{{$cardform->title ?? ''}} @if($cardform->company) \ @endif{{$cardform->company ?? ''}}</h6>
             </div>
         </div>
-    </div> 
+    </div>
 </div> --}}
 
 <!--==========================================
@@ -65,15 +50,14 @@
     </div>
 </header>
 
-<div id="v-card-holder" class="section">
+<div id="v-card-holder" class="section hide-on-desktop">
     @yield('user_card')
 </div>
 
 <!--==========================================
                      SCROLL TO TOP
 ===========================================-->
-<a href="#" class="btn waves-effect-share" onclick="shareContact()"><i class="fa-regular fa-paper-plane"></i> Share</a>
-
+<a href="#" class="btn waves-effect-share"  id="shareButton" ><i class="fa-regular fa-paper-plane"></i> Share</a>
 
 @include('user_card_layout.footer')
 @include('user_card_layout.js')

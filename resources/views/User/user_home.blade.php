@@ -9,9 +9,8 @@
 .image-container {
     position: relative;
 }
-
 </style>
-<section class="section-padding-bottom">
+<section class="section-padding-bottom hide-on-desktop">
     <a class="butonadd" href="{{route('new_card')}}">
         <div class="d-flex justify-content-end">
             <div class="nav-item ms-auto">
@@ -40,7 +39,7 @@
                      <div class="ty">
                         @if ($filteredCardforms->isEmpty())
                         <div class="alert alert-info" role="alert">
-                           You don't have any active cards. 
+                           You don't have any active cards.
                         </div>
                         @else @foreach ($filteredCardforms as $filteredCardform)
                         <div class="ty">
@@ -86,12 +85,12 @@
                                           <div class="qrcode"></div>
                                       </div>
                                        <!--Duplicate Icon -->
-                                       <a  class="duplicate-icon u">
+                                       <a href="{{route('duplicate' ,$filteredCardform->id)}}" class="duplicate-icon u">
                                           <i class="fas fa-copy fa-2x" style="color: #68b7e2;margin-right: 20px; font-size: 19px;"></i>
                                        </a>
                                     </div>
                                     </div>
-                                  
+
                                  </div>
                               </div>
                         </div>

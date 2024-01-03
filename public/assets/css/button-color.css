@@ -99,7 +99,7 @@
 
 
 .text-whiteee {
-    position: absolute; 
+    position: absolute;
     bottom: 0; /* Adjust this value to control the vertical position of the text */
     left: 0; /* Adjust this value to control the horizontal position of the text */
     background-color:transparent; /* Background color with transparency */
@@ -125,8 +125,8 @@
 
 
 svg {
-    position: absolute; 
-    top: 0; 
+    position: absolute;
+    top: 0;
     left: 0;
     /* box-sizing: border-box; */
     display: block;
@@ -159,7 +159,7 @@ svg {
 .tb-container .profile {
   width: 200px;
   height: auto;
-  display: none; 
+  display: none;
   margin-bottom: 30px;
 }
 .tb-container img{
@@ -198,7 +198,7 @@ svg {
   background:#68b7e2 !important;
 }
 
-  
+
 .watchlist-warpper .block-images .img-box img{
  height: 9.5rem !important;
 }
@@ -211,7 +211,7 @@ color: #68b7e2;
     box-shadow: 0 0 19px;
     text-align: center;
     text-transform: uppercase;
-    -webkit-text-stroke: 0.3vw #f7f7fe; 
+    -webkit-text-stroke: 0.3vw #f7f7fe;
      border-top-left-radius: 20px 20px !important;
     border-top-right-radius: 20px 20px !important;
     border-bottom-left-radius: 20px 20px !important;
@@ -223,8 +223,16 @@ color: #68b7e2;
     border-top-right-radius: 20px 20px !important;
     border-bottom-left-radius: 20px 20px !important;
     border-bottom-right-radius: 20px 20px !important;
-    background-color:#68b7e2 !important; 
-    background-repeat: no-repeat; 
-    background-position: center center; 
+    background-color:#68b7e2 !important;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: 68% auto;
+}
+
+
+/* For All page */
+@media (min-width: 768px) {
+    .hide-on-desktop {
+        display: none;
+    }
 }

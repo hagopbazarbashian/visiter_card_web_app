@@ -10,13 +10,16 @@ use App\Http\Controllers\User\UserFormController;
 use App\Http\Controllers\User\UserEditCardController;
 use App\Http\Controllers\User\ShowFullVisiterCardController;
 use App\Http\Controllers\User\SingleCardController;
+use App\Http\Controllers\User\DuplicateController;
 use App\Http\Controllers\FirstCardGetcardController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
-// User System
+// User System 
 use App\Http\Controllers\Admin\User\AdminUserController;
 use App\Http\Controllers\Customer\CustomerRegisterController;
+
+use App\Http\Controllers\NFCController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +68,8 @@ Route::middleware(['web:web'])->group(function () {
     Route::get('delete-card/{id}', [ShowFullVisiterCardController::class, 'delete'])->name('delete_card');
     Route::get('new-card', [UserFormController::class, 'index'])->name('new_card');
     Route::post('add-card', [UserFormController::class, 'store'])->name('add_card');
+    //Duplicate System
+    Route::get('/cardforms/{id}/duplicate', [DuplicateController::class, 'duplicate'])->name('duplicate');
 
 });
 
@@ -92,3 +97,7 @@ Route::middleware(['admin:admin'])->group(function () {
         Route::get('visitor', [VisitorController::class, 'showVisitorCount'])->name('visitor');
     });
 });
+
+
+// nfc
+Route::get('nfc' , [NFCController::class , 'index']);

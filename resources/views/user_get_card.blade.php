@@ -13,7 +13,7 @@
     }
     .b{
         padding: 0rem 0 !important;
-    }
+    }  
     /* Styles for screens with a minimum width of 768 pixels */
     @media (min-width: 768px) {
         .hide-on-desktop {
@@ -40,7 +40,7 @@
             height: 100vh;
             background-color: #f4f4f4; /* Set your desired background color */
        }
-            
+
 
         #mobile-warning {
             display: none;
