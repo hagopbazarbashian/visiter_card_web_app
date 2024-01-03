@@ -28,24 +28,6 @@
   stroke: none;
   fill: rgb(253, 253, 253);
 }
-/*scroll to top button*/
-#scrollup {
-  color: #fff;
-  height: 45px;
-  width: 45px;
-  cursor: pointer;
-  font-size: 28px;
-  background: {{$cardform->color}};
-  border: 1px solid : {{$cardform->color}};
-  text-align: center;
-  position: fixed;
-  bottom: 21px;
-  right: 18px;
-  z-index: 5;
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
-  display: none;
-  transition: .3s;
-}
 </style>
 <body>
 

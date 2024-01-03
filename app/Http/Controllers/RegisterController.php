@@ -51,7 +51,7 @@ class RegisterController extends Controller
 
             $cardform = cardform::create([
                 'user_id' => $use->id,
-                'full_name' => 'personal',
+                'full_name' => 'Personal',
                 'email' => $use->email,
                 'color'=>'#68b7e2'
             ]);

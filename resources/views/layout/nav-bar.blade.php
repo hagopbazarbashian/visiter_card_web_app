@@ -274,10 +274,10 @@
                              @endif
                              </div>
                              <a href="{{route('home')}}" class="iq-sub-card d-flex align-items-center gap-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 22" fill="none">
+                                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 22" fill="none">
                                    <path
                                       fill-rule="evenodd"
-                                      clip-rule="evenodd"
+                                      clip-rule="evenodd" 
                                       d="M7.84455 20.6621C4.15273 20.6621 1 20.0876 1 17.7868C1 15.486 4.13273 13.3621 7.84455 13.3621C11.5364 13.3621 14.6891 15.4654 14.6891 17.7662C14.6891 20.066 11.5564 20.6621 7.84455 20.6621Z"
                                       stroke="currentColor"
                                       stroke-width="1.5"
@@ -293,13 +293,9 @@
                                       stroke-linecap="round"
                                       stroke-linejoin="round"
                                    />
-                                </svg>
+                                </svg> --}}
                                 <h6 class="mb-0 font-size-14 fw-normal">My Account</h6>
                              </a>
-                             {{-- <a href="{{route('user-edit.index')}}" class="iq-sub-card d-flex align-items-center gap-3">
-                                <i class="fa-regular fa-star"></i>
-                                <h6 class="mb-0 font-size-14 fw-normal">Edit Your Card</h6>
-                             </a> --}}
                              <a href="{{route('logout')}}" class="iq-sub-card iq-logout-2 mt-1 d-flex justify-content-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
                                    <path

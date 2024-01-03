@@ -163,7 +163,7 @@ input[type=checkbox]:checked + label{
                         <input type="text" name="full_name" value="{{$cardform->full_name ?? ''}}" />
                      </div>
                      <div>
-                        <label for="holder">Profesyonel</label>
+                        <label for="holder">Professional</label>
                         <input type="text" name="title" value="{{$cardform->title ?? ''}}" />
                      </div>
                      <div>
@@ -188,7 +188,7 @@ input[type=checkbox]:checked + label{
                      </div>
                      <div>
                         <label for="holder">Phone</label>
-                        <input type="text" name="phone" value="{{ $cardform->phone ?? '' }}" />
+                        <input type="text" name="phone" placeholder="+374 XX XXXXX" value="{{ $cardform->phone ?? '' }}" />
                      </div>
                      <div>
                         <label for="holder">Date</label>

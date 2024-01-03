@@ -53,7 +53,7 @@
                         <input type="text" name="full_name" value="{{old('full_name')}}" />
                      </div>
                      <div>
-                        <label for="holder">Profesyonel</label>
+                        <label for="holder">Professional</label>
                         <input type="text" name="title" value="{{old('title')}}" />
                      </div>
                      <div>
