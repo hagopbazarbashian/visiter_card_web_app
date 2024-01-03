@@ -15,7 +15,7 @@ use App\Http\Controllers\FirstCardGetcardController;
 // Admin System
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminHomeController;
-// User System 
+// User System
 use App\Http\Controllers\Admin\User\AdminUserController;
 use App\Http\Controllers\Customer\CustomerRegisterController;
 
@@ -101,3 +101,4 @@ Route::middleware(['admin:admin'])->group(function () {
 
 // nfc
 Route::get('nfc' , [NFCController::class , 'index']);
+ 
