@@ -46,8 +46,12 @@
                               <div class="watchlist-warpper card-hover-style-two">
                                  <div class="block-images position-relative w-100">
                                     <div class="img-box" style="background-color: #yourBackgroundColor;">
+                                       <a  class="btn sty"  id="triggerButton{{$filteredCardform->id}}">
+                                          <i class="fa-solid fa-bars"></i>
+                                      </a> 
+                                        @include('User.modal_for_user_card')
                                         <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}">
-                                            <!-- Your card image code here -->
+                                            <!-- Your card image code here --> 
                                             <a href="{{ route('single_card', $filteredCardform->id) }}">
                                             <div class="image-container">
                                                 @if($filteredCardform->photo)
@@ -62,7 +66,7 @@
                                             </a>
                                             <!-- Edit icon -->
                                         </button>
-                                          <!-- Modal Body -->
+                                       <!-- Modal Body -->
                                     <div class="modal-body text-center">
                                        <!-- Edit Icon -->
                                        <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon u">
@@ -90,10 +94,10 @@
                                        </a>
                                     </div>
                                     </div>
-
                                  </div>
                               </div>
                         </div>
+                        
                         @endforeach @endif
                      </div>
                   </div>
@@ -102,8 +106,6 @@
          </div>
       </div>
    </div>
-
-
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-bzZwK8hO06P5wGn5aPQkflkLgpoWB/JDl/G9E963b0gs1pLV9Z1glqQ8V0oH3h/R" crossorigin="anonymous"></script>
 <script>
