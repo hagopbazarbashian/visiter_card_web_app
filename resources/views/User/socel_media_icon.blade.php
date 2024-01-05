@@ -60,3 +60,6 @@
 <a  onclick="toggleInput('website')">
     <div class="bg-ico" id="website"><i class="fas fa-globe social website fa-3x"></i></div>
 </a>
+<a onclick="toggleInput('pdf')">
+    <div class="bg-ico" id="pdf"><i class="fas fa-file social file fa-3x"></i></div>
+</a>

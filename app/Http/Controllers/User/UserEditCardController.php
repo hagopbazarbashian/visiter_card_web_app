@@ -86,7 +86,7 @@ class UserEditCardController extends Controller
     $cardform = Cardform::findOrFail($id);
 
     // Check if a new photo is provided
-    if ($request->hasFile('photo')) { 
+    if ($request->hasFile('photo')) {
         $image = $request->file('photo');
         $logoFileName = $image->hashName();
         $destinationPath = public_path('user_image');
@@ -108,13 +108,13 @@ class UserEditCardController extends Controller
         $logos = $request->file('logo');
         $logo = $logos->hashName(); // Fixed variable name
         $Path = public_path('logo');
-    
+
         // Move the uploaded image to the destination folder
         $logos->move($Path, $logo);
-    
+
         // Path to the saved logo image
         $logoImagePath = $Path . '/' . $logo;
-    
+
         // Update record with new photo information
         $cardform->update([
             'logo' => $logo,
@@ -138,7 +138,7 @@ class UserEditCardController extends Controller
         'date'=>$request->date
     ]);
 
-    return redirect()->back()->with('succes', 'Record updated successfully.');
+      return redirect()->back()->with('succes', 'Record updated successfully.');
     }
 
     /**
@@ -154,4 +154,7 @@ class UserEditCardController extends Controller
         return redirect()->back()->with('succes', 'Deleted successfully');
 
     }
+
+
+    
 }

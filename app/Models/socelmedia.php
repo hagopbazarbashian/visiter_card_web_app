@@ -31,6 +31,7 @@ class socelmedia extends Model
         'twitch',
         'link',
         'website',
+        'doc'
 
 
     ];

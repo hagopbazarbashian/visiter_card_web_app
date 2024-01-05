@@ -1,5 +1,6 @@
+
 <!-- Your existing form fields go here -->
-@if ($socelmedia->facebook > 0))
+@if ($socelmedia->facebook > 0)
 <div class="" id="facebookInput">
    <label for="facebookUsername">Facebook Username</label>
    <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook profile link" value="{{ $socelmedia->facebook ?? '' }}" />
@@ -94,7 +95,7 @@
    <label for="telegramUsername">telegram Username</label>
    <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your telegram profile name" value="{{ $socelmedia->telegram ?? '' }}" />
 </div>
-@else
+@else 
 <div class="social-media-input" id="telegramInput">
    <label for="telegramUsername">telegram Username</label>
    <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your telegram profile name" value="{{ $socelmedia->telegram ?? '' }}" />
@@ -192,12 +193,37 @@
 </div>
 @endif @if ($socelmedia->website > 0)
 <div class="" id="websiteInput">
-   <label for="websiteUsername">website Username</label>
+   <label for="websiteUsername">Website Link</label>
    <input type="text" id="twitchUsername" name="website" placeholder="Enter your website" value="{{ $socelmedia->website ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="websiteInput">
-   <label for="websiteUsername">website Username</label>
+   <label for="websiteUsername">Website Link</label>
    <input type="text" id="twitchUsername" name="website" placeholder="Enter your website" value="{{ $socelmedia->website ?? '' }}" />
 </div>
 @endif
+@if ($socelmedia->doc > 0)
+<div class="" id="pdfInput">
+    <label for="pdffile">PDF File</label>
+    <input type="file" id="pdffile" name="doc" accept=".pdf" value="{{$socelmedia->doc}}"/>
+    <a href="#" class="delete-link" onclick="deleteFile({{$socelmedia->id}})">
+        <i class="fa fa-trash delete-icon" aria-hidden="true"></i>
+    </a>
+</div>
+@else
+<div class="social-media-input" id="pdfInput">
+    <label for="pdfFile">PDF File</label>
+    <input type="file" id="pdffile" name="doc" accept=".pdf"  value="{{$socelmedia->doc}}"/>
+</div>
+@endif
+
+<script>
+    function deleteFile(fileId) {
+        // Construct the URL using the provided fileId
+        var deleteUrl = "{{ route('delete_file', ['id' => ':fileId']) }}".replace(':fileId', fileId);
+
+        // Navigate to the URL
+        window.location.href = deleteUrl;
+    }
+</script>
+

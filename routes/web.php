@@ -68,6 +68,9 @@ Route::middleware(['web:web'])->group(function () {
     Route::get('delete-card/{id}', [ShowFullVisiterCardController::class, 'delete'])->name('delete_card');
     Route::get('new-card', [UserFormController::class, 'index'])->name('new_card');
     Route::post('add-card', [UserFormController::class, 'store'])->name('add_card');
+    //Delete Logo File Profile Image
+    Route::get('delete-file/{id}', [ShowFullVisiterCardController::class, 'deletefileinfo'])->name('delete_file');
+    Route::get('delete-profile-image/{id}', [ShowFullVisiterCardController::class, 'deleteprofileimage'])->name('delete_profile');
     //Duplicate System
     Route::get('/cardforms/{id}/duplicate', [DuplicateController::class, 'duplicate'])->name('duplicate');
 
@@ -101,4 +104,3 @@ Route::middleware(['admin:admin'])->group(function () {
 
 // nfc
 Route::get('nfc' , [NFCController::class , 'index']);
- 

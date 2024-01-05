@@ -94,7 +94,7 @@ class ShowFullVisiterCardController extends Controller
             $updateData = [
                 'facebook' => $request->facebook,
                 'pinterest' => $request->pinterest,
-                'twitter' => $request->twitter,  
+                'twitter' => $request->twitter,
                 'instagram' => $request->instagram,
                 'whatsapp' => $request->whatsapp,
                 'youtube' => $request->youtube,
@@ -116,9 +116,24 @@ class ShowFullVisiterCardController extends Controller
 
             $updateResult = $media->update($updateData);
 
+            // Check if a new PDF file is provided
+            if ($request->hasFile('doc')) {
+                $pdfFile = $request->file('doc');
+                $pdfFileName = $pdfFile->hashName();
+                $pdfDestinationPath = public_path('pdf'); // Change the path as needed
+
+                // Move the uploaded PDF file to the destination folder
+                $pdfFile->move($pdfDestinationPath, $pdfFileName);
+
+                // Update record with new PDF information
+                $media->update([
+                    'doc' => $pdfFileName,
+                ]);
+            }
+
             if ($updateResult) {
                 // Update successful
-                return redirect()->back()->with('succes', 'Social media information updated successfully.');
+                return redirect()->route('home')->with('succes', 'Record updated successfully.');
             } else {
                 // Update failed
                 return redirect()->back()->with('error', 'Failed to update social media information.');
@@ -128,7 +143,7 @@ class ShowFullVisiterCardController extends Controller
                 return redirect()->back()->with('error', 'Social media record not found.');
             }
 
-            return redirect()->back()->with('succes', 'Record updated successfully.');
+            return redirect()->route('home')->with('succes', 'Record updated successfully.');
      }
 
         public function delete(Request $request , $id){
@@ -163,6 +178,46 @@ class ShowFullVisiterCardController extends Controller
             $cardform->delete();
 
             return redirect()->back()->with('succes', 'Card and associated media deleted successfully.');
+
+        }
+
+
+        public function deletefileinfo(Request $request , $id){
+
+            $media = socelmedia::find($id);
+
+            if ($media->doc) {
+                $photoPath = public_path('pdf') . '/' . $media->doc;
+                if (file_exists($photoPath)) {
+                    unlink($photoPath);
+                }
+            }
+
+            $media->update([
+                'doc'=>''
+
+            ]);
+
+            return redirect()->back()->with('succes','Deleted successfully');
+        }
+
+        public function deleteprofileimage(Request $request , $id){
+
+            $media = cardform::find($id);
+
+            if ($media->photo) {
+                $photoPath = public_path('user_image') . '/' . $media->photo;
+                if (file_exists($photoPath)) {
+                    unlink($photoPath);
+                }
+            }
+
+            $media->update([
+                'photo'=>''
+
+            ]);
+
+            return redirect()->back()->with('succes','Deleted successfully');
 
         }
 }

@@ -8,29 +8,31 @@
             </div>
             <!-- Modal Body -->
             <div class="modal-body">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between y">
                     <div>Edit Card</div>
-                    <div> 
+                    <div>
                         <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon u">
                          <i class="fas fa-edit fa-1x" style="color: #68b7e2;"></i>
                         </a>
                     </div>
                 </div>
+                <div class="d-flex justify-content-between y">
+                    <div>Delete Card</div>
+                    <div>
+                        <a href="{{ route('delete_card', $filteredCardform->id) }}" class="edit-icon u">
+                            <i class="fas fa-trash-alt fa-1x" style="color: #68b7e2;"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between y">
+                    <div>Duplicate Card</div>
+                    <div>
+                        <a href="{{route('duplicate' ,$filteredCardform->id)}}" class="edit-icon u">
+                            <i class="fas fa-copy fa-1x" style="color: #68b7e2;"></i>
+                        </a>
+                    </div>
+                </div>
 
-                
-            
-                {{-- <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon u" style="display: flex; align-items: center; margin-bottom: 20px; text-decoration: underline;">
-                    <span style="margin-right: 10px;">Edit</span><i class="fas fa-edit fa-2x" style="color: #68b7e2; font-size: 19px;"></i>
-                </a>
-            
-                <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon u" style="display: flex; align-items: center; margin-bottom: 20px; text-decoration: underline;">
-                    <span style="margin-right: 10px;">Edit</span><i class="fas fa-edit fa-2x" style="color: #68b7e2; font-size: 19px;"></i>
-                </a>
-            
-                <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon u" style="display: flex; align-items: center; margin-bottom: 20px; text-decoration: underline;">
-                    <span style="margin-right: 10px;">Edit</span><i class="fas fa-edit fa-2x" style="color: #68b7e2; font-size: 19px;"></i>
-                </a>  --}}
-            
             </div>
         </div>
     </div>

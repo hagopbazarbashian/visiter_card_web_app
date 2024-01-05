@@ -248,8 +248,65 @@ svg {
     top: 7px;
     right: 13px;
     z-index: 999;
+    color:black;
 }
 
 .card-hover-style-two .block-images .img-box{
-    -webkit-transform: scale3d(1.1, 1.1, 1) translate3d(1%, 0, 0) perspective(31.25em) !important;
+    -webkit-transform: scale3d(1.1, 1.1, 1) translate3d(0%, 0, 0) perspective(31.25em) !important;
+
+}
+.y{
+    margin: 9px 0 0 0 !important;
+}
+.share{
+    background-color:#68b7e2 !important;
+    border-top-left-radius: 20px 20px !important;
+    border-top-right-radius: 20px 20px !important;
+    border-bottom-left-radius: 20px 20px !important;
+    width: 95px;
+    border-bottom-right-radius: 20px 20px !important;
+    height: 16px;
+    text-align: center;
+}
+
+.sh:before{
+    position: absolute;
+    top: 10px;
+    left: 80px;
+}
+
+
+.pdf-input-container {
+    margin-bottom: 10px;
+}
+
+.input-with-delete {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#pdffile {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.delete-icon {
+    cursor: pointer;
+    font-size: 16px;
+    color:#68b7e2;
+    position: absolute;
+    right: 45px;
+    /* top: 40px; */
+    bottom: 101px;
+}
+
+.delete-icon-icon{
+    cursor: pointer;
+    font-size: 28px;
+    position: ab;
+    color: #68b7e2;
+    right: 120px;
+    position: relative;
+    bottom: 30px;
 }

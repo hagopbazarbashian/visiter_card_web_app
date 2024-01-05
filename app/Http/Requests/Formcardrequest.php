@@ -27,6 +27,7 @@ class Formcardrequest extends FormRequest
            'photo'=>'max:2048|mimes:png,jpg,jpeg',
            'logo'=>'max:2048|mimes:png,jpg,jpeg',
            'full_name'=>'required',
+           'doc'=>'nullable|mimes:pdf|max:10240'
         ];
     }
 }

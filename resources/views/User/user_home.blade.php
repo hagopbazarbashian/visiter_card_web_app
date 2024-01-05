@@ -48,10 +48,10 @@
                                     <div class="img-box" style="background-color: #yourBackgroundColor;">
                                        <a  class="btn sty"  id="triggerButton{{$filteredCardform->id}}">
                                           <i class="fa-solid fa-bars"></i>
-                                      </a> 
+                                      </a>
                                         @include('User.modal_for_user_card')
                                         <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}">
-                                            <!-- Your card image code here --> 
+                                            <!-- Your card image code here -->
                                             <a href="{{ route('single_card', $filteredCardform->id) }}">
                                             <div class="image-container">
                                                 @if($filteredCardform->photo)
@@ -67,37 +67,19 @@
                                             <!-- Edit icon -->
                                         </button>
                                        <!-- Modal Body -->
-                                    <div class="modal-body text-center">
-                                       <!-- Edit Icon -->
-                                       <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon u">
-                                          <i class="fas fa-edit fa-2x" style="color: #68b7e2; margin-right: 20px;font-size: 19px;"></i>
-                                       </a>
-                                       <form id="deleteForm{{$filteredCardform->id}}" action="{{ route('delete_card', $filteredCardform->id) }}" style="display: inline; margin: 0; padding: 0;">
-                                       @csrf
-                                       @method('DELETE')
-                                          <!-- Delete Icon -->
-                                          <a href="#"  class="delete-icon u"  data-delete-id="{{$filteredCardform->id}}">
-                                             <i class="fas fa-trash-alt fa-2x" style="color: #68b7e2; margin-right: 20px;font-size: 19px;"></i>
-                                          </a>
-                                       </form>
-                                       <!-- QR Icon -->
-                                       <a  id="qr-icon" class="qr-icon u" data-url="{{ route('single_card', $filteredCardform->id) }}">
-                                          <i class="fas fa-qrcode fa-2x" style="color: #68b7e2; margin-right: 20px;font-size: 19px;"></i>
-                                       </a>
-                                       <div class="qrcode-container text-center" style="display: none;">
-                                          <div class="qrcode-close" style="cursor: pointer;">&times;</div>
-                                          <div class="qrcode"></div>
-                                      </div>
-                                       <!--Duplicate Icon -->
-                                       <a href="{{route('duplicate' ,$filteredCardform->id)}}" class="duplicate-icon u">
-                                          <i class="fas fa-copy fa-2x" style="color: #68b7e2;margin-right: 20px; font-size: 19px;"></i>
-                                       </a>
-                                    </div>
-                                    </div>
+                                        <div class="modal-body text-center">
+                                            <a  id="qr-icon" class="qr-icon btn  share" data-url="{{ route('single_card', $filteredCardform->id) }}">
+                                                <i class="fa-regular fa-paper-plane tr sh"></i>
+                                            </a>
+                                        </div>
+                                        <div class="qrcode-container text-center" style="display: none;">
+                                            <div class="qrcode-close" style="cursor: pointer;">&times;</div>
+                                            <div class="qrcode"></div>
+                                        </div>
+                                        </div>
                                  </div>
                               </div>
                         </div>
-                        
                         @endforeach @endif
                      </div>
                   </div>

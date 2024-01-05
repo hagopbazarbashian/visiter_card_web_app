@@ -39,6 +39,7 @@ return new class extends Migration
             $table->string('twitch')->nullable();
             $table->string('link')->nullable();
             $table->string('website')->nullable();
+            $table->string('doc')->nullable();
             $table->timestamps();
         });
     }

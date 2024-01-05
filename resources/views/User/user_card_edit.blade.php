@@ -112,42 +112,15 @@ input[type=checkbox]:checked + label{
          <div class="content-details iq-custom-tab-style-two">
             <div class="tab-content px-0">
                <div id="playlist" class="tab-pane animated fadeInUp active show" role="tabpanel">
-                  {{-- <section id="card" class="card">
-                     <div id="highlight"></div>
-                     <section class="card__front">
-                        <div class="card__header">
-                           <div>{{ $cardform->full_name }}</div>
-                        </div>
-                        <div id="card_number" class="card__number">
-                           <!-- Your card number content goes here -->
-                        </div>
-                        <div class="card__image">
-                           @if($cardform->photo)
-                           <img src="{{ asset('/assets/images/logo.png') }}" />
-                           @else
-                           <img src="{{ asset('/assets/images/logo.png') }}" />
-                           @endif
-                        </div>
-                        <div class="card__footer">
-                           <!-- Your card footer content goes here -->
-                        </div>
-                     </section>
-                     <section class="card__back">
-                        <div class="card__image">
-                           @if($cardform->photo)
-                           <img src="{{ asset('/assets/images/logo.png') }}" />
-                           @else
-                           <img src="{{ asset('/assets/images/logo.png') }}" />
-                           @endif
-                        </div>
-                     </section>
-                  </section> --}}
                   <form method="post" action="{{route('full_visiter_card_update',$cardform->id)}}" class="form" enctype="multipart/form-data">
                      @csrf
                     <div class="tb-container">
                         <div class="tb-img-view">
                            @if ($cardform->photo)
                             <img src="{{ asset('user_image/' . $cardform->photo) }}"/>
+                            <a href="#" class="delete-link" onclick="deleteprofile({{$socelmedia->id}})">
+                                <i class="fa fa-trash delete-icon-icon" aria-hidden="true"></i>
+                            </a>
                            @endif
                            <img class="profile" id="tb-image" />
                         </div>
@@ -212,7 +185,7 @@ input[type=checkbox]:checked + label{
                            @include('User.socel_media_icon')
                         </div>
                      </div>
-                     @include('User.input_socel_media_for_edit_page') 
+                     @include('User.input_socel_media_for_edit_page')
                      <div class="full-button">
                         <div class="iq-button" style="display: flex; justify-content: space-around;">
                            <button type="submit" class="btn text-uppercase position-relative submit-button">
@@ -274,5 +247,14 @@ const fileUpload = (event) => {
     imagePreviewElement.style.display = "block";
   }
 };
+</script>
+<script>
+    function deleteprofile(fileId) {
+        // Construct the URL using the provided fileId
+        var deleteUrl = "{{ route('delete_profile', ['id' => ':fileId']) }}".replace(':fileId', fileId);
+
+        // Navigate to the URL
+        window.location.href = deleteUrl;
+    }
 </script>
 @endsection
