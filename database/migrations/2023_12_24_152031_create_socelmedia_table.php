@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('pinterest')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
+            $table->string('instagram2')->nullable();
+            $table->string('instagram3')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('youtube')->nullable();
 

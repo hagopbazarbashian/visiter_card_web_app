@@ -57,8 +57,26 @@ class UserFormController extends Controller
                 $logoFileNameee = ''; // Use a different variable name to store the filename
             }
 
+            // Check if a new PDF file is provided
+             $pdf = $request->file('doc');
+             if($pdf) {
+                // If an image is uploaded
+                $logopdfNameee = $pdf->hashName();
+                $destinationPathh = public_path('pdf');
+
+                // Move the uploaded image to the destination folder
+                $pdf->move($destinationPathh, $logopdfNameee);
+
+                // Path to the saved logo image
+                $logoImagePath = $destinationPathh . '/' . $logopdfNameee;
+            } else {
+                // If no image is uploaded, use the default image
+                $logopdfNameee = ''; // Use a different variable name to store the filename
+            }
+            
+
                $cardform = cardform::create([
-               'user_id' => Auth()->user()->id,
+               'user_id' => Auth()->user()->id, 
                'photo' => $logoFileName,
                'full_name' => $request->full_name,
                'title' => $request->title,
@@ -75,11 +93,11 @@ class UserFormController extends Controller
                $socelmedia = socelmedia::create([
                'cardform_id' => $cardform->id,
                'facebook' => $request->facebook,
-               'pinterest' => $request->full_name,
-               'twitter' => $request->title,
-               'instagram' => $request->department,
-               'whatsapp' => $request->company,
-               'youtube' => $request->headline,
+               'pinterest' => $request->pinterest,
+               'twitter' => $request->twitter,
+               'instagram' => $request->instagram,
+               'whatsapp' => $request->whatsapp,
+               'youtube' => $request->youtube,
 
 
                'tiktok' => $request->tiktok,
@@ -97,9 +115,10 @@ class UserFormController extends Controller
                'twitch' => $request->twitch,
                'link' => $request->link,
                'website' => $request->website,
+               'doc'=>$logopdfNameee
             ]);
 
-            return redirect()->back()->with('succes', 'Your card info has been registered successfully. You can use it.');
+            return redirect()->route('home')->with('succes', 'Your card info has been registered successfully. You can use it.');
 
 
      }

@@ -169,6 +169,14 @@ class ShowFullVisiterCardController extends Controller
                 }
             }
 
+            // Delete the PDf file
+            if ($media->doc) {
+                $photoPath = public_path('pdf') . '/' . $media->doc;
+                if (file_exists($photoPath)) {
+                    unlink($photoPath);
+                }
+            }
+
             // Delete the socelmedia record
             if ($media) {
                 $media->delete();
@@ -210,7 +218,7 @@ class ShowFullVisiterCardController extends Controller
                 if (file_exists($photoPath)) {
                     unlink($photoPath);
                 }
-            }
+            } 
 
             $media->update([
                 'photo'=>''
@@ -220,4 +228,24 @@ class ShowFullVisiterCardController extends Controller
             return redirect()->back()->with('succes','Deleted successfully');
 
         }
+
+        public function deleteprologo(Request $request ,$id){
+
+            $media = cardform::find($id); 
+
+                if ($media->logo) {
+                    $photoPath = public_path('logo') . '/' . $media->logo;
+                    if (file_exists($photoPath)) {
+                        unlink($photoPath);
+                    }
+                }
+
+                $media->update([
+                    'logo'=>''
+
+                ]);
+
+                return redirect()->back()->with('succes','Deleted successfully');
+            
+            }
 }

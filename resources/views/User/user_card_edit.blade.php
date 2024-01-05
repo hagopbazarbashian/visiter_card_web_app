@@ -127,10 +127,21 @@ input[type=checkbox]:checked + label{
                         <label for="tb-file-upload">Upload Profile Image</label>
                         <input type="file" name="photo" id="tb-file-upload" accept="image/*" onchange="fileUpload(event);" />
                      </div>
+                     @if ($cardform->logo)
                      <div>
                         <label for="holder">Add Your Logo</label>
                         <input type="file" name="logo" accept="image/*" value="{{$cardform->logo ?? ''}}" />
+                         <a href="#" class="delete-link" onclick="deleteprologo({{$socelmedia->id}})">
+                                <i class="fa fa-trash delete-icon logooo" aria-hidden="true" style="color:red"></i>
+                         </a>
                      </div>
+                     @else
+                        <div>
+                        <label for="holder">Add Your Logo</label>
+                        <input type="file" name="logo" accept="image/*" value="{{$cardform->logo ?? ''}}" />
+                     </div>
+                     @endif
+                     
                      <div>
                         <label for="holder">Full Name</label>
                         <input type="text" name="full_name" value="{{$cardform->full_name ?? ''}}" />
@@ -247,14 +258,5 @@ const fileUpload = (event) => {
     imagePreviewElement.style.display = "block";
   }
 };
-</script>
-<script>
-    function deleteprofile(fileId) {
-        // Construct the URL using the provided fileId
-        var deleteUrl = "{{ route('delete_profile', ['id' => ':fileId']) }}".replace(':fileId', fileId);
-
-        // Navigate to the URL
-        window.location.href = deleteUrl;
-    }
 </script>
 @endsection

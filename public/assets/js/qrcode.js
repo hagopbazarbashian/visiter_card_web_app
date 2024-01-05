@@ -56,8 +56,9 @@ document.querySelectorAll(".qr-icon").forEach(function (qrIcon) {
         var qrcode = new QRCode(qrcodeDiv, {
             text: url,
             width: 128, // Set the width as needed
-            height: 128 // Set the height as needed
+            height: 128 // Set the height as needed 
         });
+        
 
         // Append the new container to the body
         document.body.appendChild(qrcodeContainer);

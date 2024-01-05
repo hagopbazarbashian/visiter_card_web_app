@@ -66,11 +66,12 @@ Route::middleware(['web:web'])->group(function () {
     Route::get('full-visiter-card/{id}', [ShowFullVisiterCardController::class, 'index'])->name('full_visiter_card');
     Route::post('full-visiter-card-update/{id}', [ShowFullVisiterCardController::class, 'update'])->name('full_visiter_card_update');
     Route::get('delete-card/{id}', [ShowFullVisiterCardController::class, 'delete'])->name('delete_card');
-    Route::get('new-card', [UserFormController::class, 'index'])->name('new_card');
+    Route::get('new-card', [UserFormController::class, 'index'])->name('new_card'); 
     Route::post('add-card', [UserFormController::class, 'store'])->name('add_card');
     //Delete Logo File Profile Image
     Route::get('delete-file/{id}', [ShowFullVisiterCardController::class, 'deletefileinfo'])->name('delete_file');
     Route::get('delete-profile-image/{id}', [ShowFullVisiterCardController::class, 'deleteprofileimage'])->name('delete_profile');
+    Route::get('delete-logo/{id}', [ShowFullVisiterCardController::class, 'deleteprologo'])->name('delete_logo');
     //Duplicate System
     Route::get('/cardforms/{id}/duplicate', [DuplicateController::class, 'duplicate'])->name('duplicate');
 

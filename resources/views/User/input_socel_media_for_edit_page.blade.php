@@ -217,10 +217,28 @@
 </div>
 @endif
 
-<script>
+<script> 
     function deleteFile(fileId) {
         // Construct the URL using the provided fileId
         var deleteUrl = "{{ route('delete_file', ['id' => ':fileId']) }}".replace(':fileId', fileId);
+
+        // Navigate to the URL
+        window.location.href = deleteUrl;
+    }
+</script>
+<script>
+    function deleteprofile(fileId) {
+        // Construct the URL using the provided fileId
+        var deleteUrl = "{{ route('delete_profile', ['id' => ':fileId']) }}".replace(':fileId', fileId);
+
+        // Navigate to the URL
+        window.location.href = deleteUrl;
+    }
+</script>
+<script>
+    function deleteprologo(fileId) {
+        // Construct the URL using the provided fileId
+        var deleteUrl = "{{ route('delete_logo', ['id' => ':fileId']) }}".replace(':fileId', fileId);
 
         // Navigate to the URL
         window.location.href = deleteUrl;
