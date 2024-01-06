@@ -38,12 +38,13 @@
                     HEADER
 ===========================================-->
 <header id="home">
-    <!--HEADER BACKGROUND-->
+    <!--HEADER BACKGROUND--> 
     <div class="header-background section">
         <!-- WAVE DESIGN -->
+        {{-- 43 for wave --}}
         <div class="waveContainer">
             <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="viewBox">
-              <path d="M0.00,49.98 C254.51,72.06 306.43,22.41 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" class="path">
+              <path d="M0.00,49.98 C254.51,72.06 306.43,40.41 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" class="path">
               </path>
             </svg>
           </div>
@@ -54,12 +55,15 @@
     @yield('user_card')
 </div>
 
+
 <!--==========================================
                      SCROLL TO TOP
 ===========================================-->
-<a href="#" class="btn waves-effect-share"  id="shareButton" ><i class="fa-regular fa-paper-plane"></i> Share</a>
 
-@include('user_card_layout.footer')
+<div class="ff">
+<a href="#" class="btn waves-effect-share"  id="shareButton" ><i class="fa-regular fa-paper-plane"></i> Share</a>
+</div>
+
 @include('user_card_layout.js')
 </body>
 </html>

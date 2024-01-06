@@ -90,33 +90,10 @@ class UserFormController extends Controller
                'logo' => $logoFileNameee,
                ]);
 
-               $socelmedia = socelmedia::create([
-               'cardform_id' => $cardform->id,
-               'facebook' => $request->facebook,
-               'pinterest' => $request->pinterest,
-               'twitter' => $request->twitter,
-               'instagram' => $request->instagram,
-               'whatsapp' => $request->whatsapp,
-               'youtube' => $request->youtube,
-
-
-               'tiktok' => $request->tiktok,
-               'linkedin' => $request->linkedin,
-               'snapchat' => $request->snapchat,
-               'telegram' => $request->telegram,
-               'discord' => $request->discord,
-               'skype' => $request->skype,
-               'paypal' => $request->paypal,
-               'spotify' => $request->spotify,
-               'applemusic' => $request->applemusic,
-
-               'soundcloud' => $request->soundcloud,
-               'behance' => $request->behance,
-               'twitch' => $request->twitch,
-               'link' => $request->link,
-               'website' => $request->website,
-               'doc'=>$logopdfNameee
-            ]);
+              $socelmedia = socelmedia::create([
+                'cardform_id' => $cardform->id,
+                'doc' => $logopdfNameee,
+                ] + $request->all());
 
             return redirect()->route('home')->with('succes', 'Your card info has been registered successfully. You can use it.');
 

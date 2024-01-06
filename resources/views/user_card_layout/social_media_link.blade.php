@@ -1,9 +1,9 @@
 <ul class="profile-list">
     @if ($cardform->email)
-    <div class="your-div-class">
+    <div class="your-div-class"> 
        <li class="clearfix">
           <span class="title"><i class="fa fa-envelope ic"></i></span>
-          <a href="mailto:{{ $cardform->email }}"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->email, $limit = 20, $end = '...') }}</span></a>
+          <a href="mailto:{{ $cardform->email }}"><span class="content">{{ $cardform->email ?? ''}}</span></a>
        </li>
     </div>
     @endif
@@ -15,11 +15,19 @@
        </li>
     </div>
     @endif
+    @if ($cardform->socelmedia->facebook)
+    <div class="your-div-class"> 
+       <li class="clearfix">
+          <span class="title"><i class="fa fa-facebook ic"></i></span>
+          <a href="{{ $cardform->socelmedia->facebook }}" target="_blank"><span class="content">{{ $cardform->socelmedia->facebookprofilename }}</span></a>
+       </li>
+    </div>
+    @endif 
     @if ($cardform->socelmedia->website)
     <div class="your-div-class">
        <li class="clearfix">
-          <span class="title"><i class="material-icons ic"></i></span>
-          <a href="{{ $cardform->socelmedia->website }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->website, $limit = 20, $end = '...') }}</span></a>
+          <span class="title"><i class="fa fa-globe ic"></i></span>
+          <a href="{{ $cardform->socelmedia->website }}" target="_blank"><span class="content">{{ $cardform->socelmedia->website }}</span></a>
        </li>
     </div>
     @endif
@@ -31,14 +39,7 @@
        </li>
     </div>
     @endif
-    @if ($cardform->socelmedia->facebook)
-    <div class="your-div-class">
-       <li class="clearfix">
-          <span class="title"><i class="fa fa-facebook ic"></i></span>
-          <a href="{{ $cardform->socelmedia->facebook }}"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebook, $limit = 20, $end = '...') }}</span></a>
-       </li>
-    </div>
-    @endif @if ($cardform->socelmedia->pinterest)
+    @if ($cardform->socelmedia->pinterest)
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-pinterest ic"></i></span>
@@ -178,4 +179,5 @@
        </li>
     </div>
     @endif
+    @include('user_card_layout.footer')
  </ul>

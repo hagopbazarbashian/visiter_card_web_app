@@ -17,11 +17,10 @@ return new class extends Migration
             $table->id();
             $table->integer('cardform_id');
             $table->string('facebook')->nullable();
+            $table->string('facebookprofilename')->nullable();
             $table->string('pinterest')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
-            $table->string('instagram2')->nullable();
-            $table->string('instagram3')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('youtube')->nullable();
 
@@ -41,6 +40,7 @@ return new class extends Migration
             $table->string('twitch')->nullable();
             $table->string('link')->nullable();
             $table->string('website')->nullable();
+            $table->string('address')->nullable();
             $table->string('doc')->nullable();
             $table->timestamps();
         });

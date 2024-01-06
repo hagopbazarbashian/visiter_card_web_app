@@ -302,7 +302,7 @@ svg {
 }
 
 .delete-icon-icon{
-    cursor: pointer;
+    cursor: pointer; 
     font-size: 28px;
     position: ab;
     color: #68b7e2;
@@ -311,9 +311,9 @@ svg {
     bottom: 30px;
 }
 
-.logooo{
+.link-for-logo{
     color: #68b7e2 !important;
     position: absolute;
-    top: 457px !important;
+    top: 271px !important;
+    right: 25px !important;;
 }
-

@@ -1,207 +1,332 @@
 
 <!-- Your existing form fields go here -->
-@if ($socelmedia->facebook > 0)
+@if ($socelmedia->facebook > 0) 
 <div class="" id="facebookInput">
    <label for="facebookUsername">Facebook Username</label>
    <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook profile link" value="{{ $socelmedia->facebook ?? '' }}" />
+   <label for="facebookUsername">Display name</label>
+   <input type="text" id="facebookUsername" name="facebookprofilename" placeholder="Display name" value="{{ $socelmedia->facebookprofilename ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="facebookInput">
    <label for="facebookUsername">Facebook Username</label>
    <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook profile link" value="{{ $socelmedia->facebook ?? '' }}" />
+   <label for="facebookUsername">Display name</label>
+   <input type="text" id="facebookUsername" name="facebookprofilename" placeholder="Display name" value="{{ $socelmedia->facebookprofilename ?? '' }}" />
 </div>
 @endif @if ($socelmedia->pinterest > 0)
 <div class="" id="pinterestInput">
    <label for="pinterestUsername">Pinterest Username</label>
-   <input type="text" id="pinterestUsername" name="pinterest" placeholder="Enter your Pinterest profile link" value="{{ $socelmedia->pinterest ?? '' }}" />
+   <input type="text" id="pinterestUsername" name="pinterest" placeholder="Enter your Pinterest profile" value="{{ $socelmedia->pinterest ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="pinterestInput">
    <label for="pinterestUsername">Pinterest Username</label>
-   <input type="text" id="pinterestUsername" name="pinterest" placeholder="Enter your Pinterest profile link" value="{{ $socelmedia->pinterest ?? '' }}" />
+   <input type="text" id="pinterestUsername" name="pinterest" placeholder="Enter your Pinterest profile" value="{{ $socelmedia->pinterest ?? '' }}" />
 </div>
 @endif @if ($socelmedia->twitter > 0)
 <div class="" id="twitterInput">
-   <label for="twitterUsername">twitter Username</label>
-   <input type="text" id="twitterUsername" name="twitter" placeholder="Enter your twitter profile link" value="{{ $socelmedia->twitter ?? '' }}" />
+   <label for="twitterUsername">Twitter Username</label>
+   <input type="text" id="twitterUsername" name="twitter" placeholder="Enter your Twitter profile" value="{{ $socelmedia->twitter ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="twitterInput">
-   <label for="twitterUsername">twitter Username</label>
-   <input type="text" id="twitterUsername" name="twitter" placeholder="Enter your twitter profile link" value="{{ $socelmedia->twitter ?? '' }}" />
+   <label for="twitterUsername">Twitter Username</label>
+   <input type="text" id="twitterUsername" name="twitter" placeholder="Enter your Twitter profile" value="{{ $socelmedia->twitter ?? '' }}" />
 </div>
 @endif @if ($socelmedia->instagram > 0)
 <div class="" id="instagramInput">
-   <label for="instagramUsername">instagram Username</label>
-   <input type="text" id="instagramUsername" name="instagram" placeholder="Enter your instagram profile link" value="{{ $socelmedia->instagram ?? '' }}" />
+   <label for="instagramUsername">Instagram Username</label>
+   <input type="text" id="instagramUsername" name="instagram" placeholder="Enter your Instagram profile" value="{{ $socelmedia->instagram ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="instagramInput">
-   <label for="instagramUsername">instagram Username</label>
-   <input type="text" id="instagramUsername" name="instagram" placeholder="Enter your instagram profile link" value="{{ $socelmedia->instagram ?? '' }}" />
+   <label for="instagramUsername">Instagram Username</label>
+   <input type="text" id="instagramUsername" name="instagram" placeholder="Enter your Instagram profile" value="{{ $socelmedia->instagram ?? '' }}" />
 </div>
 @endif @if ($socelmedia->whatsapp > 0)
 <div class="" id="whatsappInput">
-   <label for="whatsappUsername">instagram Username</label>
-   <input type="text" id="whatsappUsername" name="whatsapp" placeholder="Enter your whatsapp number" value="{{ $socelmedia->whatsapp ?? '' }}" />
+   <label for="whatsappUsername">Whatsapp Number</label>
+   <input type="text" id="whatsappUsername" name="whatsapp" placeholder="Enter your Whatsapp number" value="{{ $socelmedia->whatsapp ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="whatsappInput">
-   <label for="whatsappUsername">instagram Username</label>
-   <input type="text" id="whatsappUsername" name="whatsapp" placeholder="Enter your whatsapp number" value="{{ $socelmedia->whatsapp ?? '' }}" />
+   <label for="whatsappUsername">Whatsapp Number</label>
+   <input type="text" id="whatsappUsername" name="whatsapp" placeholder="Enter your Whatsapp number" value="{{ $socelmedia->whatsapp ?? '' }}" />
 </div>
 @endif @if ($socelmedia->youtube > 0)
 <div class="" id="youtubeInput">
-   <label for="youtubeUsername">youtube Username</label>
-   <input type="text" id="youtubeUsername" name="youtube" placeholder="Enter your youtube profile link" value="{{ $socelmedia->youtube ?? '' }}" />
+   <label for="youtubeUsername">Youtube Username</label>
+   <input type="text" id="youtubeUsername" name="youtube" placeholder="Enter your Youtube profile" value="{{ $socelmedia->youtube ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="youtubeInput">
-   <label for="youtubeUsername">youtube Username</label>
-   <input type="text" id="youtubeUsername" name="youtube" placeholder="Enter your youtube profile link" value="{{ $socelmedia->youtube ?? '' }}" />
+   <label for="youtubeUsername">Youtube Username</label>
+   <input type="text" id="youtubeUsername" name="youtube" placeholder="Enter your Youtube profile" value="{{ $socelmedia->youtube ?? '' }}" />
 </div>
 @endif @if ($socelmedia->tiktok > 0)
 <div class="" id="tiktokInput">
-   <label for="tiktokUsername">tiktok Username</label>
-   <input type="text" id="tiktokUsername" name="tiktok" placeholder="Enter your tiktok profile link" value="{{ $socelmedia->tiktok ?? '' }}" />
+   <label for="tiktokUsername">Tiktok Username</label>
+   <input type="text" id="tiktokUsername" name="tiktok" placeholder="Enter your Tiktok profile" value="{{ $socelmedia->tiktok ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="tiktokInput">
-   <label for="tiktokUsername">tiktok Username</label>
-   <input type="text" id="tiktokUsername" name="tiktok" placeholder="Enter your tiktok profile link" value="{{ $socelmedia->tiktok ?? '' }}" />
+   <label for="tiktokUsername">Tiktok Username</label>
+   <input type="text" id="tiktokUsername" name="tiktok" placeholder="Enter your Tiktok profile" value="{{ $socelmedia->tiktok ?? '' }}" />
 </div>
 @endif @if ($socelmedia->linkedin > 0)
 <div class="" id="linkedinInput">
    <label for="linkedinUsername">linkedin Username</label>
-   <input type="text" id="linkedinUsername" name="linkedin" placeholder="Enter your linkedin profile link" value="{{ $socelmedia->linkedin ?? '' }}" />
+   <input type="text" id="linkedinUsername" name="linkedin" placeholder="Enter your Linkedin profile" value="{{ $socelmedia->linkedin ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="linkedinInput">
    <label for="linkedinUsername">linkedin Username</label>
-   <input type="text" id="linkedinUsername" name="linkedin" placeholder="Enter your linkedin profile link" value="{{ $socelmedia->linkedin ?? '' }}" />
+   <input type="text" id="linkedinUsername" name="linkedin" placeholder="Enter your Linkedin profile" value="{{ $socelmedia->linkedin ?? '' }}" />
 </div>
 @endif @if ($socelmedia->snapchat > 0)
 <div class="" id="snapchatInput">
-   <label for="snapchatUsername">snapchat Username</label>
-   <input type="text" id="snapchatUsername" name="snapchat" placeholder="Enter your snapchat profile link" value="{{ $socelmedia->snapchat ?? '' }}" />
+   <label for="snapchatUsername">Snapchat Username</label>
+   <input type="text" id="snapchatUsername" name="snapchat" placeholder="Enter your Snapchat profile" value="{{ $socelmedia->snapchat ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="snapchatInput">
-   <label for="snapchatUsername">snapchat Username</label>
-   <input type="text" id="snapchatUsername" name="snapchat" placeholder="Enter your snapchat profile link" value="{{ $socelmedia->snapchat ?? '' }}" />
+   <label for="snapchatUsername">Snapchat Username</label>
+   <input type="text" id="snapchatUsername" name="snapchat" placeholder="Enter your Snapchat profile" value="{{ $socelmedia->snapchat ?? '' }}" />
 </div>
 @endif @if ($socelmedia->telegram > 0)
 <div class="" id="telegramInput">
-   <label for="telegramUsername">telegram Username</label>
-   <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your telegram profile name" value="{{ $socelmedia->telegram ?? '' }}" />
+   <label for="telegramUsername">Telegram Username</label>
+   <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your Telegram profile" value="{{ $socelmedia->telegram ?? '' }}" />
 </div>
 @else 
 <div class="social-media-input" id="telegramInput">
-   <label for="telegramUsername">telegram Username</label>
-   <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your telegram profile name" value="{{ $socelmedia->telegram ?? '' }}" />
+   <label for="telegramUsername">Telegram Username</label>
+   <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your Telegram profile" value="{{ $socelmedia->telegram ?? '' }}" />
 </div>
 @endif @if ($socelmedia->discord > 0)
 <div class="" id="discordInput">
-   <label for="discordUsername">discord Username</label>
-   <input type="text" id="discordUsername" name="discord" placeholder="Enter your discord profile name" value="{{ $socelmedia->discord ?? '' }}" />
+   <label for="discordUsername">Discord Username</label>
+   <input type="text" id="discordUsername" name="discord" placeholder="Enter your Discord profile" value="{{ $socelmedia->discord ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="discordInput">
-   <label for="discordUsername">discord Username</label>
-   <input type="text" id="discordUsername" name="discord" placeholder="Enter your discord profile name" value="{{ $socelmedia->discord ?? '' }}" />
+   <label for="discordUsername">Discord Username</label>
+   <input type="text" id="discordUsername" name="discord" placeholder="Enter your Discord profile" value="{{ $socelmedia->discord ?? '' }}" />
 </div>
 @endif @if ($socelmedia->skype > 0)
 <div class="" id="skypeInput">
-   <label for="skypeUsername">skype Username</label>
-   <input type="text" id="skypeUsername" name="skype" placeholder="Enter your skype profile name" value="{{ $socelmedia->skype ?? '' }}" />
+   <label for="skypeUsername">Skype Username</label>
+   <input type="text" id="skypeUsername" name="skype" placeholder="Enter your Skype profile" value="{{ $socelmedia->skype ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="skypeInput">
-   <label for="skypeUsername">skype Username</label>
-   <input type="text" id="skypeUsername" name="skype" placeholder="Enter your skype profile name" value="{{ $socelmedia->skype ?? '' }}" />
+   <label for="skypeUsername">Skype Username</label>
+   <input type="text" id="skypeUsername" name="skype" placeholder="Enter your Skype profile" value="{{ $socelmedia->skype ?? '' }}" />
 </div>
 @endif @if ($socelmedia->paypal > 0)
 <div class="" id="paypalInput">
-   <label for="paypalUsername">paypal Username</label>
-   <input type="text" id="paypalUsername" name="paypal" placeholder="Enter your paypal profile name" value="{{ $socelmedia->paypal ?? '' }}" />
+   <label for="paypalUsername">Paypal Username</label>
+   <input type="text" id="paypalUsername" name="paypal" placeholder="Enter your Paypal profile" value="{{ $socelmedia->paypal ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="paypalInput">
-   <label for="paypalUsername">paypal Username</label>
-   <input type="text" id="paypalUsername" name="paypal" placeholder="Enter your paypal profile name" value="{{ $socelmedia->paypal ?? '' }}" />
+   <label for="paypalUsername">Paypal Username</label>
+   <input type="text" id="paypalUsername" name="paypal" placeholder="Enter your Paypal profile" value="{{ $socelmedia->paypal ?? '' }}" />
 </div>
 @endif @if ($socelmedia->spotify > 0)
 <div class="" id="spotifyInput">
-   <label for="spotifyUsername">spotify Username</label>
-   <input type="text" id="spotifyUsername" name="spotify" placeholder="Enter your spotify profile name" value="{{ $socelmedia->spotify ?? '' }}" />
+   <label for="spotifyUsername">Spotify Username</label>
+   <input type="text" id="spotifyUsername" name="spotify" placeholder="Enter your Spotify profile" value="{{ $socelmedia->spotify ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="spotifyInput">
-   <label for="spotifyUsername">spotify Username</label>
-   <input type="text" id="spotifyUsername" name="spotify" placeholder="Enter your spotify profile name" value="{{ $socelmedia->spotify ?? '' }}" />
+   <label for="spotifyUsername">Spotify Username</label>
+   <input type="text" id="spotifyUsername" name="spotify" placeholder="Enter your Spotify profile" value="{{ $socelmedia->spotify ?? '' }}" />
 </div>
 @endif @if ($socelmedia->applemusic > 0)
 <div class="" id="applemusicInput">
-   <label for="applemusicUsername">applemusic Username</label>
-   <input type="text" id="applemusicUsername" name="applemusic" placeholder="Enter your applemusic profile name" value="{{ $socelmedia->applemusic ?? '' }}" />
+   <label for="applemusicUsername">Applemusic Username</label>
+   <input type="text" id="applemusicUsername" name="applemusic" placeholder="Enter your Applemusic profile" value="{{ $socelmedia->applemusic ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="applemusicInput">
-   <label for="applemusicUsername">applemusic Username</label>
-   <input type="text" id="applemusicUsername" name="applemusic" placeholder="Enter your applemusic profile name" value="{{ $socelmedia->applemusic ?? '' }}" />
+   <label for="applemusicUsername">Applemusic Username</label>
+   <input type="text" id="applemusicUsername" name="applemusic" placeholder="Enter your Applemusic profile" value="{{ $socelmedia->applemusic ?? '' }}" />
 </div>
 @endif @if ($socelmedia->soundcloud > 0)
 <div class="" id="soundcloudInput">
-   <label for="soundcloudUsername">soundcloud Username</label>
-   <input type="text" id="soundcloudUsername" name="soundcloud" placeholder="Enter your soundcloud profile name" value="{{ $socelmedia->soundcloud ?? '' }}" />
+   <label for="soundcloudUsername">Soundcloud Username</label>
+   <input type="text" id="soundcloudUsername" name="soundcloud" placeholder="Enter your Soundcloud profile" value="{{ $socelmedia->soundcloud ?? '' }}" />
 </div>
 @else
 
 <div class="social-media-input" id="soundcloudInput">
-   <label for="soundcloudUsername">soundcloud Username</label>
-   <input type="text" id="soundcloudUsername" name="soundcloud" placeholder="Enter your soundcloud profile name" value="{{ $socelmedia->soundcloud ?? '' }}" />
+   <label for="soundcloudUsername">Soundcloud Username</label>
+   <input type="text" id="soundcloudUsername" name="soundcloud" placeholder="Enter your Soundcloud profile" value="{{ $socelmedia->soundcloud ?? '' }}" />
 </div>
 @endif @if ($socelmedia->behance > 0)
 <div class="" id="behanceInput">
-   <label for="behanceUsername">behance Username</label>
-   <input type="text" id="behanceUsername" name="behance" placeholder="Enter your behance profile name" value="{{ $socelmedia->behance ?? '' }}" />
+   <label for="behanceUsername">Behance Username</label>
+   <input type="text" id="behanceUsername" name="behance" placeholder="Enter your Behance profile" value="{{ $socelmedia->behance ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="behanceInput">
-   <label for="behanceUsername">behance Username</label>
-   <input type="text" id="behanceUsername" name="behance" placeholder="Enter your behance profile name" value="{{ $socelmedia->behance ?? '' }}" />
+   <label for="behanceUsername">Behance Username</label>
+   <input type="text" id="behanceUsername" name="behance" placeholder="Enter your Behance profile" value="{{ $socelmedia->behance ?? '' }}" />
 </div>
 @endif @if ($socelmedia->twitch > 0)
 <div class="" id="twitchInput">
-   <label for="twitchUsername">twitch Username</label>
-   <input type="text" id="twitchUsername" name="twitch" placeholder="Enter your twitch profile name" value="{{ $socelmedia->twitch ?? '' }}" />
+   <label for="twitchUsername">Twitch Username</label>
+   <input type="text" id="twitchUsername" name="twitch" placeholder="Enter your Twitch profile" value="{{ $socelmedia->twitch ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="twitchInput">
-   <label for="twitchUsername">twitch Username</label>
-   <input type="text" id="twitchUsername" name="twitch" placeholder="Enter your twitch profile name" value="{{ $socelmedia->twitch ?? '' }}" />
+   <label for="twitchUsername">Twitch Username</label>
+   <input type="text" id="twitchUsername" name="twitch" placeholder="Enter your Twitch profile" value="{{ $socelmedia->twitch ?? '' }}" />
 </div>
 @endif @if ($socelmedia->link > 0)
 <div class="" id="linkInput">
-   <label for="linkUsername">link Username</label>
-   <input type="text" id="linkUsername" name="link" placeholder="Enter your link" value="{{ $socelmedia->link ?? '' }}" />
+   <label for="linkUsername">Link</label>
+   <input type="text" id="linkUsername" name="link" placeholder="Enter your Link" value="{{ $socelmedia->link ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="linkInput">
-   <label for="linkUsername">link Username</label>
-   <input type="text" id="linkUsername" name="link" placeholder="Enter your link" value="{{ $socelmedia->link ?? '' }}" />
+   <label for="linkUsername">Link</label>
+   <input type="text" id="linkUsername" name="link" placeholder="Enter your Link" value="{{ $socelmedia->link ?? '' }}" />
 </div>
 @endif @if ($socelmedia->website > 0)
 <div class="" id="websiteInput">
    <label for="websiteUsername">Website Link</label>
-   <input type="text" id="twitchUsername" name="website" placeholder="Enter your website" value="{{ $socelmedia->website ?? '' }}" />
+   <input type="text" id="twitchUsername" name="website" placeholder="Enter your Website" value="{{ $socelmedia->website ?? '' }}" />
 </div>
 @else
 <div class="social-media-input" id="websiteInput">
    <label for="websiteUsername">Website Link</label>
-   <input type="text" id="twitchUsername" name="website" placeholder="Enter your website" value="{{ $socelmedia->website ?? '' }}" />
+   <input type="text" id="twitchUsername" name="website" placeholder="Enter your Website" value="{{ $socelmedia->website ?? '' }}" />
 </div>
 @endif
+
+@if ($socelmedia->address > 0)
+{{-- Start Addres --}}
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://api.opencagedata.com/geocode/v1/js?key=1de4ecc69ce340e4ba918ae16bffed6a"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<div class="" id="addressInput">
+   <label for="addressInput">Address</label>
+   <input type="text" id="addressInput" name="address" placeholder="Enter your Address" value="{{ $socelmedia->address ?? '' }}" onclick="initMap()" />
+   <div id="map" style="height: 300px;"></div>
+</div>
+
+<script>
+function initMap() {
+   var map = L.map('map').setView([0, 0], 8);
+
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+   }).addTo(map);
+
+   var input = document.getElementById('addressInput');
+   var marker;
+
+   input.addEventListener('focus', function () {
+      map.invalidateSize();
+      if (!marker) {
+         marker = L.marker([0, 0]).addTo(map);
+      }
+   });
+
+   input.addEventListener('input', function () {
+      var inputValue = input.value;
+      
+      if (inputValue) {
+         // Use OpenCage Geocoding API to get coordinates based on the address
+         opencage
+            .geocode({ q: inputValue })
+            .then(function (result) {
+               if (result && result.results && result.results.length > 0) {
+                  var coordinates = [
+                     result.results[0].geometry.lat,
+                     result.results[0].geometry.lng
+                  ];
+
+                  marker.setLatLng(coordinates);
+                  map.setView(coordinates, 17);
+               }
+            })
+            .catch(function (error) {
+               console.error('Error fetching coordinates:', error);
+            });
+      }
+   });
+}
+</script>
+{{-- End addres --}}
+@else
+{{-- Start Addres --}}
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://api.opencagedata.com/geocode/v1/js?key=1de4ecc69ce340e4ba918ae16bffed6a"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<div class="social-media-input" id="addressInput">
+   <label for="addressInput">Address</label>
+   <input type="text" id="addressInput" name="address" placeholder="Enter your Address" value="{{ $socelmedia->address ?? '' }}" onclick="initMap()" />
+   <div id="map" style="height: 300px;"></div>
+</div>
+
+<script>
+function initMap() {
+   var map = L.map('map').setView([0, 0], 8);
+
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+   }).addTo(map);
+
+   var input = document.getElementById('addressInput');
+   var marker;
+
+   input.addEventListener('focus', function () {
+      map.invalidateSize();
+      if (!marker) {
+         marker = L.marker([0, 0]).addTo(map);
+      }
+   });
+
+   input.addEventListener('input', function () {
+      var inputValue = input.value;
+      
+      if (inputValue) {
+         // Use OpenCage Geocoding API to get coordinates based on the address
+         opencage
+            .geocode({ q: inputValue })
+            .then(function (result) {
+               if (result && result.results && result.results.length > 0) {
+                  var coordinates = [
+                     result.results[0].geometry.lat,
+                     result.results[0].geometry.lng
+                  ];
+
+                  marker.setLatLng(coordinates);
+                  map.setView(coordinates, 17);
+               }
+            })
+            .catch(function (error) {
+               console.error('Error fetching coordinates:', error);
+            });
+      }
+   });
+}
+</script>
+{{-- End addres --}}
+@endif
+
+
+
+
+
 @if ($socelmedia->doc > 0)
 <div class="" id="pdfInput">
     <label for="pdffile">PDF File</label>

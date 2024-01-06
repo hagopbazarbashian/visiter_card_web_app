@@ -32,7 +32,7 @@
       #v-card-holder #v-card {
          background:#fff;
          box-shadow: none;
-         top: 135px;
+         top: 225px;
       }
 
       .your-div-class {
@@ -65,7 +65,7 @@
    .waves-effect{
       background-color: {{$cardform->color}} !important;
       width: 299px;
-      height: 50px;
+      height: 41px;
       font-weight: 900;
       border-top-left-radius: 20px 20px !important;
       border-top-right-radius: 20px 20px !important;

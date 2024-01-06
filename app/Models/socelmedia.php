@@ -10,6 +10,7 @@ class socelmedia extends Model
     protected $fillable = [
         'cardform_id',
         'facebook',
+        'facebookprofilename',
         'pinterest',
         'twitter',
         'instagram',
@@ -31,6 +32,7 @@ class socelmedia extends Model
         'twitch',
         'link',
         'website',
+        'address',
         'doc'
 
 

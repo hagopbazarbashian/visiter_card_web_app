@@ -1,98 +1,5 @@
 @extends('layout.app') @section('title'){{ 'Edit Your Your Card' }}@endsection @section('home')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<style>
-.panel {
-	position:relative;
-	width: 105px;
-	height: 90px;
-	 margin: -30px auto 30px;
-}
-
-input[type=checkbox]{
-  margin-left: -999px;
-}
-
-input[type=checkbox] + label {
-	background: #efefef;
-	position: absolute;
-	border:1px solid #8e8e8e;
-	box-shadow: 1px 2px 1px rgba(0,0,0, 0.2);
-	background: rgba(255,255,255,1);
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(158,155,158,1) 24%, rgba(102,102,102,1) 52%, rgba(235,235,235,1) 70%, rgba(214,214,214,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(24%, rgba(158,155,158,1)), color-stop(52%, rgba(102,102,102,1)), color-stop(70%, rgba(235,235,235,1)), color-stop(100%, rgba(214,214,214,1)));
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(158,155,158,1) 24%, rgba(102,102,102,1) 52%, rgba(235,235,235,1) 70%, rgba(214,214,214,1) 100%);
-	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(158,155,158,1) 24%, rgba(102,102,102,1) 52%, rgba(235,235,235,1) 70%, rgba(214,214,214,1) 100%);
-	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(158,155,158,1) 24%, rgba(102,102,102,1) 52%, rgba(235,235,235,1) 70%, rgba(214,214,214,1) 100%);
-	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(158,155,158,1) 24%, rgba(102,102,102,1) 52%, rgba(235,235,235,1) 70%, rgba(214,214,214,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d6d6d6', GradientType=0 );
-
-}
-
-.toggle{
-	display: block;
-  position: relative;
-	left:0;
-	width: 50px;
-	height: 50px;
-  margin-top: 1px;
-	border-radius: 50%;
-	cursor: pointer;
-	-webkit-transition: left .3s linear;
-	-moz-transition: left .3s linear;
-	-ms-transition: left .3s linear;
-	-o-transition: left .3s linear;
-	transition: left .3s linear;
-}
-
-input[type=checkbox]:checked + label{
-	left:44px;
-}
-
-.toggle-color{
-	display:block;
-	position: relative;
-	top: 8px;
-	left: 8px;
-	width: 35px;
-	height: 35px;
-	border-radius: 100%;
-	box-shadow: inset 0px 0px 15px rgba(0,0,0, 0.6), -1px -2px 2px rgba(138,138,138,0.8);
-}
-
-#onoff + label .toggle-color {
-	background:#fc0000;
-}
-#onoff:checked + label .toggle-color {
-	background:#a2fd00;
-}
-
-.inner-panel {
-	width: 95px;
-	height: 52px;
-	padding:0;
-	margin:0;
-	display: block;
-	background: #e4e4e4;
-	border-radius: 25px;
-	border: 1px solid #c1c2c2;
-	box-shadow: inset 0px 0px 12px rgba(0,0,0, 0.2), 0px 1px 1px #fff;
-}
-
-.inner-panel:after{
-	position: absolute;
-	top:40px;
-	color: #bdbdbd;
-	text-shadow: 1px 1px 1px #efefef;
-}
-#onoff:checked + label ~ .inner-panel:after {
-	content: "ON";
-	right:-30px;
-}
-#onoff + label ~ .inner-panel:after {
-	content: "OFF";
-	right:120px;
-}
-</style>
 <section class="section-padding-bottom">
    <div class="profile-box">
       <div class="container-fluid">
@@ -131,8 +38,8 @@ input[type=checkbox]:checked + label{
                      <div>
                         <label for="holder">Add Your Logo</label>
                         <input type="file" name="logo" accept="image/*" value="{{$cardform->logo ?? ''}}" />
-                         <a href="#" class="delete-link" onclick="deleteprologo({{$socelmedia->id}})">
-                                <i class="fa fa-trash delete-icon logooo" aria-hidden="true" style="color:red"></i>
+                         <a href="#" class="link-for-logo" onclick="deleteprologo({{$socelmedia->id}})">
+                           <i class="fa fa-trash  link-for-logo" aria-hidden="true"></i>
                          </a>
                      </div>
                      @else
@@ -147,7 +54,7 @@ input[type=checkbox]:checked + label{
                         <input type="text" name="full_name" value="{{$cardform->full_name ?? ''}}" />
                      </div>
                      <div>
-                        <label for="holder">Professional</label>
+                        <label for="holder">Job Position</label>
                         <input type="text" name="title" value="{{$cardform->title ?? ''}}" />
                      </div>
                      <div>

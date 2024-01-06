@@ -8,9 +8,9 @@
          <div id="v-card" class="card">
             <!-- PROFILE PICTURE -->
             @if ($cardform->logo)
-            <div id="profile" class="right">
+            {{-- <div id="profile" class="right">
                 <img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}" />
-            </div>
+            </div> --}}
             @endif
             <!--VIDEO CLOSE BUTTON-->
             <!--<div id="close-btn" class="btn-floating icon-close">
@@ -41,7 +41,7 @@
             <div class="infos">
                @include('user_card_layout.social_media_link')
             </div>
-            @include('user_card_layout.other')
+            {{-- @include('user_card_layout.other') --}}
          </div>
          <!--HTML 5 VIDEO-->
          <!-- <video id="html-video" class="video" poster="images/poster/poster.jpg" controls>

@@ -1,7 +1,9 @@
 <!-- Your existing form fields go here -->
 <div class="social-media-input" id="facebookInput">
-   <label for="facebookUsername">Facebook Username</label>
-   <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook" value="{{old('facebook')}}" />
+   <label for="facebookUsername">Facebook Link</label>
+   <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook Link" value="{{old('facebook')}}" />
+   <label for="facebookUsername">Display name</label>
+   <input type="text" id="facebookUsername" name="facebookprofilename" placeholder="Display name" value="{{old('facebookprofilename')}}" />
 </div>
 <div class="social-media-input" id="pinterestInput">
    <label for="pinterestUsername">Pinterest Username</label>
@@ -74,7 +76,7 @@
    <input type="text" id="twitchUsername" name="twitch" placeholder="Enter your Twitch" value="{{old('twitch')}}" />
 </div>
 
-<div class="social-media-input" id="linkInput">
+<div class="social-media-input" id="linkInput"> 
    <label for="linkUsername">Link</label>
    <input type="text" id="linkUsername" name="link" placeholder="Enter your Link" value="{{old('link')}}" />
 </div>
@@ -82,8 +84,66 @@
    <label for="websiteUsername">Website Link</label>
    <input type="text" id="twitchUsername" name="website" placeholder="Enter your Website" value="{{old('website')}}" />
 </div>
+{{-- Start Addres --}}
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://api.opencagedata.com/geocode/v1/js?key=1de4ecc69ce340e4ba918ae16bffed6a"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<div class="social-media-input" id="addressInput">
+   <label for="addressInput">Address</label>
+   <input type="text" id="addressInput" name="address" placeholder="Enter your Address" value="{{ old('address') }}" onclick="initMap()" />
+   <div id="map" style="height: 300px;"></div>
+</div>
+
+<script>
+function initMap() {
+   var map = L.map('map').setView([0, 0], 8);
+
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+   }).addTo(map);
+
+   var input = document.getElementById('addressInput');
+   var marker;
+
+   input.addEventListener('focus', function () {
+      map.invalidateSize();
+      if (!marker) {
+         marker = L.marker([0, 0]).addTo(map);
+      }
+   });
+
+   input.addEventListener('input', function () {
+      var inputValue = input.value;
+      
+      if (inputValue) {
+         // Use OpenCage Geocoding API to get coordinates based on the address
+         opencage
+            .geocode({ q: inputValue })
+            .then(function (result) {
+               if (result && result.results && result.results.length > 0) {
+                  var coordinates = [
+                     result.results[0].geometry.lat,
+                     result.results[0].geometry.lng
+                  ];
+
+                  marker.setLatLng(coordinates);
+                  map.setView(coordinates, 17);
+               }
+            })
+            .catch(function (error) {
+               console.error('Error fetching coordinates:', error);
+            });
+      }
+   });
+}
+</script>
+{{-- End addres --}}
 <div class="social-media-input" id="pdfInput">
    <label for="pdfFile">PDF File</label>
    <input type="file" id="pdffile" name="doc" accept=".pdf"  value="{{old('doc')}}"/>
 </div>
+ 
+
  

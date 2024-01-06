@@ -91,29 +91,9 @@ class ShowFullVisiterCardController extends Controller
 
 
             if ($media) {
-            $updateData = [
-                'facebook' => $request->facebook,
-                'pinterest' => $request->pinterest,
-                'twitter' => $request->twitter,
-                'instagram' => $request->instagram,
-                'whatsapp' => $request->whatsapp,
-                'youtube' => $request->youtube,
-                'tiktok' => $request->tiktok,
-                'linkedin' => $request->linkedin,
-                'snapchat' => $request->snapchat,
-                'telegram' => $request->telegram,
-                'discord' => $request->discord,
-                'skype' => $request->skype,
-                'paypal' => $request->paypal,
-                'spotify' => $request->spotify,
-                'applemusic' => $request->applemusic,
-                'soundcloud' => $request->soundcloud,
-                'behance' => $request->behance,
-                'twitch' => $request->twitch,
-                'link' => $request->link,
-                'website' => $request->website,
-            ];
-
+              $updateData = $request->all();
+            }
+            
             $updateResult = $media->update($updateData);
 
             // Check if a new PDF file is provided
@@ -131,17 +111,7 @@ class ShowFullVisiterCardController extends Controller
                 ]);
             }
 
-            if ($updateResult) {
-                // Update successful
-                return redirect()->route('home')->with('succes', 'Record updated successfully.');
-            } else {
-                // Update failed
-                return redirect()->back()->with('error', 'Failed to update social media information.');
-            }
-            } else {
-                // Media record not found
-                return redirect()->back()->with('error', 'Social media record not found.');
-            }
+            
 
             return redirect()->route('home')->with('succes', 'Record updated successfully.');
      }

@@ -833,22 +833,28 @@ body.scale-effect {
     top: 34px; }
     #v-card-holder #v-card #profile {
       /*profile v-card at max width 767*/
-      position: absolute;
-      bottom: 96%;
-      left: 0;
-      left: 244px;
-      width: 100px;
-      height: auto;
-      margin-right: auto;
-      margin-left: auto;
-      z-index: 1;
-      background-color: transparent; }
+          /* position: absolute; */
+        bottom: 50px;
+        left: 0;
+        left: 244px;
+        width: 72px;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto;
+        z-index: 1;
+        background-color: transparent;
+        overflow: hidden;
+        object-fit: cover;
+        position: fixed;
+      }
       #v-card-holder #v-card #profile img {
         /*image at max width 767*/
         width: 100%;
         height: auto;
-        border-radius: 50%;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+        /* border-radius: 50%; */
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+        
+        }
       #v-card-holder #v-card #profile .slant {
         /*hide slant*/
         display: none;
@@ -2222,7 +2228,7 @@ hr {
 }
 
 .waveContainer{
-    height: 121vh;
+    height: 219vh;
     overflow: hidden;
   }
   .viewBox{
