@@ -73,17 +73,20 @@
       border-bottom-right-radius: 20px 20px !important;
    }
    .btn.waves-effect-share {
-           position: fixed;
-           bottom: 0;
-           left: 0;
-           width: 100%;
-           height: 45px;
-           font-weight: 900;
-           background-color:  {{$cardform->color}}; /* Set background color if needed */
-           text-align: center;
-           padding: 10px; /* Adjust padding as needed */
-           z-index: 999;
-          margin: 0 0 9px 0;
+         color: #fff;
+         height: 45px;
+         width: 45px;
+         cursor: pointer;
+         font-size: 28px;
+         background: #68b7e2;
+         border: 1px solid : #68b7e2;
+         text-align: center;
+         position: fixed;
+         bottom: 21px;
+         right: 18px;
+         z-index: 5;
+         box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+         transition: .3s;
          border-top-left-radius: 20px 20px !important;
          border-top-right-radius: 20px 20px !important;
          border-bottom-left-radius: 20px 20px !important;
@@ -146,5 +149,6 @@
   display: none;
   transition: .3s;
 }
+
 </style>
 

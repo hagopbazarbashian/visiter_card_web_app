@@ -47,7 +47,7 @@
               <path d="M0.00,49.98 C254.51,72.06 306.43,40.41 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" class="path">
               </path>
             </svg>
-          </div>
+          </div> 
     </div>
 </header>
 
@@ -56,14 +56,14 @@
 </div>
 
 
+ 
 <!--==========================================
                      SCROLL TO TOP
-===========================================-->
-
+===========================================--> 
+ 
 <div class="ff">
-<a href="#" class="btn waves-effect-share"  id="shareButton" ><i class="fa-regular fa-paper-plane"></i> Share</a>
+<a href="#" class="btn waves-effect-share"  id="shareButton" ><i class="fa-regular fa-paper-plane" style="position: absolute!important;left: 10px !important;"></i></a>
 </div>
-
 @include('user_card_layout.js')
 </body>
 </html>

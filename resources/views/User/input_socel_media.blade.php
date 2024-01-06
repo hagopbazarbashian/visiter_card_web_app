@@ -3,77 +3,77 @@
    <label for="facebookUsername">Facebook Link</label>
    <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook Link" value="{{old('facebook')}}" />
    <label for="facebookUsername">Display name</label>
-   <input type="text" id="facebookUsername" name="facebookprofilename" placeholder="Display name" value="{{old('facebookprofilename')}}" />
+   <input type="text" id="facebookUsername" name="facebookprofilename" placeholder="Display name" value="{{old('facebookprofilename')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="pinterestInput">
    <label for="pinterestUsername">Pinterest Username</label>
-   <input type="text" id="pinterestUsername" name="pinterest" placeholder="Enter your Pinterest" value="{{old('pinterest')}}" />
+   <input type="text" id="pinterestUsername" name="pinterest" placeholder="Enter your Pinterest" value="{{old('pinterest')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="twitterInput">
    <label for="twitterUsername">Twitter Username</label>
-   <input type="text" id="twitterUsername" name="twitter" placeholder="Enter your Twitter" value="{{old('twitter')}}" />
+   <input type="text" id="twitterUsername" name="twitter" placeholder="Enter your Twitter" value="{{old('twitter')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="instagramInput">
    <label for="instagramUsername">Instagram Username</label>
-   <input type="text" id="instagramUsername" name="instagram" placeholder="Enter your Instagram" value="{{old('instagram')}}" />
+   <input type="text" id="instagramUsername" name="instagram" placeholder="Enter your Instagram" value="{{old('instagram')}}" pattern="[a-zA-Z0-9_]+" />
 </div>
 <div class="social-media-input" id="whatsappInput">
-   <label for="whatsappUsername">Whats App Number</label> 
-   <input type="text" id="whatsappUsername" name="whatsapp" placeholder="+374 XX XXXXX" value="{{old('whatsapp')}}" />
+   <label for="whatsappUsername">WhatsApp Number</label> 
+   <input type="tel" id="whatsappUsername" name="whatsapp" placeholder="+374 XX XXXXX" value="{{ old('whatsapp') }}" pattern="[+0-9]+" title="Please enter a valid WhatsApp number (only + and numbers are allowed)" inputmode="tel" />
 </div>
 <div class="social-media-input" id="youtubeInput">
    <label for="youtubeUsername">Youtube Username</label>
-   <input type="text" id="youtubeUsername" name="youtube" placeholder="Enter your Youtube" value="{{old('youtube')}}" />
+   <input type="text" id="youtubeUsername" name="youtube" placeholder="Enter your Youtube" value="{{old('youtube')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 
 <div class="social-media-input" id="tiktokInput">
    <label for="tiktokUsername">Tiktok Username</label>
-   <input type="text" id="tiktokUsername" name="tiktok" placeholder="Enter your Tiktok" value="{{old('tiktok')}}" />
+   <input type="text" id="tiktokUsername" name="tiktok" placeholder="Enter your Tiktok" value="{{old('tiktok')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="linkedinInput">
    <label for="linkedinUsername">Linkedin Username</label>
-   <input type="text" id="linkedinUsername" name="linkedin" placeholder="Enter your Linkedin" value="{{old('linkedin')}}" />
+   <input type="text" id="linkedinUsername" name="linkedin" placeholder="Enter your Linkedin" value="{{old('linkedin')}}" pattern="[a-zA-Z0-9_]+" />
 </div>
 <div class="social-media-input" id="snapchatInput">
    <label for="snapchatUsername">Snapchat Username</label>
-   <input type="text" id="snapchatUsername" name="snapchat" placeholder="Enter your Snapchat" value="{{old('snapchat')}}" />
+   <input type="text" id="snapchatUsername" name="snapchat" placeholder="Enter your Snapchat" value="{{old('snapchat')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="telegramInput">
    <label for="telegramUsername">Telegram Username</label>
-   <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your Telegram" value="{{old('telegram')}}" />
+   <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your Telegram" value="{{old('telegram')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="discordInput">
    <label for="discordUsername">Discord Username</label>
-   <input type="text" id="discordUsername" name="discord" placeholder="Enter your Discord" value="{{old('discord')}}" />
+   <input type="text" id="discordUsername" name="discord" placeholder="Enter your Discord" value="{{old('discord')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="skypeInput">
    <label for="skypeUsername">Skype Username</label>
-   <input type="text" id="skypeUsername" name="skype" placeholder="Enter your Skype" value="{{old('skype')}}" />
+   <input type="text" id="skypeUsername" name="skype" placeholder="Enter your Skype" value="{{old('skype')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="paypalInput">
    <label for="paypalUsername">Paypal Username</label>
-   <input type="text" id="paypalUsername" name="paypal" placeholder="Enter your Paypal" value="{{old('paypal')}}" />
+   <input type="text" id="paypalUsername" name="paypal" placeholder="Enter your Paypal" value="{{old('paypal')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 
 <div class="social-media-input" id="spotifyInput">
    <label for="spotifyUsername">Spotify Username</label>
-   <input type="text" id="spotifyUsername" name="spotify" placeholder="Enter your Spotify" value="{{old('spotify')}}" />
+   <input type="text" id="spotifyUsername" name="spotify" placeholder="Enter your Spotify" value="{{old('spotify')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="applemusicInput">
    <label for="applemusicUsername">Applemusic Username</label>
-   <input type="text" id="applemusicUsername" name="applemusic" placeholder="Enter your Applemusic" value="{{old('applemusic')}}" />
+   <input type="text" id="applemusicUsername" name="applemusic" placeholder="Enter your Applemusic" value="{{old('applemusic')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="soundcloudInput">
    <label for="soundcloudUsername">Soundcloud Username</label>
-   <input type="text" id="soundcloudUsername" name="soundcloud" placeholder="Enter your Soundcloud" value="{{old('soundcloud')}}" />
+   <input type="text" id="soundcloudUsername" name="soundcloud" placeholder="Enter your Soundcloud" value="{{old('soundcloud')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="behanceInput">
    <label for="behanceUsername">Behance Username</label>
-   <input type="text" id="behanceUsername" name="behance" placeholder="Enter your Behance" value="{{old('behance')}}" />
+   <input type="text" id="behanceUsername" name="behance" placeholder="Enter your Behance" value="{{old('behance')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 <div class="social-media-input" id="twitchInput">
    <label for="twitchUsername">Twitch Username</label>
-   <input type="text" id="twitchUsername" name="twitch" placeholder="Enter your Twitch" value="{{old('twitch')}}" />
+   <input type="text" id="twitchUsername" name="twitch" placeholder="Enter your Twitch" value="{{old('twitch')}}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 
 <div class="social-media-input" id="linkInput"> 
@@ -144,6 +144,3 @@ function initMap() {
    <label for="pdfFile">PDF File</label>
    <input type="file" id="pdffile" name="doc" accept=".pdf"  value="{{old('doc')}}"/>
 </div>
- 
-
- 

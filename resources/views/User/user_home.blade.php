@@ -47,7 +47,7 @@
                                  <div class="block-images position-relative w-100">
                                     <div class="img-box" style="background-color: #yourBackgroundColor;">
                                        <a  class="btn sty"  id="triggerButton{{$filteredCardform->id}}">
-                                          <i class="fa-solid fa-bars"></i>
+                                          <i class="fa-solid fa-bars" style="color: #fff;"></i>
                                       </a>
                                         @include('User.modal_for_user_card')
                                         <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#cardDetailsModal{{$filteredCardform->id}}">
