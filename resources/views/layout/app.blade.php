@@ -4,18 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{{ asset('favicon_io/android-chrome-512x512.png') }}"> 
+
+    <meta name="description" content="Card youcan add widget and share your info via quick QE scan" />
+    <meta name="keywords" content="">
+    <!-- Standard Favicon -->
     <link rel="icon" href="{{ asset('favicon_io/android-chrome-512x512.png') }}">
     <!-- Touch Icons - iOS and Android 2.1+ -->
     <link rel="apple-touch-icon" href="{{asset('favicon_io/apple-touch-icon.png')}}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon_io/android-chrome-512x512.png') }}" >
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('favicon_io/android-chrome-192x192.png') }}" >
-
-    <!-- Other meta tags and headers -->
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="">
+    <meta property="og:title" content="Get your first card">
+    <meta property="og:description" content="Card youcan add widget and share your info via quick QE scan">
+    <meta property="og:image" content="https://toch.am/assets/images/lot.png">
+    <meta property="og:url" content="https://toch.am">
     <meta property="og:type" content="website">
+
     <title>@yield('title')</title>
      @include('layout.style')
 

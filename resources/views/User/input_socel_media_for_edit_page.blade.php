@@ -2,19 +2,54 @@
 <!-- Your existing form fields go here -->
 @if ($socelmedia->facebook > 0) 
 <div class="" id="facebookInput">
-   <label for="facebookUsername">Facebook Username</label>
-   <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook profile link" value="{{ $socelmedia->facebook ?? '' }}" />
+   <label for="facebookUsername">Facebook Link</label>
+   <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook profile link" value="{{ $socelmedia->facebook ?? '' }}" pattern="^(https?:\/\/)?(www\.)?facebook\.com\/[a-zA-Z0-9_\.]+$" />
    <label for="facebookUsername">Display name</label>
    <input type="text" id="facebookUsername" name="facebookprofilename" placeholder="Display name" value="{{ $socelmedia->facebookprofilename ?? '' }}" pattern="[a-zA-Z0-9_]+"/>
+   <span id="toggleIcon" style="cursor: pointer; font-weight: bold;"><i class="fa fa-plus fa-1x" aria-hidden="true" style="color:#68b7e2"></i></span>
+</div>
+
+<!-- First social media input div -->
+<div class="" id="facebookInput1">
+    <label for="facebookUsername1">Facebook Second Link</label>
+    <input type="text" id="facebookUsername1" name="facebook2" placeholder="Enter your Facebook Second Link" value="{{ $socelmedia->facebook2 ?? '' }}" pattern="^(https?:\/\/)?(www\.)?facebook\.com\/[a-zA-Z0-9_\.]+$" />
+    <label for="facebookProfileName1">Second Display name</label>
+    <input type="text" id="facebookProfileName1" name="facebookprofilename2" placeholder="Second Display name" value="{{ $socelmedia->facebookprofilename2 ?? '' }}" pattern="[a-zA-Z0-9_]+"/>
+</div>
+
+<!-- Second social media input div -->
+<div class="" id="facebookInput2">
+    <label for="facebookUsername2">Facebook Third Link</label>
+    <input type="text" id="facebookUsername2" name="facebook3" placeholder="Enter your Facebook Third Link" value="{{ $socelmedia->facebook3 ?? '' }}" pattern="^(https?:\/\/)?(www\.)?facebook\.com\/[a-zA-Z0-9_\.]+$" />
+    <label for="facebookProfileName2">Third Display name</label>
+    <input type="text" id="facebookProfileName2" name="facebookprofilename3" placeholder="Third Display name" value="{{ $socelmedia->facebookprofilename3 ?? '' }}" pattern="[a-zA-Z0-9_]+"/>
 </div>
 @else
 <div class="social-media-input" id="facebookInput">
-   <label for="facebookUsername">Facebook Username</label>
-   <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook profile link" value="{{ $socelmedia->facebook ?? '' }}" />
+   <label for="facebookUsername">Facebook Link</label>
+   <input type="text" id="facebookUsername" name="facebook" placeholder="Enter your Facebook profile link" value="{{ $socelmedia->facebook ?? '' }}" pattern="^(https?:\/\/)?(www\.)?facebook\.com\/[a-zA-Z0-9_\.]+$" />
    <label for="facebookUsername">Display name</label>
    <input type="text" id="facebookUsername" name="facebookprofilename" placeholder="Display name" value="{{ $socelmedia->facebookprofilename ?? '' }}" pattern="[a-zA-Z0-9_]+"/>
+   <span id="toggleIcon" style="cursor: pointer; font-weight: bold;"><i class="fa fa-plus fa-1x" aria-hidden="true" style="color:#68b7e2"></i></span>
 </div>
-@endif @if ($socelmedia->pinterest > 0)
+<!-- First social media input div -->
+<div class="social-media-input" id="facebookInput1">
+    <label for="facebookUsername1">Facebook Second Link</label>
+    <input type="text" id="facebookUsername1" name="facebook2" placeholder="Enter your Facebook Second Link" value="{{old('facebook2')}}" pattern="^(https?:\/\/)?(www\.)?facebook\.com\/[a-zA-Z0-9_\.]+$" />
+    <label for="facebookProfileName1">Second Display name</label>
+    <input type="text" id="facebookProfileName1" name="facebookprofilename2" placeholder="Second Display name" value="{{old('facebookprofilename2')}}" pattern="[a-zA-Z0-9_]+"/>
+</div>
+
+<!-- Second social media input div -->
+<div class="social-media-input" id="facebookInput2">
+    <label for="facebookUsername2">Facebook Third Link</label>
+    <input type="text" id="facebookUsername2" name="facebook3" placeholder="Enter your Facebook Third Link" value="{{old('facebook3')}}" pattern="^(https?:\/\/)?(www\.)?facebook\.com\/[a-zA-Z0-9_\.]+$" />
+    <label for="facebookProfileName2">Third Display name</label>
+    <input type="text" id="facebookProfileName2" name="facebookprofilename3" placeholder="Third Display name" value="{{old('facebookprofilename3')}}" pattern="[a-zA-Z0-9_]+"/>
+</div>
+
+@endif
+@if ($socelmedia->pinterest > 0)
 <div class="" id="pinterestInput">
    <label for="pinterestUsername">Pinterest Username</label>
    <input type="text" id="pinterestUsername" name="pinterest" placeholder="Enter your Pinterest profile" value="{{ $socelmedia->pinterest ?? '' }}" pattern="[a-zA-Z0-9_]+"/>
@@ -38,12 +73,34 @@
 <div class="" id="instagramInput">
    <label for="instagramUsername">Instagram Username</label>
    <input type="text" id="instagramUsername" name="instagram" placeholder="Enter your Instagram profile" value="{{ $socelmedia->instagram ?? '' }}" pattern="[a-zA-Z0-9_]+"/>
+   <span id="toggleIcon2" style="cursor: pointer; font-weight: bold;"><i class="fa fa-plus fa-1x" aria-hidden="true" style="color:#68b7e2"></i></span>
 </div>
+
+<div class="" id="instagram1">
+    <label for="instagramUsername">Instagram Second Username</label>
+    <input type="text" id="instagramUsername" name="instagram2" placeholder="Enter your Second Instagram" value="{{ $socelmedia->instagram2 ?? '' }}" pattern="[a-zA-Z0-9_]+" />
+ </div>
+ <div class="" id="instagram2">
+    <label for="instagramUsername">Instagram Third Username</label>
+    <input type="text" id="instagramUsername" name="instagram3" placeholder="Enter your Third Instagram" value="{{ $socelmedia->instagram3 ?? '' }}" pattern="[a-zA-Z0-9_]+" />
+ </div>
 @else
 <div class="social-media-input" id="instagramInput">
    <label for="instagramUsername">Instagram Username</label>
    <input type="text" id="instagramUsername" name="instagram" placeholder="Enter your Instagram profile" value="{{ $socelmedia->instagram ?? '' }}" pattern="[a-zA-Z0-9_]+"/>
+   <span id="toggleIcon2" style="cursor: pointer; font-weight: bold;"><i class="fa fa-plus fa-1x" aria-hidden="true" style="color:#68b7e2"></i></span>
 </div>
+
+<div class="social-media-input" id="instagram1">
+    <label for="instagramUsername">Instagram Second Username</label>
+    <input type="text" id="instagramUsername" name="instagram2" placeholder="Enter your Second Instagram" value="{{old('instagram2')}}" pattern="[a-zA-Z0-9_]+" />
+ </div>
+ <div class="social-media-input" id="instagram2">
+    <label for="instagramUsername">Instagram Third Username</label>
+    <input type="text" id="instagramUsername" name="instagram3" placeholder="Enter your Third Instagram" value="{{old('instagram3')}}" pattern="[a-zA-Z0-9_]+" />
+ </div>
+
+
 @endif @if ($socelmedia->whatsapp > 0)
 <div class="" id="whatsappInput">
    <label for="whatsappUsername">Whatsapp Number</label>
@@ -99,7 +156,7 @@
    <label for="telegramUsername">Telegram Username</label>
    <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your Telegram profile" value="{{ $socelmedia->telegram ?? '' }}" pattern="[a-zA-Z0-9_]+"/>
 </div>
-@else 
+@else
 <div class="social-media-input" id="telegramInput">
    <label for="telegramUsername">Telegram Username</label>
    <input type="text" id="telegramUsername" name="telegram" placeholder="Enter your Telegram profile" value="{{ $socelmedia->telegram ?? '' }}" pattern="[a-zA-Z0-9_]+"/>
@@ -240,7 +297,7 @@ function initMap() {
 
    input.addEventListener('input', function () {
       var inputValue = input.value;
-      
+
       if (inputValue) {
          // Use OpenCage Geocoding API to get coordinates based on the address
          opencage
@@ -297,7 +354,7 @@ function initMap() {
 
    input.addEventListener('input', function () {
       var inputValue = input.value;
-      
+
       if (inputValue) {
          // Use OpenCage Geocoding API to get coordinates based on the address
          opencage
@@ -342,7 +399,7 @@ function initMap() {
 </div>
 @endif
 
-<script> 
+<script>
     function deleteFile(fileId) {
         // Construct the URL using the provided fileId
         var deleteUrl = "{{ route('delete_file', ['id' => ':fileId']) }}".replace(':fileId', fileId);

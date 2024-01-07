@@ -1,6 +1,6 @@
 <ul class="profile-list">
     @if ($cardform->email)
-    <div class="your-div-class"> 
+    <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-envelope ic"></i></span>
           <a href="mailto:{{ $cardform->email }}"><span class="content">{{ $cardform->email ?? ''}}</span></a>
@@ -16,13 +16,29 @@
     </div>
     @endif
     @if ($cardform->socelmedia->facebook)
-    <div class="your-div-class"> 
+    <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-facebook ic"></i></span>
           <a href="{{ $cardform->socelmedia->facebook }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebookprofilename, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
-    @endif 
+    @endif
+    @if ($cardform->socelmedia->facebook2)
+    <div class="your-div-class">
+       <li class="clearfix">
+          <span class="title"><i class="fa fa-facebook ic"></i></span>
+          <a href="{{ $cardform->socelmedia->facebook2 }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebookprofilename2, $limit = 30, $end = '...') }}</span></a>
+       </li>
+    </div>
+    @endif
+    @if ($cardform->socelmedia->facebook3)
+    <div class="your-div-class">
+       <li class="clearfix">
+          <span class="title"><i class="fa fa-facebook ic"></i></span>
+          <a href="{{ $cardform->socelmedia->facebook3 }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebookprofilename3, $limit = 30, $end = '...') }}</span></a>
+       </li>
+    </div>
+    @endif
     @if ($cardform->socelmedia->website)
     <div class="your-div-class">
        <li class="clearfix">
@@ -53,14 +69,32 @@
           <a href="https://twitter.com/{{ $cardform->socelmedia->twitter }}" target="_blank" ><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->twitter, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
-    @endif @if ($cardform->socelmedia->instagram)
+    @endif
+    @if ($cardform->socelmedia->instagram)
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-instagram ic"></i></span>
           <a href="https://www.instagram.com/{{ $cardform->socelmedia->instagram }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->instagram, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
-    @endif @if ($cardform->socelmedia->whatsapp)
+    @endif
+    @if ($cardform->socelmedia->instagram2)
+    <div class="your-div-class">
+       <li class="clearfix">
+          <span class="title"><i class="fa fa-instagram ic"></i></span>
+          <a href="https://www.instagram.com/{{ $cardform->socelmedia->instagram2 }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->instagram2, $limit = 30, $end = '...') }}</span></a>
+       </li>
+    </div>
+    @endif
+    @if ($cardform->socelmedia->instagram3)
+    <div class="your-div-class">
+       <li class="clearfix">
+          <span class="title"><i class="fa fa-instagram ic"></i></span>
+          <a href="https://www.instagram.com/{{ $cardform->socelmedia->instagram3 }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->instagram3, $limit = 30, $end = '...') }}</span></a>
+       </li>
+    </div>
+    @endif
+    @if ($cardform->socelmedia->whatsapp)
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-whatsapp ic"></i></span>
@@ -200,5 +234,5 @@
    <div>
     @include('user_card_layout.footer')
    </div>
-   
+
  </ul>

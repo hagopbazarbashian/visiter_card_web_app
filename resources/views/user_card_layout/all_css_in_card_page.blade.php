@@ -150,5 +150,33 @@
   transition: .3s;
 }
 
+
+.btn.waves-effect-logo{
+    color: red;
+    height: 65px;
+    width: 60px;
+    cursor: pointer;
+    font-size: 28px;
+    background: transparent;
+    border: 1px solid : #68b7e2;
+    text-align: center;
+    position: absolute;
+    bottom: 430px;
+    right: 28px;
+    z-index: 5;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    transition: .3s;
+    border-top-left-radius: 20px 20px !important;
+    border-top-right-radius: 20px 20px !important;
+    border-bottom-left-radius: 20px 20px !important;
+    border-bottom-right-radius: 20px 20px !important;
+
+}
+
+.btn.waves-effect-logo img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 20px; /* Apply border-radius to the image */
+}
 </style>
 

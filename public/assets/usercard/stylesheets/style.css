@@ -852,8 +852,8 @@ body.scale-effect {
         width: 100%;
         height: auto;
         /* border-radius: 50%; */
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
-        
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
         }
       #v-card-holder #v-card #profile .slant {
         /*hide slant*/
@@ -2219,7 +2219,7 @@ hr {
 
 /*# sourceMappingURL=style.css.map */
 
-
+ 
 /* For All page User*/
 @media (min-width: 768px) {
     .hide-on-desktop {
@@ -2228,7 +2228,7 @@ hr {
 }
 
 .waveContainer{
-    height: 219vh;
+    height: 129vh;
     overflow: hidden;
   }
   .viewBox{

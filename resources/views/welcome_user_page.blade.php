@@ -5,7 +5,7 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-2"></div>
-        <div class="col-lg-8">
+        <div class="col-lg-8"> 
             <h2 class="welcome">Welcome</h2>
           <p class="text-center">Get your first card</p>
           <a href="{{ route('get_card') }}">

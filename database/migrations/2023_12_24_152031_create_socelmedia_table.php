@@ -18,9 +18,15 @@ return new class extends Migration
             $table->integer('cardform_id');
             $table->string('facebook')->nullable();
             $table->string('facebookprofilename')->nullable();
+            $table->string('facebook2')->nullable();
+            $table->string('facebookprofilename2')->nullable();
+            $table->string('facebook3')->nullable();
+            $table->string('facebookprofilename3')->nullable();
             $table->string('pinterest')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
+            $table->string('instagram2')->nullable();
+            $table->string('instagram3')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('youtube')->nullable();
 

@@ -44,6 +44,53 @@ function validateFacebookUsername() {
 
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the icon and social media input divs
+    var toggleIcon = document.getElementById("toggleIcon");
+    var facebookInput1 = document.getElementById("facebookInput1");
+    var facebookInput2 = document.getElementById("facebookInput2");
+
+    // Initial state: hide the social media input divs
+    facebookInput1.style.display = "none";
+    facebookInput2.style.display = "none";
+
+    // Toggle visibility on icon click
+    toggleIcon.addEventListener("click", function() {
+        if (facebookInput1.style.display === "none") {
+            // Show the social media input divs
+            facebookInput1.style.display = "block";
+            facebookInput2.style.display = "block";
+        } else {
+            // Hide the social media input divs
+            facebookInput1.style.display = "none";
+            facebookInput2.style.display = "none";
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the icon and social media input divs
+    var toggleIcon = document.getElementById("toggleIcon2");
+    var facebookInput1 = document.getElementById("instagram1"); 
+    var facebookInput2 = document.getElementById("instagram2");
+
+    // Initial state: hide the social media input divs
+    facebookInput1.style.display = "none";
+    facebookInput2.style.display = "none";
+
+    // Toggle visibility on icon click
+    toggleIcon.addEventListener("click", function() {
+        if (facebookInput1.style.display === "none") {
+            // Show the social media input divs
+            facebookInput1.style.display = "block";
+            facebookInput2.style.display = "block";
+        } else {
+            // Hide the social media input divs
+            facebookInput1.style.display = "none";
+            facebookInput2.style.display = "none";
+        }
+    });
+});
 
 
 

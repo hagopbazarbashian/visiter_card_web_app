@@ -21,7 +21,6 @@ class DuplicateController extends Controller
         $newCardform->user_id = Auth()->user()->id; // Update the user_id for the new record
         $newCardform->date = now(); // Update the date for the new record (if needed)
         $newCardform->save();
-
         // Duplicate the associated media record
         $originalMedia = socelmedia::where('cardform_id', $originalCardform->id)->first();
 

@@ -17,7 +17,7 @@ class UserFormController extends Controller
         return view('User.add_new_card');
     }
 
-  
+
 
      public function store(Formcardrequest $request){
 
@@ -73,10 +73,10 @@ class UserFormController extends Controller
                 // If no image is uploaded, use the default image
                 $logopdfNameee = ''; // Use a different variable name to store the filename
             }
-            
+
 
                $cardform = cardform::create([
-               'user_id' => Auth()->user()->id, 
+               'user_id' => Auth()->user()->id,
                'photo' => $logoFileName,
                'full_name' => $request->full_name,
                'title' => $request->title,
@@ -88,7 +88,7 @@ class UserFormController extends Controller
                'phone' => $request->phone,
                'color' => $request->color,
                'logo' => $logoFileNameee,
-               ]);
+               ]); 
 
               $socelmedia = socelmedia::create([
                 'cardform_id' => $cardform->id,

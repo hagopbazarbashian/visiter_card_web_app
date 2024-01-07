@@ -7,14 +7,9 @@
          <!-- V-CARD -->
          <div id="v-card" class="card">
             <!-- PROFILE PICTURE -->
-            @if ($cardform->logo)
-            {{-- <div id="profile" class="right">
-                <img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}" />
-            </div> --}}
-            @endif
             <!--VIDEO CLOSE BUTTON-->
             <!--<div id="close-btn" class="btn-floating icon-close">
-                    <i class="fa fa-close"></i>
+                    <i class="fa fa-close"></i> 
                 </div>-->
 
             <div class="card-content">
@@ -33,7 +28,7 @@
             <div id="about-btn" class="card-action">
                <div class="about-btn">
                   <!-- DOWNLOAD CV BUTTON -->
-                  <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:{{ urlencode($cardform->full_name) }}%20Doe%0AEMAIL:{{ urlencode($cardform->email) }}%0ATEL:{{ urlencode($cardform->phone) }}%0AEND:VCARD" download="contact.vcf" class="btn waves-effect">Save Contact</a>
+                  <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:{{ urlencode($cardform->full_name) }}%0AEMAIL:{{ urlencode($cardform->email) }}%0ATEL:{{ urlencode($cardform->phone) }}%0AEND:VCARD" download="contact.vcf" class="btn waves-effect">Save Contact</a>
                   <!-- CONTACT BUTTON -->
                </div>
             </div>
@@ -53,7 +48,7 @@
 </div>
 @else
 <div style="display:flex;justify-content: space-around;">
-   <p>Your Card is not Activ</p> 
+   <p>Your Card is not Activ</p>
 </div>
 @endif
 @endsection

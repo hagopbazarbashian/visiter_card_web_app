@@ -1,5 +1,5 @@
  <!--APPLE TOUCH ICON-->
- <link rel="apple-touch-icon" href="{{asset('assets/usercard/images/site/apple-touch-icon.png')}}">
+ {{-- <link rel="apple-touch-icon" href="{{asset('assets/usercard/images/site/apple-touch-icon.png')}}"> --}}
 
 
  <!-- GOOGLE FONT -->

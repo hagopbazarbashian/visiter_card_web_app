@@ -13,7 +13,7 @@
     }
     .b{
         padding: 0rem 0 !important;
-    }  
+    }
     /* Styles for screens with a minimum width of 768 pixels */
     @media (min-width: 768px) {
         .hide-on-desktop {
@@ -103,7 +103,7 @@
                                 <a href="{{route('home')}}" class="company">
                                     <span class="company-logo"><img src="{{asset('assets/images/IMG_3086.png')}}" alt=""></span>
                                     <h4>Virtual</h4>
-                                    <h5 class="utf-job-listing-company"><span><i class="icon-feather-briefcase"></i> Card youcan add to Apple Wallet or as a widget and share your info via quick QE scan</span></h5>
+                                    <h5 class="utf-job-listing-company"><span><i class="icon-feather-briefcase"></i>Card youcan add widget and share your info via quick QE scan</span></h5>
                                     {{-- <div class="utf-star-rating" data-rating="4.5"></div> --}}
                                 </a>
                             </div>
