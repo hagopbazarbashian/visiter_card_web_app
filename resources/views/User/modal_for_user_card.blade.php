@@ -1,3 +1,4 @@
+
  <!-- Modal with dynamic ID -->
  <div class="modal" id="myModal{{$filteredCardform->id}}">
     <div class="modal-dialog">
@@ -8,14 +9,17 @@
             </div>
             <!-- Modal Body -->
             <div class="modal-body">
-                <div class="d-flex justify-content-between y">
-                    <div>Edit Card</div>
-                    <div>
-                        <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon u">
-                         <i class="fas fa-edit fa-1x" style="color: #68b7e2;"></i>
-                        </a>
+                <div class="underline-container">
+                    <div class="d-flex justify-content-between y">
+                        <div class="edit-text">Edit Card</div>
+                        <div>
+                            <a href="{{ route('full_visiter_card', $filteredCardform->id) }}" class="edit-icon u">
+                                <i class="fas fa-edit fa-1x" style="color: #68b7e2;"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <div class="underline-container">
                 <div class="d-flex justify-content-between y">
                     <div>Delete Card</div>
                     <div>
@@ -24,6 +28,8 @@
                         </a>
                     </div>
                 </div>
+                </div>
+                <div class="underline-container">
                 <div class="d-flex justify-content-between y">
                     <div>Duplicate Card</div>
                     <div>
@@ -32,7 +38,7 @@
                         </a>
                     </div>
                 </div>
-
+                </div>
             </div>
         </div>
     </div>

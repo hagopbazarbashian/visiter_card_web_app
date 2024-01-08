@@ -49,25 +49,17 @@
                     HEADER
 ===========================================-->
 <header id="home">
-    <!--HEADER BACKGROUND-->
+    <!--HEADER BACKGROUND-->   
     <div class="header-background section">
         <!-- WAVE DESIGN -->
         {{-- 43 for wave --}}
-        {{-- <div class="waveContainer">
+        <div class="waveContainer">
             <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="viewBox">
               <path d="M0.00,49.98 C254.51,72.06 306.43,40.41 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" class="path">
               </path>
             </svg>
-        </div> --}}
+        </div>
     </div>
-    @if ($cardform->logo)
-{{-- <div id="profile" class="right">
-    <img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}" />
-</div> --}}
-<div class="ff" id="logoContainer">
-    <a href="#" class="btn waves-effect-logo" id="shareButton"><img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}" /></a>
-</div>
-@endif
 </header>
 
 <div id="v-card-holder" class="section hide-on-desktop">
@@ -81,7 +73,7 @@
 ===========================================-->
 
 <div class="ff">
-<a href="#" class="btn waves-effect-share"  id="shareButton" ><i class="fa-regular fa-paper-plane" style="position: absolute!important;left: 10px !important;"></i></a>
+<a href="#" class="btn waves-effect-share"  id="shareButton" ><i class="fa-solid fa-paper-plane" style="position: absolute!important;left: 10px !important;"></i></a>
 </div>
 
 @include('user_card_layout.js')

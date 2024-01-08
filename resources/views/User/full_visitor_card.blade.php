@@ -6,13 +6,15 @@
       <div class="">
          <!-- V-CARD -->
          <div id="v-card" class="card">
-            <!-- PROFILE PICTURE -->
-            <!--VIDEO CLOSE BUTTON-->
-            <!--<div id="close-btn" class="btn-floating icon-close">
-                    <i class="fa fa-close"></i> 
-                </div>-->
-
             <div class="card-content">
+                 @if ($cardform->logo)
+                  {{-- <div id="profile" class="right">
+                     <img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}" />
+                  </div> --}}
+                  <div class="ff" id="logoContainer">
+                     <a href="#" class="btn waves-effect-logo" id="shareButton"><img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}" /></a>
+                  </div>
+               @endif
                <!-- NAME & STATUS -->
                <div class="info-headings">
                   <h4 class="text-uppercase left">{{$cardform->full_name}}</h4>
@@ -38,11 +40,6 @@
             </div>
             {{-- @include('user_card_layout.other') --}}
          </div>
-         <!--HTML 5 VIDEO-->
-         <!-- <video id="html-video" class="video" poster="images/poster/poster.jpg" controls>
-                    <source src="videos/........" type="video/webm">
-                    <source src="videos/..........." type="video/mp4">
-                </video>-->
       </div>
    </div>
 </div>

@@ -114,7 +114,7 @@
 }
 
 .card-hover-style-two .block-images .img-box{
-    width: 181px !important;
+    width: 163px !important;
     height: 269px !important;
 }
 
@@ -252,7 +252,8 @@ svg {
 }
 
 .card-hover-style-two .block-images .img-box{
-    -webkit-transform: scale3d(1.1, 1.1, 1) translate3d(0%, 0, 0) perspective(31.25em) !important;
+    -webkit-transform: scale3d(1.1, 1.1, 1) translate3d(1%, 0, 0) perspective(31.25em) !important;
+     margin: 4px 2px 0 0;
 
 }
 .y{
@@ -272,7 +273,7 @@ svg {
 .sh:before{
     position: absolute;
     top: 10px;
-    left: 80px;
+    left: 74px;
 }
 
 
@@ -317,3 +318,13 @@ svg {
     top: 135px !important;
     right: 25px !important;;
 }
+
+  .underline-container {
+        border-bottom: 1px solid #68b7e2; /* Adjust color as needed */
+        padding-bottom: 5px; /* Adjust as needed for spacing */
+    }
+
+    .edit-text {
+        display: inline-block; /* Ensures the border only covers the text width */
+        margin-right: 10px; /* Adjust as needed for spacing between text and icon */
+    }

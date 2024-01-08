@@ -105,7 +105,7 @@
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-youtube ic"></i></span>
-          <a href="https://www.youtube.com/{{ $cardform->socelmedia->youtube }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->youtube, $limit = 30, $end = '...') }}</span></a>
+          <a href="https://www.youtube.com/@{{ $cardform->socelmedia->youtube }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->youtube, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
     @endif
