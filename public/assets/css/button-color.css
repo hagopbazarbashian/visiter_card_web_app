@@ -314,9 +314,9 @@ svg {
 
 .link-for-logo{
     color: #68b7e2 !important;
-    position: absolute;
-    top: 135px !important;
-    right: 25px !important;;
+    position: relative;
+    top: -16px !important;
+    right: -120px !important;
 }
 
   .underline-container {

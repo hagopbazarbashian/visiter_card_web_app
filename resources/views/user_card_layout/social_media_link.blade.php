@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/0b13bde584.js" crossorigin="anonymous"></script>
 <ul class="profile-list">
     @if ($cardform->email)
     <div class="your-div-class">
@@ -19,7 +20,7 @@
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-facebook ic"></i></span>
-          <a href="{{ $cardform->socelmedia->facebook }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebookprofilename, $limit = 30, $end = '...') }}</span></a>
+          <a href="https://www.facebook.com/{{ $cardform->socelmedia->facebook }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebookprofilename, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
     @endif
@@ -27,7 +28,7 @@
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-facebook ic"></i></span>
-          <a href="{{ $cardform->socelmedia->facebook2 }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebookprofilename2, $limit = 30, $end = '...') }}</span></a>
+          <a href="https://www.facebook.com/{{ $cardform->socelmedia->facebook2 }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebookprofilename2, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
     @endif
@@ -35,7 +36,7 @@
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-facebook ic"></i></span>
-          <a href="{{ $cardform->socelmedia->facebook3 }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebookprofilename3, $limit = 30, $end = '...') }}</span></a>
+          <a href="https://www.facebook.com/{{ $cardform->socelmedia->facebook3 }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->facebookprofilename3, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
     @endif
@@ -82,7 +83,7 @@
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-instagram ic"></i></span>
-          <a href="https://www.instagram.com/{{ $cardform->socelmedia->instagram2 }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->instagram2, $limit = 30, $end = '...') }}</span></a>
+          <a href="https://www.instagram.com/{{ $cardform->socelmedia->instagram2 }}?" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->instagram2, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
     @endif
@@ -105,15 +106,15 @@
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-youtube ic"></i></span>
-          <a href="https://www.youtube.com/@{{ $cardform->socelmedia->youtube }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->youtube, $limit = 30, $end = '...') }}</span></a>
+          <a href="https://www.youtube.com/{{'@' .$cardform->socelmedia->youtube }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->youtube, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
     @endif
     @if ($cardform->socelmedia->tiktok)
     <div class="your-div-class">
        <li class="clearfix">
-          <span class="title"><i class="fa fa-tiktok ic"></i></span>
-          <a href="https://www.tiktok.com/@{{ $cardform->socelmedia->tiktok }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->tiktok, $limit = 30, $end = '...') }}</span></a>
+          <span class="title"><i class="fa-brands fa-tiktok ic"></i></span>
+          <a href="https://www.tiktok.com/{{ '@'. $cardform->socelmedia->tiktok }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->tiktok, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
     @endif
@@ -144,7 +145,7 @@
     @if ($cardform->socelmedia->discord)
     <div class="your-div-class">
        <li class="clearfix">
-          <span class="title"><i class="fa fa-discord ic"></i></span>
+          <span class="title"><i class="fa-brands fa-discord ic"></i></span>
           <a href="https://discord.gg/{{ $cardform->socelmedia->discord }}" target="_blank"><span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->discord, $limit = 30, $end = '...') }}</span></a>
        </li>
     </div>
@@ -219,7 +220,7 @@
          <span class="title"><i class="fa fa-map-marker ic"></i></span>
          <span class="content">{{ \Illuminate\Support\Str::limit($cardform->socelmedia->address, $limit = 30, $end = '...') }}</span>
          <!-- Add a link to show the address on a map -->
-         <a href="https://maps.google.com/?q={{ urlencode($cardform->socelmedia->address) }}" target="_blank">Show on Map</a>
+         <a href="https://maps.google.com/?q={{ urlencode($cardform->socelmedia->address) }}" target="_blank"><span class="content">Display <sub>Map</sub></span></a>
        </li>
     </div>
    @endif
@@ -227,7 +228,7 @@
    <div class="your-div-class">
       <li class="clearfix">
          <span class="title"><i class="fa fa-file-pdf-o ic"></i></span>
-         <a href="{{ asset('pdf/' . $cardform->socelmedia->doc) }}" target="_blank">Show PDF</a>
+         <a href="{{ asset('pdf/' . $cardform->socelmedia->doc) }}" target="_blank"><span class="content">Display<sub>PDF</sub></span></a>
       </li>
    </div>
    @endif

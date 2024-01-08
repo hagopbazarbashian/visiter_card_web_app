@@ -282,9 +282,7 @@ video {
       /*paragraph style inside card content*/
       margin: 0;
       color: inherit;
-      text-align: center;
-      margin: 0 0 14px;
-    }
+      text-align: center; }
 
 /*-------------------------------------------------------------------------------
 #MODAL
@@ -691,8 +689,18 @@ body.scale-effect {
     transform: rotate(-45deg) !important;
     -webkit-transform-origin: 28% 43%;
     transform-origin: 28% 43%; }
+#home .header-background {
+  /*home background*/
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 370px;
+  background: url(../images/backgrounds/background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed; }
 
-/*----------------------------------------------------------------------------- --
+/*-------------------------------------------------------------------------------
  V-CARD
 -------------------------------------------------------------------------------*/
 #v-card-holder {
@@ -709,10 +717,8 @@ body.scale-effect {
     overflow: hidden;
     transition: height 1s, color 1s, margin 1s;
     z-index: 1;
-    /* background: #06A763; */
-    margin: -33px 3px 0 0;
-    height: auto;
-}
+    background: #06A763;
+    margin: -33px 3px 0 0; }
     #v-card-holder #v-card .info-headings {
       /*basic infos*/
       max-width: 514px; }
@@ -731,15 +737,14 @@ body.scale-effect {
         margin-top: -10px;
         margin-bottom: 30px;
         font-size: 1.2em;
-        color: black;
+        color:black;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.29); }
     #v-card-holder #v-card .infos {
       /*detailed infos*/
       max-width: 515px;
       margin-top: 99px; }
       #v-card-holder #v-card .infos .profile-list {
-        width: 86%;
-       }
+        /*list*/ }
         #v-card-holder #v-card .infos .profile-list .title {
           /*info title*/
           display: block;
@@ -748,18 +753,20 @@ body.scale-effect {
           line-height: 26px; }
           #v-card-holder #v-card .infos .profile-list .title i {
             /*matching icon*/
-            font-size: 22px; }
+            font-size: 23px;
+            padding: 3px 0 0 0;}
           #v-card-holder #v-card .infos .profile-list .title .fa {
             /*for font awesome*/
-            padding-left: 0; }
+            }
         #v-card-holder #v-card .infos .profile-list .content {
           /*infos content*/
-          /* display: block; */
-          margin-left: 30px;
-          font-size: 15px;
-          font-weight: 700;
-          line-height: 20px;
-          color:black; }
+            /* display: block; */
+            margin-left: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 20px;
+            color: black;
+        }
     #v-card-holder #v-card .links {
       /*social links*/
       max-width: 500px;
@@ -833,28 +840,21 @@ body.scale-effect {
     top: 34px; }
     #v-card-holder #v-card #profile {
       /*profile v-card at max width 767*/
-          /* position: absolute; */
-        bottom: 50px;
-        left: 0;
-        left: 244px;
-        width: 72px;
-        height: auto;
-        margin-right: auto;
-        margin-left: auto;
-        z-index: 1;
-        background-color: transparent;
-        overflow: hidden;
-        object-fit: cover;
-        position: fixed;
-      }
+      position: absolute;
+      bottom: 85%;
+      left: 0;
+      width: 150px;
+      height: auto;
+      margin-right: auto;
+      margin-left: auto;
+      z-index: 1;
+      background-color: transparent; }
       #v-card-holder #v-card #profile img {
         /*image at max width 767*/
-        width: 100%;
-        height: auto;
-        /* border-radius: 50%; */
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-
-        }
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
       #v-card-holder #v-card #profile .slant {
         /*hide slant*/
         display: none;
@@ -874,9 +874,7 @@ body.scale-effect {
     display: table;
     margin: 0 auto;
     max-width: 100%;
-    padding: 0;
-    display: flex;
- }
+    padding: 0; }
   #v-card-holder #v-card .links {
     /*links at max width 767*/
     display: table;
@@ -890,12 +888,12 @@ body.scale-effect {
     /*heading at max width 767*/
     max-width: 100%;
     text-align: center;
-     }
+    margin-top: 38px; }
     #v-card-holder #v-card .info-headings h6 {
       margin-bottom: 20px; }
   #v-card-holder #v-card .card-content {
     /*content padding*/
-    padding: 0px; } }
+    padding: 10px; } }
 /*-------------------------------------------------------------------------------
  ABOUT
 -------------------------------------------------------------------------------*/
@@ -979,7 +977,19 @@ body.scale-effect {
       font-size: 20px; }
       .timeline-block .card-content .modal-dot:hover, .timeline-block .card-content .modal-dot:focus {
         color: #12579b; }
-
+  .timeline-block .timeline-dot {
+    /*timeline dot*/
+    background: #06A763;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    right: 2%; }
     .timeline-block .timeline-dot i {
       /*dot icon*/
       text-align: center;
@@ -993,7 +1003,14 @@ body.scale-effect {
       font-weight: bold;
       margin-top: 8px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.29); }
-
+  .timeline-block .timeline-content {
+    /*each timeline content*/
+    position: relative;
+    background: #fff;
+    margin-right: 0;
+    z-index: 1;
+    margin-bottom: 5px;
+    border-left: 5px solid #1976D2; }
     .timeline-block .timeline-content::before {
       /*horizontal line*/
       content: '';
@@ -2029,7 +2046,23 @@ POPUP ANIMATIONS
 /*-------------------------------------------------------------------------------
  SCROLL TO TOP SECTION
 -------------------------------------------------------------------------------*/
-
+/*scroll to top button*/
+#scrollup {
+  color: #fff;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  font-size: 28px;
+  background: #1976D2;
+  border: 1px solid #1976D2;
+  text-align: center;
+  position: fixed;
+  bottom: 21px;
+  right: 18px;
+  z-index: 5;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  display: none;
+  transition: .3s; }
 
 /*-------------------------------------------------------------------------------
  FOOTER SECTION
@@ -2039,7 +2072,7 @@ footer {
   width: 100%;
   height: auto;
   color: #fff;
-  margin-top: 34px;
+  margin-top: -18px;
   margin-bottom: 9px; }
 
 /*-------------------------------------------------------------------------------
@@ -2219,30 +2252,12 @@ hr {
 
 /*# sourceMappingURL=style.css.map */
 
- 
-/* For All page User*/
-@media (min-width: 768px) {
-    .hide-on-desktop {
-        display: none;
-    }
+
+/* visiter page  */
+.wave{
+    position: relative;
+    bottom: 80px;
 }
-
-.waveContainer{
-    height: 219vh;
-    overflow: hidden;
-  }
-  .viewBox{
-    height: 100%;
-    width: 100%;
-  }
-  .path{
-    stroke: none;
-    fill: rgb(253, 253, 253);
-  }
-
-
-  .right img {
-    border-radius: 10px;
-    max-width: 100px!important;
-    max-height: 100px!important;
+.btn.focus, .btn:focus, .btn:hover{
+    color:  #fff !important;
 }

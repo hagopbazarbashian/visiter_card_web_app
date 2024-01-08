@@ -1,51 +1,246 @@
-@extends('user_card_layout.app') @section('title'){{ 'Profile' }}@endsection @section('user_card')
-@if (isset($cardform))
-@include('user_card_layout.all_css_in_card_page')
-<div class="">
-   <div class="">
-      <div class="">
-         <!-- V-CARD -->
-         <div id="v-card" class="card">
-            <div class="card-content">
-                 @if ($cardform->logo)
-                  {{-- <div id="profile" class="right">
-                     <img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}" />
-                  </div> --}}
-                  <div class="ff" id="logoContainer">
-                     <a href="#" class="btn waves-effect-logo" id="shareButton"><img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}" /></a>
-                  </div>
-               @endif
-               <!-- NAME & STATUS -->
-               <div class="info-headings">
-                  <h4 class="text-uppercase left">{{$cardform->full_name}}</h4>
-                  <h6 class="text-capitalize left">{{$cardform->title ?? ''}} @if($cardform->company) & @endif {{$cardform->company ?? '' }}</h6>
-               </div>
-               <div class="card-content">
-                  <!-- ABOUT PARAGRAPH -->
-                  <p style="color: black;">
-                     {{$cardform->headline ?? ''}}
-                  </p>
-               </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Trimatrix Lab">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+
+    <title>Flatrica | Material CV/Resume</title>
+    <link rel="icon" href="images/site/fav-icon.png">
+
+    <!--APPLE TOUCH ICON-->
+    <link rel="apple-touch-icon" href="images/site/apple-touch-icon.png">
+
+
+    <!-- GOOGLE FONT -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+
+     @include('user_card_layout.style')
+     @include('user_card_layout.all_css_in_card_page')
+
+</head>
+<body>
+
+
+<!--==========================================
+                  PRE-LOADER
+===========================================-->
+{{-- <div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="box-holder animated bounceInDown">
+                <span class="load-box"><span class="box-inner"></span></span>
             </div>
-            <div id="about-btn" class="card-action">
-               <div class="about-btn">
-                  <!-- DOWNLOAD CV BUTTON -->
-                  <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:{{ urlencode($cardform->full_name) }}%0AEMAIL:{{ urlencode($cardform->email) }}%0ATEL:{{ urlencode($cardform->phone) }}%0AEND:VCARD" download="contact.vcf" class="btn waves-effect">Save Contact</a>
-                  <!-- CONTACT BUTTON -->
-               </div>
+            <!-- NAME & STATUS -->
+            <div class="text-holder text-center">
+                <h2>JOHN DOE</h2>
+                <h6>Software Engineer & UI/UX Expert</h6>
             </div>
-            <!-- CONTACT INFO -->
-            <div class="infos">
-               @include('user_card_layout.social_media_link')
+        </div>
+    </div>
+</div> --}}
+
+<!--==========================================
+                    HEADER
+===========================================-->
+<header id="home">
+
+    <!--HEADER BACKGROUND-->
+    <div class="header-background section"></div>
+        <!-- WAVE DESIGN -->
+        {{-- 43 for wave --}}
+        <div class="waveContainer wave">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="viewBox">
+              <path d="M0.00,49.98 C254.51,72.06 306.43,40.41 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" class="path">
+              </path>
+            </svg>
+        </div>
+</header>
+
+
+<!--==========================================
+                   V-CARD
+===========================================-->
+<div id="v-card-holder" class="section">
+    <div class="">
+        <div class="">
+            <div class="">
+                <!-- V-CARD -->
+                <div id="v-card" class="card">
+                    @if($cardform->logo)
+                    <!-- PROFILE PICTURE -->
+                    <div id="profile" class="right">
+                        <img alt="profile-image" class="img-responsive" src="{{asset('logo/' . $cardform->logo)}}">
+                        <div class="slant"></div>
+                        <!--EMPTY PLUS BUTTON-->
+                        <div class="btn-floating btn-large add-btn"><i class="material-icons">add</i></div>
+                    </div>
+                    @endif
+                    <div class="card-content">
+                        <!-- NAME & STATUS -->
+                        <div class="info-headings">
+                            <h4 class="text-uppercase left">{{$cardform->full_name}}</h4>
+                            <h6 class="text-capitalize left">{{$cardform->title ?? ''}} @if($cardform->company) - @endif {{$cardform->company ?? '' }}</h6>
+                        </div>
+                    </div>
+                     <!-- BUTTONS -->
+                     <div id="about-btn" class="card-action">
+                        <div class="about-btn">
+                            <!-- DOWNLOAD CV BUTTON -->
+                            <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:{{ urlencode($cardform->full_name) }}%0AEMAIL:{{ urlencode($cardform->email) }}%0ATEL:{{ urlencode($cardform->phone) }}%0AEND:VCARD" download="contact.vcf" class="btn waves-effect">Save Contact</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            {{-- @include('user_card_layout.other') --}}
-         </div>
-      </div>
-   </div>
+        </div>
+    </div>
 </div>
-@else
-<div style="display:flex;justify-content: space-around;">
-   <p>Your Card is not Activ</p>
+
+
+
+
+<div id="v-card-holder" class="section">
+    <div class="">
+        <div class="">
+            <div class="">
+                <!-- V-CARD -->
+                <div id="v-card" class="card">
+                    <div class="infos">
+                        <ul class="profile-list">
+                            @include('user_card_layout.social_media_link')
+
+                        </ul>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-@endif
-@endsection
+
+<!--==========================================
+                   ABOUT
+===========================================-->
+{{-- <div id="about" class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- DETAILS -->
+                <div id="about-card" class="card">
+                    <div class="card-content">
+                        <!-- ABOUT PARAGRAPH -->
+                        <div class="infos">
+                            <ul class="profile-list">
+                                @include('user_card_layout.social_media_link')
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- BUTTONS -->
+                    <div id="about-btn" class="card-action">
+                        <div class="about-btn">
+                            <!-- DOWNLOAD CV BUTTON -->
+                            <a href="#" class="btn waves-effect">Download CV</a>
+                            <!-- CONTACT BUTTON -->
+                            <a href="#contact" class="btn waves-effect">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+
+
+<!--==========================================
+                   EDUCATION
+===========================================-->
+
+
+<!--==========================================
+                   SKILLS
+===========================================-->
+
+
+<!--==========================================
+                   EXPERIENCE
+===========================================-->
+
+
+<!--==========================================
+                  MODALS
+===========================================-->
+
+<!--==========================================
+                  PORTFOLIOS
+===========================================-->
+
+
+
+<!--==========================================
+                   INTEREST
+===========================================-->
+
+
+<!--==========================================
+             TESTIMONIALS AND CLIENTS
+===========================================-->
+
+
+<!--==========================================
+             PRICING TABLE
+===========================================-->
+
+
+<!--==========================================
+             BLOG
+===========================================-->
+
+
+<!--==========================================
+                  CONTACT
+===========================================-->
+
+
+<!--==========================================
+                     SCROLL TO TOP
+===========================================-->
+{{-- <div id="scroll-top">
+    <div id="scrollup"><i class="fa fa-angle-up"></i></div>
+</div> --}}
+<div class="ff">
+    <a href="#" class="btn waves-effect-share"  id="shareButton" ><i class="fa fa-paper-plane" style="position: absolute!important;left: 10px !important;"></i></a>
+</div>
+
+<!--==========================================
+                      FOOTER
+===========================================-->
+<!--==========================================
+                  SCRIPTS
+===========================================-->
+@include('user_card_layout.js')
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

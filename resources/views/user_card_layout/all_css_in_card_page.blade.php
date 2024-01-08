@@ -30,9 +30,10 @@
 @endif
 <style>
       #v-card-holder #v-card {
-         background:#fff;
+         background:transparent;
          box-shadow: none;
-         top: 225px;
+         top: 125px;
+         /* height: 100%; */
       }
 
       .your-div-class {
@@ -54,7 +55,8 @@
    }
 
    svg {
-       fill: #fff; /* Adjust the color of the wave */
+       fill:{{$cardform->color}}; /* Adjust the color of the wave */
+
 
    }
 
@@ -78,7 +80,7 @@
          width: 45px;
          cursor: pointer;
          font-size: 28px;
-         background: #68b7e2;
+         background: {{$cardform->color}};
          border: 1px solid : #68b7e2;
          text-align: center;
          position: fixed;
@@ -98,11 +100,11 @@
        width: 30px;
        height: 30px;
        display: flex;
-       /* text-align: center; */
+       text-align: center;
        /* margin: 0px 0 0px 0; */
-       justify-content: center !important;
+       /* justify-content: center !important;
        align-content: stretch;
-       align-items: center;
+       align-items: center; */
    }
    .content{
        color:black;
@@ -178,5 +180,6 @@
     max-width: 100%;
     border-radius: 20px; /* Apply border-radius to the image */
 }
+
 </style>
 

@@ -68,10 +68,11 @@
                                         </button>
                                        <!-- Modal Body -->
                                         <div class="modal-body text-center">
-                                            <a  id="qr-icon" class="qr-icon btn  share" data-url="{{ route('single_card', $filteredCardform->id) }}">
+                                            <a   id="qr-icon" class="qr-icon btn  share" data-url="{{ route('single_card', $filteredCardform->id) }}">
                                                 <i class="fa-regular fa-paper-plane tr sh"></i>
                                             </a>
                                         </div>
+
                                         <div class="qrcode-container text-center" style="display: none;">
                                             <div class="qrcode-close" style="cursor: pointer;">&times;</div>
                                             <div class="qrcode"></div>

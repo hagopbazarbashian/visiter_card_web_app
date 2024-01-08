@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Trimatrix Lab">
-    <script src="https://kit.fontawesome.com/0b13bde584.js" crossorigin="anonymous"></script>
 
     <meta name="description" content="Card youcan add widget and share your info via quick QE scan" />
     <meta name="keywords" content="">
@@ -49,7 +48,7 @@
                     HEADER
 ===========================================-->
 <header id="home">
-    <!--HEADER BACKGROUND-->   
+    <!--HEADER BACKGROUND-->
     <div class="header-background section">
         <!-- WAVE DESIGN -->
         {{-- 43 for wave --}}
