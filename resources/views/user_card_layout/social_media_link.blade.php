@@ -71,7 +71,7 @@
        </li>
     </div>
     @endif
-    @if ($cardform->socelmedia->instagram)
+    @if ($cardform->socelmedia->instagram) 
     <div class="your-div-class">
        <li class="clearfix">
           <span class="title"><i class="fa fa-instagram ic"></i></span>

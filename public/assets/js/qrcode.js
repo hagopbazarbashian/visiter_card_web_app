@@ -60,7 +60,7 @@ document.querySelectorAll(".qr-icon").forEach(function (qrIcon) {
        // });
 
        // URL of the image you want to embed
-       var imageUrl = "https://picsum.photos/100/100?random=1"; // Replace with your actual image URL
+       var imageUrl = "assets/images/toch-qr.jpg"; // Replace with your actual image URL
 
        // Generate QR code
        // Generate QR code

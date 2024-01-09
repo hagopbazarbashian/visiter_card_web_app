@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="Trimatrix Lab">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="author" content="Develop Smart">
 
-
-    <title>Flatrica | Material CV/Resume</title>
-    <link rel="icon" href="images/site/fav-icon.png">
-
-    <!--APPLE TOUCH ICON-->
-    <link rel="apple-touch-icon" href="images/site/apple-touch-icon.png">
+    <title>Welcome {{$cardform->full_name}}</title>
+    <!-- Standard Favicon -->
+    <link rel="icon" href="{{ asset('favicon_io/android-chrome-512x512.png') }}">
+    <!-- Touch Icons - iOS and Android 2.1+ -->
+    <link rel="apple-touch-icon" href="{{asset('favicon_io/apple-touch-icon.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon_io/android-chrome-512x512.png') }}" >
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('favicon_io/android-chrome-192x192.png') }}" >
+    <meta property="og:title" content="Get your first card">
+    <meta property="og:description" content="Card youcan add widget and share your info via quick QE scan">
+    <meta property="og:image" content="https://toch.am/assets/images/lot.png">
+    <meta property="og:url" content="https://toch.am">
+    <meta property="og:type" content="website">
 
 
     <!-- GOOGLE FONT -->
@@ -27,8 +31,8 @@
 </head>
 <body>
 
-
-<!--==========================================
+@if ($cardform->status == 1)
+    <!--==========================================
                   PRE-LOADER
 ===========================================-->
 {{-- <div id="loading">
@@ -55,12 +59,12 @@
     <div class="header-background section"></div>
         <!-- WAVE DESIGN -->
         {{-- 43 for wave --}}
-        <div class="waveContainer wave">
+        {{-- <div class="waveContainer wave">
             <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="viewBox">
               <path d="M0.00,49.98 C254.51,72.06 306.43,40.41 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" class="path">
               </path>
             </svg>
-        </div>
+        </div> --}}
 </header>
 
 
@@ -95,14 +99,13 @@
                             <!-- DOWNLOAD CV BUTTON -->
                             <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:{{ urlencode($cardform->full_name) }}%0AEMAIL:{{ urlencode($cardform->email) }}%0ATEL:{{ urlencode($cardform->phone) }}%0AEND:VCARD" download="contact.vcf" class="btn waves-effect">Save Contact</a>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
+</div>
 
 
 <div id="v-card-holder" class="section">
@@ -117,11 +120,7 @@
 
                         </ul>
                     </div>
-
-
-
-
-                </div>
+                </div> 
             </div>
         </div>
     </div>
@@ -162,59 +161,6 @@
 </div> --}}
 
 
-<!--==========================================
-                   EDUCATION
-===========================================-->
-
-
-<!--==========================================
-                   SKILLS
-===========================================-->
-
-
-<!--==========================================
-                   EXPERIENCE
-===========================================-->
-
-
-<!--==========================================
-                  MODALS
-===========================================-->
-
-<!--==========================================
-                  PORTFOLIOS
-===========================================-->
-
-
-
-<!--==========================================
-                   INTEREST
-===========================================-->
-
-
-<!--==========================================
-             TESTIMONIALS AND CLIENTS
-===========================================-->
-
-
-<!--==========================================
-             PRICING TABLE
-===========================================-->
-
-
-<!--==========================================
-             BLOG
-===========================================-->
-
-
-<!--==========================================
-                  CONTACT
-===========================================-->
-
-
-<!--==========================================
-                     SCROLL TO TOP
-===========================================-->
 {{-- <div id="scroll-top">
     <div id="scrollup"><i class="fa fa-angle-up"></i></div>
 </div> --}}
@@ -222,13 +168,10 @@
     <a href="#" class="btn waves-effect-share"  id="shareButton" ><i class="fa fa-paper-plane" style="position: absolute!important;left: 10px !important;"></i></a>
 </div>
 
-<!--==========================================
-                      FOOTER
-===========================================-->
-<!--==========================================
-                  SCRIPTS
-===========================================-->
 @include('user_card_layout.js')
+@else
+    <p>your page closed by admin</p>
+@endif
 </body>
 </html>
 

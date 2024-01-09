@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\User; 
+use App\Models\cardform;
 
 class AdminUserController extends Controller
 {
@@ -71,11 +72,11 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::where('id' , $id)->first();
+        $cardform = cardform::where('id' , $id)->first();
         $user->update([
-            'status'=>'1'
+            'status'=>'0'
         ]);
-        return redirect()->back()->with('succes', 'User is active now');
+        return redirect()->back()->with('succes', 'user in not active now');
     }
 
     /**
